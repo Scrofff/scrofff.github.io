@@ -1,0 +1,268 @@
+* Initialisation                             :noexport:
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+HTML_HEAD: <style> #content{max-width:3600px;}</style>
+#+OPTIONS: toc:t
+#+OPTIONS: num:nil
+#+TITLE: Testing org-mode
+#+AUTHOR: Rob Holton
+#+latex_header: \usepackage{vmargin} 
+#+latex_header: \usepackage[euler-digits]{eulervm}
+#+latex_header: \usepackage[noBBpl]{mathpazo}
+#+latex_header: \usepackage{amsmath,amsfonts}
+#+latex_header: \setpapersize{A4}
+#+latex_header: \setmarginsrb{25mm}{20mm}{20mm}{20mm}{10pt}{7mm}{10pt}{10mm}
+#+STARTUP: overview
+#+STARTUP: indent
+
+* Contents                               :TOC:noexport:
+- [[#tasks][Tasks]]
+  - [[#get-the-new-album-by-mary-lattimore-produced-by-neil-halstead][Get the new album by Mary Lattimore, produced by Neil Halstead]]
+  - [[#get-the-50th-anniversary-remix-of-the-man-who-sold-the-world][Get the 50th anniversary remix of The Man Who Sold The World]]
+  - [[#check-out-syncthing][Check out syncthing]]
+  - [[#check-out-this-reddit-post-on-selectively-including-subtrees-from-an-org-document][Check out this reddit post on selectively including subtrees from an org document]]
+  - [[#an-interesting-literate-config-file][An interesting literate config file]]
+  - [[#spend-some-more-time-with-fswatch][Spend some more time with fswatch]]
+  - [[#must-investigate-org-roam-server][Must investigate org-roam-server]]
+  - [[#start-new-org-file-for-tutorial][start new org file for tutorial]]
+  - [[#outline-document][outline document]]
+  - [[#go-through-the-tutorial][Go through the tutorial]]
+  - [[#tidy-up-my-initialisation-file---deadline-2020-07-15-wed][Tidy up my initialisation file   DEADLINE: <2020-07-15 Wed>]]
+  - [[#install-emacs-into-wsl][Install emacs into wsl]]
+  - [[#prog-some-awesome-css-files-for-the-html-exporter][PROG Some awesome CSS files for the HTML exporter:]]
+  - [[#prog-sharing-emacs-configurations][PROG Sharing emacs configurations]]
+  - [[#next-how-about-a-bit-of-sumo][NEXT How about a bit of sumo?]]
+  - [[#wait-how-about-a-bit-of-gnuplot][WAIT How about a bit of gnuplot?]]
+  - [[#fail-testing-a-function-to-put-a-youtube-thumbnail-in-a-link][FAIL Testing a function to put a YouTube thumbnail in a link]]
+  - [[#some-awesome-slowdive-videos][Some awesome Slowdive videos]]
+  - [[#can-the-emoji-dream-come-true-p-o-p-d-yes-yes-it-can-][Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬]]
+  - [[#testing-some-latex-fragments][Testing some LaTeX fragments]]
+- [[#bombay-bicycle-club-is-awesome][Bombay Bicycle Club is awesome.]]
+  - [[#i-had-the-blues-but-i-shook-them-loose-2009][I Had the Blues But I Shook Them Loose (2009)]]
+  - [[#flaws-2010][Flaws (2010)]]
+  - [[#a-different-kind-of-fix-2011][A Different Kind of Fix (2011)]]
+  - [[#so-long-see-you-tomorrow-2014][So Long, See You Tomorrow (2014)]]
+
+* Tasks
+Adding text after a headline is just great
+
+** TODO Get the new album by Mary Lattimore, produced by Neil Halstead
+[[https://marylattimoreharpist.bandcamp.com/album/silver-ladders][Available on bandcamp]] SCHEDULED: <2020-10-09 Fri>
+** TODO Get the 50th anniversary remix of The Man Who Sold The World
+[[https://www.davidbowie.com/blog/2020/9/4/metrobolist-aka-the-man-who-sold-the-world-50th-anniversary-edition?fbclid=IwAR0aFbavuaeiAFHpEEDwQePtdctmKmzFJBQS3q2SFn9aOJ-TdLechtsTM3s][Announcement]] SCHEDULED: <2020-11-06 Fri>
+** TODO Check out syncthing
+[[https://syncthing.net/][Syncthing]] is an open equivalent to dropbox/iCloud/onedrive
+- Open protocol/source/development is a bonus
+- Can sync multiple directories and files, so there is no need to put everything under a single subdirectory
+- Dropbox has the advantage that it also has version control in their servers which has saved me in the past
+- Perhaps try it out on my emacs setup initially.
+** TODO Get a github token                  :noexport:
+- Lol I already did! b0e07f0f2e0e6c4c0bbbf97c103bb31e57c73fe6
+** DONE Check out [[https://www.reddit.com/r/orgmode/comments/fj7xcm/reproducible_research_interleaving_disparate/][this reddit post]] on selectively including subtrees from an org document
+
+** DONE An interesting literate config file
+[[https://github.com/alhassy/emacs.d][Here]] - looking through it and recommending it!
+** DONE Spend some more time with fswatch
+- [[https://github.com/emcrisostomo/fswatch][fswatch]] is a utility which can watch files and react to them changing state.
+- I want to watch the files which are being worked on and react when they are updated -- I don't need to know which file has changed, just that one or more of them has. The following invocation of fswatch allows this.
+#+begin_src bash
+fswatch --event Updated -o ~/Org/Roam
+#+end_src
+- Pipe the output from this command into a bash script to do whatever you want to do when the change has occurred. For example:
+#+begin_src bash
+while read NUM ;
+do
+  pdflatex test
+done
+#+end_src
+- In my use-case, I want to export the master file when any of the constituents have changed. The following use of emacsclient performs the export on the desired file.
+#+begin_src bash
+emacsclient -e "(progn (find-file \"~/Test/test.org\") (org-export-and-save) (previous-buffer))"
+#+end_src
+- A complete command line which looks for updated files, exports the master, and runs LaTeX on it is given below.
+#+begin_src
+fswatch --event Updated -o ~/Org/Roam/ | while read NUM ; do emacsclient -e "(progn (find-file \"~/Test/test.org\") (org-export-and-save) (previous-buffer))" ; pdflatex -synctex=1 test ; done
+#+end_src
+** DONE Must investigate [[https://github.com/org-roam/org-roam-server][org-roam-server]]
+
+** DONE start new org file for tutorial
+This was rather easy
+
+** DONE outline document
+Outlining is cool
+
+** DONE Go through the tutorial
+It's useful to do this to get an initial impression of what's going on. The tutorial I'm looking at is at [[https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html][the org mode home page]]. It is the document which got me to understand the basics of org after a number of failed attempts!
+
+** DONE Tidy up my initialisation file   DEADLINE: <2020-07-15 Wed>
+It can be found at [[file:~/.emacs][my init file]] which is a bit tautological right?
+
+** DONE Install emacs into wsl
+There is an awesome [[https://medium.com/@elecming/the-ultimate-emacs-hacking-tutorial-in-windows-10-wsl-2-cfd3ea3893e3][guide]]
+** PROG Some awesome CSS files for the HTML exporter:
+- The [[https://gongzhitaao.org/orgcss/][gongzhitaao theme]] is simple and clean and can be activated by adding a reference to the CSS file in the header -- see [[file:work.org][work.org]] for an example.
+- [[https://github.com/fniessen/org-html-themes][fniessen]] provides a couple of setup themes which are great. See above for usage.
+
+** PROG Sharing emacs configurations
+- [[https://syncthing.net/][Syncthing]] doesn't work on two local directories - well, it could but you'd have to run two instances of the daemon on different ports. More trouble than it's worth.
+- Dear old rsync and Dropbox seems to be the way. Dropbox to share between machines and installations, rsync to synchronise the directories using a command such as:
+#+begin_src bash
+rsync -arv --progress --delete ~/.emacs.d/ /mnt/h/Dropbox/Emacs/emacs.d
+#+end_src
+** NEXT How about a bit of sumo?
+Livestream available on [[https://www.twitch.tv/mbovosumo][Twitch]]. The [[https://tachiai.org/][tachiai]] blog site.
+
+** WAIT How about a bit of gnuplot?
+
+#+begin_src gnuplot :file output.tikz
+set dummy u, v
+set nokey bmargin center horizontal Right noreverse enhanced autotitle nobox
+set parametric
+set view 50, 30, 1, 1
+set isosamples 50, 20
+set hidden3d back offset 1 trianglepattern 3 undefined 1 altdiagonal bentover
+set style data lines
+474set xyplane relative 0
+set title "Interlocking Tori" 
+set urange [ -3.14159 : 3.14159 ] noreverse nowriteback
+set vrange [ -3.14159 : 3.14159 ] noreverse nowriteback
+set xrange [ * : * ] noreverse writeback
+set x2range [ * : * ] noreverse writeback
+set yrange [ * : * ] noreverse writeback
+set y2range [ * : * ] noreverse writeback
+set zrange [ * : * ] noreverse writeback
+set cbrange [ * : * ] noreverse writeback
+set rrange [ * : * ] noreverse writeback
+NO_ANIMATION = 1
+splot cos(u)+.5*cos(u)*cos(v),sin(u)+.5*sin(u)*cos(v),.5*sin(v) with lines,       1+cos(u)+.5*cos(u)*cos(v),.5*sin(v),sin(u)+.5*sin(u)*cos(v) with lines
+#+end_src
+
+#+RESULTS:
+[[file:output.tikz]]
+
+#+begin_src gnuplot :file output2.tikz
+unset border
+set style fill   solid 1.00 noborder
+set dummy u, v
+unset key
+set object  1 rect from screen 0, 0 to screen 1, 1
+set object  1 behind clip lw 1.0  dashtype solid fc  rgb "gray"  fillstyle   solid 1.00 border lt -1
+set parametric
+set view 236, 339, 1.245, 1
+set isosamples 75, 75
+unset xtics
+unset ytics
+unset ztics
+set title "PM3D surfaces with specular highlighting" 
+7set urange [ -3.14159 : 3.14159 ] noreverse nowriteback
+set vrange [ -3.14159 : 3.14159 ] noreverse nowriteback
+set xrange [ * : * ] noreverse writeback
+set x2range [ * : * ] noreverse writeback
+set yrange [ * : * ] noreverse writeback
+set y2range [ * : * ] noreverse writeback
+set zrange [ * : * ] noreverse writeback
+set cbrange [ * : * ] noreverse writeback
+set rrange [ * : * ] noreverse writeback
+set pm3d depthorder 
+set pm3d lighting primary 0.5 specular 0.6 spec2 0
+set palette rgbformulae 8, 9, 7
+slice(x,y) = (x**2+y**2 < 10.0) ? 1.0 : (x**2+y**2 > 300.0) ? NaN : sin(abs(atan2(x,y)))
+sinc2(x,y) = sin(sqrt(x**2+y**2))/sqrt(x**2+y**2)
+flatten(x,y) = sqrt(x**2+y**2)/5.
+F(x,y) =  sinc2(x,y) * slice(x,y) * flatten(x,y)
+NO_ANIMATION = 1
+## Last datafile plotted: "++"
+splot cos(u)+.5*cos(u)*cos(v),sin(u)+.5*sin(u)*cos(v),.5*sin(v) with pm3d,     1+cos(u)+.5*cos(u)*cos(v),.5*sin(v),sin(u)+.5*sin(u)*cos(v) with pm3d
+#+end_src
+
+#+RESULTS:
+[[file:output2.tikz]]
+
+** FAIL Testing a function to put a YouTube thumbnail in a link
+#+begin_comment
+press C-c C-x C-v to toggle inline images
+#+end_comment
+I've just discovered Hammock from reading a post on reddit's shoegaze sub and
+really they are fantastic. Below is a link to a full album! Their entire
+discography is available on their [[https://shop.hammockmusic.com/][Bandcamp page]] for just $100 which feels
+like a bargain given that it comprises 23 releases.
+[[yt:RkVeyakTrWA]]
+[[yt:YnoyiVZUxUk][Rock'n'Roll Suicide live]]
+** Some awesome Slowdive videos
+- [[yt:Z3s4KLMjsME][Catch the Breeze]] (official video)
+- [[yt:SpVXV8aXxiI][Catch the Breeze]] (live)
+- [[yt:u9Ve8hVX0C4][Blue Skied an' Clear]]
+- [[yt:S3TG7d9N7J4][Primal]]
+** Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬
+:raising_hand: zenra rocks!
+
+** Testing some LaTeX fragments
+
+$x^2 + y^2 = z^2$
+
+  \begin{equation*}
+    \begin{bmatrix}
+      a_1 & a_2  \\
+      a_3 & a_4  \\
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+      b_1 & b_2  \\
+      b_3 & b_4  \\
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      a_1+b_1 & a_2+b_2  \\
+      a_3+b_3 & a_4+b_4  \\
+    \end{bmatrix}
+  \end{equation*}
+
+** Rosie Posie                              :noexport:
+- She's the best
+- 19/9/20 was the last time I saw her before she left for Sheffield
+- We had a fun morning, got lots gone, bought those little bits and pieces that you always need
+- Ploughman's for lunch - yummy!!
+- Talked quite a lot about the leaving and how awesome she's gonna be
+- She said that she's more worried about the things she's leaving behind - she can deal with anything!
+- Was very sad dropping her off - she waved to me from the door - tears in my eyes driving home
+- Cried a lot at home. "What am I going to do?" - I'll endure as always.
+- I should be happier and more thankful that she's got to this stage of her life so brilliantly.
+- I know I'm being selfish for being so upset, I should be thinking more about her, but I am going to miss her so very much.
+* Bombay Bicycle Club is awesome.
+Their website can be found [[https://bombaybicycle.club/][here]]. They also have a [[https://www.facebook.com/bombaybicycleclub/][Facebook page]] and a [[https://bombaybicycle.bandcamp.com/releases][Bandcamp page]]. Their [[https://en.wikipedia.org/wiki/Bombay_Bicycle_Club][Wikipedia page]] has a lot of information about the band, this little section is just to demonstrate org!
+
+They have released five studio albums:
+- [[I Had the Blues But I Shook Them Loose (2009)]]
+- [[Flaws (2010)]]
+- [[A Different Kind of Fix (2011)]]
+- [[So Long, See You Tomorrow (2014)]]
+- Everything Else Has Gone Wrong (2020)
+A brief description of them is given below.
+
+** I Had the Blues But I Shook Them Loose (2009)
+
+[[http://is5.mzstatic.com/image/thumb/Music/v4/7c/06/3f/7c063f94-084a-72a0-a964-691cccf676ea/source/10000x10000bb.jpg]]
+
+As a debut album, this was rather amazing eh?
+
+** Flaws (2010)
+A good album right?
+
+[[https://upload.wikimedia.org/wikipedia/en/9/9f/Flaws.jpg]]
+
+Lol she looks a bit stoned.
+
+** A Different Kind of Fix (2011)
+
+[[https://upload.wikimedia.org/wikipedia/en/b/ba/Bombay_bicycyle_club_a_different_kind_of_fix.jpg]]
+
+#+BEGIN_QUOTE 
+I still think this is a perfect album. --Rob Holton, July 2020
+#+END_QUOTE
+
+There are so many classic songs on this album:
+1) [[https://www.youtube.com/watch?v=JBRL-y3NRZ8][Shuffle]] 
+2) [[https://www.youtube.com/watch?v=8UEnZNuxEUA][Your Eyes]]
+3) ...
+As is to be expected of a perfect album, they're all great!
+
+** So Long, See You Tomorrow (2014)
