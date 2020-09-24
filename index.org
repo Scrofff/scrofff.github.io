@@ -26,13 +26,11 @@
   - [[#start-new-org-file-for-tutorial][start new org file for tutorial]]
   - [[#outline-document][outline document]]
   - [[#go-through-the-tutorial][Go through the tutorial]]
-  - [[#tidy-up-my-initialisation-file---deadline-2020-07-15-wed][Tidy up my initialisation file   DEADLINE: <2020-07-15 Wed>]]
   - [[#install-emacs-into-wsl][Install emacs into wsl]]
   - [[#prog-some-awesome-css-files-for-the-html-exporter][PROG Some awesome CSS files for the HTML exporter:]]
   - [[#prog-sharing-emacs-configurations][PROG Sharing emacs configurations]]
   - [[#next-how-about-a-bit-of-sumo][NEXT How about a bit of sumo?]]
   - [[#wait-how-about-a-bit-of-gnuplot][WAIT How about a bit of gnuplot?]]
-  - [[#fail-testing-a-function-to-put-a-youtube-thumbnail-in-a-link][FAIL Testing a function to put a YouTube thumbnail in a link]]
   - [[#some-awesome-slowdive-videos][Some awesome Slowdive videos]]
   - [[#can-the-emoji-dream-come-true-p-o-p-d-yes-yes-it-can-][Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬]]
   - [[#testing-some-latex-fragments][Testing some LaTeX fragments]]
@@ -90,9 +88,6 @@ Outlining is cool
 
 ** DONE Go through the tutorial
 It's useful to do this to get an initial impression of what's going on. The tutorial I'm looking at is at [[https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html][the org mode home page]]. It is the document which got me to understand the basics of org after a number of failed attempts!
-
-** DONE Tidy up my initialisation file   DEADLINE: <2020-07-15 Wed>
-It can be found at [[file:~/.emacs][my init file]] which is a bit tautological right?
 
 ** DONE Install emacs into wsl
 There is an awesome [[https://medium.com/@elecming/the-ultimate-emacs-hacking-tutorial-in-windows-10-wsl-2-cfd3ea3893e3][guide]]
@@ -175,16 +170,6 @@ splot cos(u)+.5*cos(u)*cos(v),sin(u)+.5*sin(u)*cos(v),.5*sin(v) with pm3d,     1
 #+RESULTS:
 [[file:output2.tikz]]
 
-** FAIL Testing a function to put a YouTube thumbnail in a link
-#+begin_comment
-press C-c C-x C-v to toggle inline images
-#+end_comment
-I've just discovered Hammock from reading a post on reddit's shoegaze sub and
-really they are fantastic. Below is a link to a full album! Their entire
-discography is available on their [[https://shop.hammockmusic.com/][Bandcamp page]] for just $100 which feels
-like a bargain given that it comprises 23 releases.
-[[yt:RkVeyakTrWA]]
-[[yt:YnoyiVZUxUk][Rock'n'Roll Suicide live]]
 ** Some awesome Slowdive videos
 - [[yt:Z3s4KLMjsME][Catch the Breeze]] (official video)
 - [[yt:SpVXV8aXxiI][Catch the Breeze]] (live)
