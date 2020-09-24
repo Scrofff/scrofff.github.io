@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-19 Sat 17:32 -->
+<!-- 2020-09-24 Thu 14:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Testing org-mode</title>
@@ -201,50 +201,26 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <style> #content{max-width:3600px;}</style>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -276,79 +252,94 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb492396">Tasks</a>
+<li><a href="#org093965d">Tasks</a>
 <ul>
-<li><a href="#org7846d18"><span class="todo TODO">TODO</span> Get the new album by Mary Lattimore, produced by Neil Halstead</a></li>
-<li><a href="#orgb9f44c2"><span class="todo TODO">TODO</span> Get the 50th anniversary remix of The Man Who Sold The World</a></li>
-<li><a href="#orgecb688e"><span class="done DONE">DONE</span> Check out this reddit post on selectively including subtrees from an org document</a></li>
-<li><a href="#orgf477fa1"><span class="done DONE">DONE</span> An interesting literate config file</a></li>
-<li><a href="#org6c078ae"><span class="done DONE">DONE</span> Spend some more time with fswatch</a></li>
-<li><a href="#org567188b"><span class="done DONE">DONE</span> Must investigate org-roam-server</a></li>
-<li><a href="#org5507ee4"><span class="done DONE">DONE</span> start new org file for tutorial</a></li>
-<li><a href="#org85423d1"><span class="done DONE">DONE</span> outline document</a></li>
-<li><a href="#orgf3b7865"><span class="done DONE">DONE</span> Go through the tutorial</a></li>
-<li><a href="#orgbee2382"><span class="done DONE">DONE</span> Tidy up my initialisation file   DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-15 Wed&gt;</span></span></a></li>
-<li><a href="#org49c15c6"><span class="done DONE">DONE</span> Install emacs into wsl</a></li>
-<li><a href="#org0f6fc2c"><span class="todo PROG">PROG</span> Some awesome CSS files for the HTML exporter:</a></li>
-<li><a href="#orgca9197a"><span class="todo NEXT">NEXT</span> How about a bit of sumo?</a></li>
-<li><a href="#orgced3c71"><span class="todo WAIT">WAIT</span> How about a bit of gnuplot?</a></li>
-<li><a href="#org483e3b0"><span class="todo FAIL">FAIL</span> Testing a function to put a YouTube thumbnail in a link</a></li>
-<li><a href="#orgd76843c">Some awesome Slowdive videos</a></li>
-<li><a href="#orgc7c1bfe">Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬</a></li>
-<li><a href="#org6cb5bb2">Testing some LaTeX fragments</a></li>
-<li><a href="#orgb4366b1">Rosie Posie</a></li>
+<li><a href="#org0354535"><span class="todo TODO">TODO</span> Get the new album by Mary Lattimore, produced by Neil Halstead</a></li>
+<li><a href="#org6c2602d"><span class="todo TODO">TODO</span> Get the 50th anniversary remix of The Man Who Sold The World</a></li>
+<li><a href="#orgf61d02f"><span class="todo TODO">TODO</span> Check out syncthing</a></li>
+<li><a href="#orgaa63a3a"><span class="done DONE">DONE</span> Check out this reddit post on selectively including subtrees from an org document</a></li>
+<li><a href="#org5161de3"><span class="done DONE">DONE</span> An interesting literate config file</a></li>
+<li><a href="#org3dc8299"><span class="done DONE">DONE</span> Spend some more time with fswatch</a></li>
+<li><a href="#orge7d93ed"><span class="done DONE">DONE</span> Must investigate org-roam-server</a></li>
+<li><a href="#org170090e"><span class="done DONE">DONE</span> start new org file for tutorial</a></li>
+<li><a href="#org2df53f2"><span class="done DONE">DONE</span> outline document</a></li>
+<li><a href="#org02b59f0"><span class="done DONE">DONE</span> Go through the tutorial</a></li>
+<li><a href="#orgbc412b4"><span class="done DONE">DONE</span> Tidy up my initialisation file   DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-15 Wed&gt;</span></span></a></li>
+<li><a href="#org6fb4ace"><span class="done DONE">DONE</span> Install emacs into wsl</a></li>
+<li><a href="#orge02ff78"><span class="todo PROG">PROG</span> Some awesome CSS files for the HTML exporter:</a></li>
+<li><a href="#org20f67a8"><span class="todo PROG">PROG</span> Sharing emacs configurations</a></li>
+<li><a href="#org51660af"><span class="todo NEXT">NEXT</span> How about a bit of sumo?</a></li>
+<li><a href="#org150ed81"><span class="todo WAIT">WAIT</span> How about a bit of gnuplot?</a></li>
+<li><a href="#org2298dc7"><span class="todo FAIL">FAIL</span> Testing a function to put a YouTube thumbnail in a link</a></li>
+<li><a href="#org69a6a6d">Some awesome Slowdive videos</a></li>
+<li><a href="#org2b05e37">Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬</a></li>
+<li><a href="#org51b4c0f">Testing some LaTeX fragments</a></li>
 </ul>
 </li>
-<li><a href="#org4c380f6">Bombay Bicycle Club is awesome.</a>
+<li><a href="#org9be6c0b">Bombay Bicycle Club is awesome.</a>
 <ul>
-<li><a href="#org71860a9">I Had the Blues But I Shook Them Loose (2009)</a></li>
-<li><a href="#org69319a2">Flaws (2010)</a></li>
-<li><a href="#orgc2ef417">A Different Kind of Fix (2011)</a></li>
-<li><a href="#org461fd59">So Long, See You Tomorrow (2014)</a></li>
+<li><a href="#org9517197">I Had the Blues But I Shook Them Loose (2009)</a></li>
+<li><a href="#org31938cf">Flaws (2010)</a></li>
+<li><a href="#org41e0ec0">A Different Kind of Fix (2011)</a></li>
+<li><a href="#org8bbf8d2">So Long, See You Tomorrow (2014)</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb492396" class="outline-2">
-<h2 id="orgb492396">Tasks</h2>
-<div class="outline-text-2" id="text-orgb492396">
+<div id="outline-container-org093965d" class="outline-2">
+<h2 id="org093965d">Tasks</h2>
+<div class="outline-text-2" id="text-org093965d">
 <p>
 Adding text after a headline is just great
 </p>
 </div>
 
-<div id="outline-container-org7846d18" class="outline-3">
-<h3 id="org7846d18"><span class="todo TODO">TODO</span> Get the new album by Mary Lattimore, produced by Neil Halstead</h3>
-<div class="outline-text-3" id="text-org7846d18">
+<div id="outline-container-org0354535" class="outline-3">
+<h3 id="org0354535"><span class="todo TODO">TODO</span> Get the new album by Mary Lattimore, produced by Neil Halstead</h3>
+<div class="outline-text-3" id="text-org0354535">
 <p>
 <a href="https://marylattimoreharpist.bandcamp.com/album/silver-ladders">Available on bandcamp</a> SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-09 Fri&gt;</span></span>
 </p>
 </div>
 </div>
-<div id="outline-container-orgb9f44c2" class="outline-3">
-<h3 id="orgb9f44c2"><span class="todo TODO">TODO</span> Get the 50th anniversary remix of The Man Who Sold The World</h3>
-<div class="outline-text-3" id="text-orgb9f44c2">
+<div id="outline-container-org6c2602d" class="outline-3">
+<h3 id="org6c2602d"><span class="todo TODO">TODO</span> Get the 50th anniversary remix of The Man Who Sold The World</h3>
+<div class="outline-text-3" id="text-org6c2602d">
 <p>
 <a href="https://www.davidbowie.com/blog/2020/9/4/metrobolist-aka-the-man-who-sold-the-world-50th-anniversary-edition?fbclid=IwAR0aFbavuaeiAFHpEEDwQePtdctmKmzFJBQS3q2SFn9aOJ-TdLechtsTM3s">Announcement</a> SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-06 Fri&gt;</span></span>
 </p>
 </div>
 </div>
-<div id="outline-container-orgecb688e" class="outline-3">
-<h3 id="orgecb688e"><span class="done DONE">DONE</span> Check out <a href="https://www.reddit.com/r/orgmode/comments/fj7xcm/reproducible_research_interleaving_disparate/">this reddit post</a> on selectively including subtrees from an org document</h3>
+<div id="outline-container-orgf61d02f" class="outline-3">
+<h3 id="orgf61d02f"><span class="todo TODO">TODO</span> Check out syncthing</h3>
+<div class="outline-text-3" id="text-orgf61d02f">
+<p>
+<a href="https://syncthing.net/">Syncthing</a> is an open equivalent to dropbox/iCloud/onedrive
+</p>
+<ul class="org-ul">
+<li>Open protocol/source/development is a bonus</li>
+<li>Can sync multiple directories and files, so there is no need to put everything under a single subdirectory</li>
+<li>Dropbox has the advantage that it also has version control in their servers which has saved me in the past</li>
+<li>Perhaps try it out on my emacs setup initially.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaa63a3a" class="outline-3">
+<h3 id="orgaa63a3a"><span class="done DONE">DONE</span> Check out <a href="https://www.reddit.com/r/orgmode/comments/fj7xcm/reproducible_research_interleaving_disparate/">this reddit post</a> on selectively including subtrees from an org document</h3>
 </div>
 
-<div id="outline-container-orgf477fa1" class="outline-3">
-<h3 id="orgf477fa1"><span class="done DONE">DONE</span> An interesting literate config file</h3>
-<div class="outline-text-3" id="text-orgf477fa1">
+<div id="outline-container-org5161de3" class="outline-3">
+<h3 id="org5161de3"><span class="done DONE">DONE</span> An interesting literate config file</h3>
+<div class="outline-text-3" id="text-org5161de3">
 <p>
 <a href="https://github.com/alhassy/emacs.d">Here</a> - looking through it and recommending it!
 </p>
 </div>
 </div>
-<div id="outline-container-org6c078ae" class="outline-3">
-<h3 id="org6c078ae"><span class="done DONE">DONE</span> Spend some more time with fswatch</h3>
-<div class="outline-text-3" id="text-org6c078ae">
+<div id="outline-container-org3dc8299" class="outline-3">
+<h3 id="org3dc8299"><span class="done DONE">DONE</span> Spend some more time with fswatch</h3>
+<div class="outline-text-3" id="text-org3dc8299">
 <ul class="org-ul">
 <li><a href="https://github.com/emcrisostomo/fswatch">fswatch</a> is a utility which can watch files and react to them changing state.</li>
 <li>I want to watch the files which are being worked on and react when they are updated &#x2013; I don't need to know which file has changed, just that one or more of them has. The following invocation of fswatch allows this.</li>
@@ -368,7 +359,7 @@ Adding text after a headline is just great
 </pre>
 </div>
 <ul class="org-ul">
-<li>In my use-case, I want to export the master file when any of the constituents have changed. The following use of emacsclient allows this.</li>
+<li>In my use-case, I want to export the master file when any of the constituents have changed. The following use of emacsclient performs the export on the desired file.</li>
 </ul>
 <div class="org-src-container">
 <pre class="src src-bash">emacsclient -e <span style="color: #2544bb;">"(progn (find-file \"~/Test/test.org\") (org-export-and-save) (previous-buffer))"</span>
@@ -382,57 +373,57 @@ fswatch --event Updated -o ~/Org/Roam/ | while read NUM ; do emacsclient -e "(pr
 </pre>
 </div>
 </div>
-<div id="outline-container-org567188b" class="outline-3">
-<h3 id="org567188b"><span class="done DONE">DONE</span> Must investigate <a href="https://github.com/org-roam/org-roam-server">org-roam-server</a></h3>
+<div id="outline-container-orge7d93ed" class="outline-3">
+<h3 id="orge7d93ed"><span class="done DONE">DONE</span> Must investigate <a href="https://github.com/org-roam/org-roam-server">org-roam-server</a></h3>
 </div>
 
-<div id="outline-container-org5507ee4" class="outline-3">
-<h3 id="org5507ee4"><span class="done DONE">DONE</span> start new org file for tutorial</h3>
-<div class="outline-text-3" id="text-org5507ee4">
+<div id="outline-container-org170090e" class="outline-3">
+<h3 id="org170090e"><span class="done DONE">DONE</span> start new org file for tutorial</h3>
+<div class="outline-text-3" id="text-org170090e">
 <p>
 This was rather easy
 </p>
 </div>
 </div>
 
-<div id="outline-container-org85423d1" class="outline-3">
-<h3 id="org85423d1"><span class="done DONE">DONE</span> outline document</h3>
-<div class="outline-text-3" id="text-org85423d1">
+<div id="outline-container-org2df53f2" class="outline-3">
+<h3 id="org2df53f2"><span class="done DONE">DONE</span> outline document</h3>
+<div class="outline-text-3" id="text-org2df53f2">
 <p>
 Outlining is cool
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf3b7865" class="outline-3">
-<h3 id="orgf3b7865"><span class="done DONE">DONE</span> Go through the tutorial</h3>
-<div class="outline-text-3" id="text-orgf3b7865">
+<div id="outline-container-org02b59f0" class="outline-3">
+<h3 id="org02b59f0"><span class="done DONE">DONE</span> Go through the tutorial</h3>
+<div class="outline-text-3" id="text-org02b59f0">
 <p>
 It's useful to do this to get an initial impression of what's going on. The tutorial I'm looking at is at <a href="https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html">the org mode home page</a>. It is the document which got me to understand the basics of org after a number of failed attempts!
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbee2382" class="outline-3">
-<h3 id="orgbee2382"><span class="done DONE">DONE</span> Tidy up my initialisation file   DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-15 Wed&gt;</span></span></h3>
-<div class="outline-text-3" id="text-orgbee2382">
+<div id="outline-container-orgbc412b4" class="outline-3">
+<h3 id="orgbc412b4"><span class="done DONE">DONE</span> Tidy up my initialisation file   DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-15 Wed&gt;</span></span></h3>
+<div class="outline-text-3" id="text-orgbc412b4">
 <p>
 It can be found at <a href="file:///home/drwholto/.emacs">my init file</a> which is a bit tautological right?
 </p>
 </div>
 </div>
 
-<div id="outline-container-org49c15c6" class="outline-3">
-<h3 id="org49c15c6"><span class="done DONE">DONE</span> Install emacs into wsl</h3>
-<div class="outline-text-3" id="text-org49c15c6">
+<div id="outline-container-org6fb4ace" class="outline-3">
+<h3 id="org6fb4ace"><span class="done DONE">DONE</span> Install emacs into wsl</h3>
+<div class="outline-text-3" id="text-org6fb4ace">
 <p>
 There is an awesome <a href="https://medium.com/@elecming/the-ultimate-emacs-hacking-tutorial-in-windows-10-wsl-2-cfd3ea3893e3">guide</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org0f6fc2c" class="outline-3">
-<h3 id="org0f6fc2c"><span class="todo PROG">PROG</span> Some awesome CSS files for the HTML exporter:</h3>
-<div class="outline-text-3" id="text-org0f6fc2c">
+<div id="outline-container-orge02ff78" class="outline-3">
+<h3 id="orge02ff78"><span class="todo PROG">PROG</span> Some awesome CSS files for the HTML exporter:</h3>
+<div class="outline-text-3" id="text-orge02ff78">
 <ul class="org-ul">
 <li>The <a href="https://gongzhitaao.org/orgcss/">gongzhitaao theme</a> is simple and clean and can be activated by adding a reference to the CSS file in the header &#x2013; see <a href="work.html">work.org</a> for an example.</li>
 <li><a href="https://github.com/fniessen/org-html-themes">fniessen</a> provides a couple of setup themes which are great. See above for usage.</li>
@@ -440,18 +431,31 @@ There is an awesome <a href="https://medium.com/@elecming/the-ultimate-emacs-hac
 </div>
 </div>
 
-<div id="outline-container-orgca9197a" class="outline-3">
-<h3 id="orgca9197a"><span class="todo NEXT">NEXT</span> How about a bit of sumo?</h3>
-<div class="outline-text-3" id="text-orgca9197a">
+<div id="outline-container-org20f67a8" class="outline-3">
+<h3 id="org20f67a8"><span class="todo PROG">PROG</span> Sharing emacs configurations</h3>
+<div class="outline-text-3" id="text-org20f67a8">
+<ul class="org-ul">
+<li><a href="https://syncthing.net/">Syncthing</a> doesn't work on two local directories - well, it could but you'd have to run two instances of the daemon on different ports. More trouble than it's worth.</li>
+<li>Dear old rsync and Dropbox seems to be the way. Dropbox to share between machines and installations, rsync to synchronise the directories using a command such as:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">rsync -arv --progress --delete ~/.emacs.d/ /mnt/h/Dropbox/Emacs/emacs.d
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org51660af" class="outline-3">
+<h3 id="org51660af"><span class="todo NEXT">NEXT</span> How about a bit of sumo?</h3>
+<div class="outline-text-3" id="text-org51660af">
 <p>
 Livestream available on <a href="https://www.twitch.tv/mbovosumo">Twitch</a>. The <a href="https://tachiai.org/">tachiai</a> blog site.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgced3c71" class="outline-3">
-<h3 id="orgced3c71"><span class="todo WAIT">WAIT</span> How about a bit of gnuplot?</h3>
-<div class="outline-text-3" id="text-orgced3c71">
+<div id="outline-container-org150ed81" class="outline-3">
+<h3 id="org150ed81"><span class="todo WAIT">WAIT</span> How about a bit of gnuplot?</h3>
+<div class="outline-text-3" id="text-org150ed81">
 <p>
 <a href="output.tikz">output.tikz</a>
 </p>
@@ -462,9 +466,9 @@ Livestream available on <a href="https://www.twitch.tv/mbovosumo">Twitch</a>. Th
 </div>
 </div>
 
-<div id="outline-container-org483e3b0" class="outline-3">
-<h3 id="org483e3b0"><span class="todo FAIL">FAIL</span> Testing a function to put a YouTube thumbnail in a link</h3>
-<div class="outline-text-3" id="text-org483e3b0">
+<div id="outline-container-org2298dc7" class="outline-3">
+<h3 id="org2298dc7"><span class="todo FAIL">FAIL</span> Testing a function to put a YouTube thumbnail in a link</h3>
+<div class="outline-text-3" id="text-org2298dc7">
 <p>
 I've just discovered Hammock from reading a post on reddit's shoegaze sub and
 really they are fantastic. Below is a link to a full album! Their entire
@@ -475,9 +479,9 @@ like a bargain given that it comprises 23 releases.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd76843c" class="outline-3">
-<h3 id="orgd76843c">Some awesome Slowdive videos</h3>
-<div class="outline-text-3" id="text-orgd76843c">
+<div id="outline-container-org69a6a6d" class="outline-3">
+<h3 id="org69a6a6d">Some awesome Slowdive videos</h3>
+<div class="outline-text-3" id="text-org69a6a6d">
 <ul class="org-ul">
 <li><a href="Z3s4KLMjsME">Catch the Breeze</a> (official video)</li>
 <li><a href="SpVXV8aXxiI">Catch the Breeze</a> (live)</li>
@@ -486,18 +490,18 @@ like a bargain given that it comprises 23 releases.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc7c1bfe" class="outline-3">
-<h3 id="orgc7c1bfe">Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬</h3>
-<div class="outline-text-3" id="text-orgc7c1bfe">
+<div id="outline-container-org2b05e37" class="outline-3">
+<h3 id="org2b05e37">Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬</h3>
+<div class="outline-text-3" id="text-org2b05e37">
 <p>
 :raising<sub>hand</sub>: zenra rocks!
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6cb5bb2" class="outline-3">
-<h3 id="org6cb5bb2">Testing some LaTeX fragments</h3>
-<div class="outline-text-3" id="text-org6cb5bb2">
+<div id="outline-container-org51b4c0f" class="outline-3">
+<h3 id="org51b4c0f">Testing some LaTeX fragments</h3>
+<div class="outline-text-3" id="text-org51b4c0f">
 <p>
 \(x^2 + y^2 = z^2\)
 </p>
@@ -520,28 +524,10 @@ like a bargain given that it comprises 23 releases.
 \end{equation*}
 </div>
 </div>
-
-<div id="outline-container-orgb4366b1" class="outline-3">
-<h3 id="orgb4366b1">Rosie Posie</h3>
-<div class="outline-text-3" id="text-orgb4366b1">
-<ul class="org-ul">
-<li>She's the best</li>
-<li>19/9/20 was the last time I saw her before she left for Sheffield</li>
-<li>We had a fun morning, got lots gone, bought those little bits and pieces that you always need</li>
-<li>Ploughman's for lunch - yummy!!</li>
-<li>Talked quite a lot about the leaving and how awesome she's gonna be</li>
-<li>She said that she's more worried about the things she's leaving behind - she can deal with anything!</li>
-<li>Was very sad dropping her off - she waved to me from the door - tears in my eyes driving home</li>
-<li>Cried a lot at home. "What am I going to do?" - I'll endure as always.</li>
-<li>I should be happier and more thankful that she's got to this stage of her life so brilliantly.</li>
-<li>I know I'm being selfish for being so upset, I should be thinking more about her, but I am going to miss her so very much.</li>
-</ul>
 </div>
-</div>
-</div>
-<div id="outline-container-org4c380f6" class="outline-2">
-<h2 id="org4c380f6">Bombay Bicycle Club is awesome.</h2>
-<div class="outline-text-2" id="text-org4c380f6">
+<div id="outline-container-org9be6c0b" class="outline-2">
+<h2 id="org9be6c0b">Bombay Bicycle Club is awesome.</h2>
+<div class="outline-text-2" id="text-org9be6c0b">
 <p>
 Their website can be found <a href="https://bombaybicycle.club/">here</a>. They also have a <a href="https://www.facebook.com/bombaybicycleclub/">Facebook page</a> and a <a href="https://bombaybicycle.bandcamp.com/releases">Bandcamp page</a>. Their <a href="https://en.wikipedia.org/wiki/Bombay_Bicycle_Club">Wikipedia page</a> has a lot of information about the band, this little section is just to demonstrate org!
 </p>
@@ -550,10 +536,10 @@ Their website can be found <a href="https://bombaybicycle.club/">here</a>. They 
 They have released five studio albums:
 </p>
 <ul class="org-ul">
-<li><a href="#org71860a9">I Had the Blues But I Shook Them Loose (2009)</a></li>
-<li><a href="#org69319a2">Flaws (2010)</a></li>
-<li><a href="#orgc2ef417">A Different Kind of Fix (2011)</a></li>
-<li><a href="#org461fd59">So Long, See You Tomorrow (2014)</a></li>
+<li><a href="#org9517197">I Had the Blues But I Shook Them Loose (2009)</a></li>
+<li><a href="#org31938cf">Flaws (2010)</a></li>
+<li><a href="#org41e0ec0">A Different Kind of Fix (2011)</a></li>
+<li><a href="#org8bbf8d2">So Long, See You Tomorrow (2014)</a></li>
 <li>Everything Else Has Gone Wrong (2020)</li>
 </ul>
 <p>
@@ -561,11 +547,11 @@ A brief description of them is given below.
 </p>
 </div>
 
-<div id="outline-container-org71860a9" class="outline-3">
-<h3 id="org71860a9">I Had the Blues But I Shook Them Loose (2009)</h3>
-<div class="outline-text-3" id="text-org71860a9">
+<div id="outline-container-org9517197" class="outline-3">
+<h3 id="org9517197">I Had the Blues But I Shook Them Loose (2009)</h3>
+<div class="outline-text-3" id="text-org9517197">
 
-<div class="figure">
+<div id="org31373dc" class="figure">
 <p><img src="http://is5.mzstatic.com/image/thumb/Music/v4/7c/06/3f/7c063f94-084a-72a0-a964-691cccf676ea/source/10000x10000bb.jpg" alt="10000x10000bb.jpg" />
 </p>
 </div>
@@ -576,15 +562,15 @@ As a debut album, this was rather amazing eh?
 </div>
 </div>
 
-<div id="outline-container-org69319a2" class="outline-3">
-<h3 id="org69319a2">Flaws (2010)</h3>
-<div class="outline-text-3" id="text-org69319a2">
+<div id="outline-container-org31938cf" class="outline-3">
+<h3 id="org31938cf">Flaws (2010)</h3>
+<div class="outline-text-3" id="text-org31938cf">
 <p>
 A good album right?
 </p>
 
 
-<div class="figure">
+<div id="orga2f6dc5" class="figure">
 <p><img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Flaws.jpg" alt="Flaws.jpg" />
 </p>
 </div>
@@ -595,11 +581,11 @@ Lol she looks a bit stoned.
 </div>
 </div>
 
-<div id="outline-container-orgc2ef417" class="outline-3">
-<h3 id="orgc2ef417">A Different Kind of Fix (2011)</h3>
-<div class="outline-text-3" id="text-orgc2ef417">
+<div id="outline-container-org41e0ec0" class="outline-3">
+<h3 id="org41e0ec0">A Different Kind of Fix (2011)</h3>
+<div class="outline-text-3" id="text-org41e0ec0">
 
-<div class="figure">
+<div id="org30cd92a" class="figure">
 <p><img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Bombay_bicycyle_club_a_different_kind_of_fix.jpg" alt="Bombay_bicycyle_club_a_different_kind_of_fix.jpg" />
 </p>
 </div>
@@ -624,15 +610,15 @@ As is to be expected of a perfect album, they're all great!
 </div>
 </div>
 
-<div id="outline-container-org461fd59" class="outline-3">
-<h3 id="org461fd59">So Long, See You Tomorrow (2014)</h3>
+<div id="outline-container-org8bbf8d2" class="outline-3">
+<h3 id="org8bbf8d2">So Long, See You Tomorrow (2014)</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Rob Holton</p>
-<p class="date">Created: 2020-09-19 Sat 17:32</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2020-09-24 Thu 14:47</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
