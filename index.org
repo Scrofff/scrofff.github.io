@@ -55,8 +55,6 @@ Adding text after a headline is just great
 - Can sync multiple directories and files, so there is no need to put everything under a single subdirectory
 - Dropbox has the advantage that it also has version control in their servers which has saved me in the past
 - Perhaps try it out on my emacs setup initially.
-** TODO Get a github token                  :noexport:
-- Lol I already did! b0e07f0f2e0e6c4c0bbbf97c103bb31e57c73fe6
 ** DONE Check out [[https://www.reddit.com/r/orgmode/comments/fj7xcm/reproducible_research_interleaving_disparate/][this reddit post]] on selectively including subtrees from an org document
 
 ** DONE An interesting literate config file
