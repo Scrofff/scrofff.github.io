@@ -3,8 +3,8 @@
 #+HTML_HEAD: <style> #content{max-width:3600px;}</style>
 #+OPTIONS: toc:t
 #+OPTIONS: num:nil
-#+TITLE: Testing org-mode
-#+AUTHOR: Rob Holton
+#+TITLE: Scroff’s Site
+#+AUTHOR: Scroff
 #+latex_header: \usepackage{vmargin} 
 #+latex_header: \usepackage[euler-digits]{eulervm}
 #+latex_header: \usepackage[noBBpl]{mathpazo}
