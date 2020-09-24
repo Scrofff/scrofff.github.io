@@ -46,7 +46,7 @@ Rolling her eyes, she takes a seat next to Hisao and drags her books from her ba
 #+BEGIN_CENTER
 #+ATTR_ORG: :width 250
 #+ATTR_HTML: :width 250
-[[~/Dropbox/Writing/KatawaShoujo/OneShots/line-flourish.png]]
+[[./line-flourish.png]]
 #+END_CENTER
 
 Emi sighs in relief when the alarm on Hisao's phone brings their session to an end.
