@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-19 Sat 17:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Testing org-mode</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Rob Holton" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<style> #content{max-width:3600px;}</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Testing org-mode</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb492396">Tasks</a>
+<ul>
+<li><a href="#org7846d18"><span class="todo TODO">TODO</span> Get the new album by Mary Lattimore, produced by Neil Halstead</a></li>
+<li><a href="#orgb9f44c2"><span class="todo TODO">TODO</span> Get the 50th anniversary remix of The Man Who Sold The World</a></li>
+<li><a href="#orgecb688e"><span class="done DONE">DONE</span> Check out this reddit post on selectively including subtrees from an org document</a></li>
+<li><a href="#orgf477fa1"><span class="done DONE">DONE</span> An interesting literate config file</a></li>
+<li><a href="#org6c078ae"><span class="done DONE">DONE</span> Spend some more time with fswatch</a></li>
+<li><a href="#org567188b"><span class="done DONE">DONE</span> Must investigate org-roam-server</a></li>
+<li><a href="#org5507ee4"><span class="done DONE">DONE</span> start new org file for tutorial</a></li>
+<li><a href="#org85423d1"><span class="done DONE">DONE</span> outline document</a></li>
+<li><a href="#orgf3b7865"><span class="done DONE">DONE</span> Go through the tutorial</a></li>
+<li><a href="#orgbee2382"><span class="done DONE">DONE</span> Tidy up my initialisation file   DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-15 Wed&gt;</span></span></a></li>
+<li><a href="#org49c15c6"><span class="done DONE">DONE</span> Install emacs into wsl</a></li>
+<li><a href="#org0f6fc2c"><span class="todo PROG">PROG</span> Some awesome CSS files for the HTML exporter:</a></li>
+<li><a href="#orgca9197a"><span class="todo NEXT">NEXT</span> How about a bit of sumo?</a></li>
+<li><a href="#orgced3c71"><span class="todo WAIT">WAIT</span> How about a bit of gnuplot?</a></li>
+<li><a href="#org483e3b0"><span class="todo FAIL">FAIL</span> Testing a function to put a YouTube thumbnail in a link</a></li>
+<li><a href="#orgd76843c">Some awesome Slowdive videos</a></li>
+<li><a href="#orgc7c1bfe">Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬</a></li>
+<li><a href="#org6cb5bb2">Testing some LaTeX fragments</a></li>
+<li><a href="#orgb4366b1">Rosie Posie</a></li>
+</ul>
+</li>
+<li><a href="#org4c380f6">Bombay Bicycle Club is awesome.</a>
+<ul>
+<li><a href="#org71860a9">I Had the Blues But I Shook Them Loose (2009)</a></li>
+<li><a href="#org69319a2">Flaws (2010)</a></li>
+<li><a href="#orgc2ef417">A Different Kind of Fix (2011)</a></li>
+<li><a href="#org461fd59">So Long, See You Tomorrow (2014)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb492396" class="outline-2">
+<h2 id="orgb492396">Tasks</h2>
+<div class="outline-text-2" id="text-orgb492396">
+<p>
+Adding text after a headline is just great
+</p>
+</div>
+
+<div id="outline-container-org7846d18" class="outline-3">
+<h3 id="org7846d18"><span class="todo TODO">TODO</span> Get the new album by Mary Lattimore, produced by Neil Halstead</h3>
+<div class="outline-text-3" id="text-org7846d18">
+<p>
+<a href="https://marylattimoreharpist.bandcamp.com/album/silver-ladders">Available on bandcamp</a> SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-10-09 Fri&gt;</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb9f44c2" class="outline-3">
+<h3 id="orgb9f44c2"><span class="todo TODO">TODO</span> Get the 50th anniversary remix of The Man Who Sold The World</h3>
+<div class="outline-text-3" id="text-orgb9f44c2">
+<p>
+<a href="https://www.davidbowie.com/blog/2020/9/4/metrobolist-aka-the-man-who-sold-the-world-50th-anniversary-edition?fbclid=IwAR0aFbavuaeiAFHpEEDwQePtdctmKmzFJBQS3q2SFn9aOJ-TdLechtsTM3s">Announcement</a> SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-11-06 Fri&gt;</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-orgecb688e" class="outline-3">
+<h3 id="orgecb688e"><span class="done DONE">DONE</span> Check out <a href="https://www.reddit.com/r/orgmode/comments/fj7xcm/reproducible_research_interleaving_disparate/">this reddit post</a> on selectively including subtrees from an org document</h3>
+</div>
+
+<div id="outline-container-orgf477fa1" class="outline-3">
+<h3 id="orgf477fa1"><span class="done DONE">DONE</span> An interesting literate config file</h3>
+<div class="outline-text-3" id="text-orgf477fa1">
+<p>
+<a href="https://github.com/alhassy/emacs.d">Here</a> - looking through it and recommending it!
+</p>
+</div>
+</div>
+<div id="outline-container-org6c078ae" class="outline-3">
+<h3 id="org6c078ae"><span class="done DONE">DONE</span> Spend some more time with fswatch</h3>
+<div class="outline-text-3" id="text-org6c078ae">
+<ul class="org-ul">
+<li><a href="https://github.com/emcrisostomo/fswatch">fswatch</a> is a utility which can watch files and react to them changing state.</li>
+<li>I want to watch the files which are being worked on and react when they are updated &#x2013; I don't need to know which file has changed, just that one or more of them has. The following invocation of fswatch allows this.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">fswatch --event Updated -o ~/Org/Roam
+</pre>
+</div>
+<ul class="org-ul">
+<li>Pipe the output from this command into a bash script to do whatever you want to do when the change has occurred. For example:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #5317ac;">while </span><span style="color: #8f0075;">read</span> NUM ;
+<span style="color: #5317ac;">do</span>
+  pdflatex test
+<span style="color: #5317ac;">done</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>In my use-case, I want to export the master file when any of the constituents have changed. The following use of emacsclient allows this.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">emacsclient -e <span style="color: #2544bb;">"(progn (find-file \"~/Test/test.org\") (org-export-and-save) (previous-buffer))"</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>A complete command line which looks for updated files, exports the master, and runs LaTeX on it is given below.</li>
+</ul>
+<pre class="example">
+fswatch --event Updated -o ~/Org/Roam/ | while read NUM ; do emacsclient -e "(progn (find-file \"~/Test/test.org\") (org-export-and-save) (previous-buffer))" ; pdflatex -synctex=1 test ; done
+</pre>
+</div>
+</div>
+<div id="outline-container-org567188b" class="outline-3">
+<h3 id="org567188b"><span class="done DONE">DONE</span> Must investigate <a href="https://github.com/org-roam/org-roam-server">org-roam-server</a></h3>
+</div>
+
+<div id="outline-container-org5507ee4" class="outline-3">
+<h3 id="org5507ee4"><span class="done DONE">DONE</span> start new org file for tutorial</h3>
+<div class="outline-text-3" id="text-org5507ee4">
+<p>
+This was rather easy
+</p>
+</div>
+</div>
+
+<div id="outline-container-org85423d1" class="outline-3">
+<h3 id="org85423d1"><span class="done DONE">DONE</span> outline document</h3>
+<div class="outline-text-3" id="text-org85423d1">
+<p>
+Outlining is cool
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf3b7865" class="outline-3">
+<h3 id="orgf3b7865"><span class="done DONE">DONE</span> Go through the tutorial</h3>
+<div class="outline-text-3" id="text-orgf3b7865">
+<p>
+It's useful to do this to get an initial impression of what's going on. The tutorial I'm looking at is at <a href="https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html">the org mode home page</a>. It is the document which got me to understand the basics of org after a number of failed attempts!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbee2382" class="outline-3">
+<h3 id="orgbee2382"><span class="done DONE">DONE</span> Tidy up my initialisation file   DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-15 Wed&gt;</span></span></h3>
+<div class="outline-text-3" id="text-orgbee2382">
+<p>
+It can be found at <a href="file:///home/drwholto/.emacs">my init file</a> which is a bit tautological right?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org49c15c6" class="outline-3">
+<h3 id="org49c15c6"><span class="done DONE">DONE</span> Install emacs into wsl</h3>
+<div class="outline-text-3" id="text-org49c15c6">
+<p>
+There is an awesome <a href="https://medium.com/@elecming/the-ultimate-emacs-hacking-tutorial-in-windows-10-wsl-2-cfd3ea3893e3">guide</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org0f6fc2c" class="outline-3">
+<h3 id="org0f6fc2c"><span class="todo PROG">PROG</span> Some awesome CSS files for the HTML exporter:</h3>
+<div class="outline-text-3" id="text-org0f6fc2c">
+<ul class="org-ul">
+<li>The <a href="https://gongzhitaao.org/orgcss/">gongzhitaao theme</a> is simple and clean and can be activated by adding a reference to the CSS file in the header &#x2013; see <a href="work.html">work.org</a> for an example.</li>
+<li><a href="https://github.com/fniessen/org-html-themes">fniessen</a> provides a couple of setup themes which are great. See above for usage.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgca9197a" class="outline-3">
+<h3 id="orgca9197a"><span class="todo NEXT">NEXT</span> How about a bit of sumo?</h3>
+<div class="outline-text-3" id="text-orgca9197a">
+<p>
+Livestream available on <a href="https://www.twitch.tv/mbovosumo">Twitch</a>. The <a href="https://tachiai.org/">tachiai</a> blog site.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgced3c71" class="outline-3">
+<h3 id="orgced3c71"><span class="todo WAIT">WAIT</span> How about a bit of gnuplot?</h3>
+<div class="outline-text-3" id="text-orgced3c71">
+<p>
+<a href="output.tikz">output.tikz</a>
+</p>
+
+<p>
+<a href="output2.tikz">output2.tikz</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org483e3b0" class="outline-3">
+<h3 id="org483e3b0"><span class="todo FAIL">FAIL</span> Testing a function to put a YouTube thumbnail in a link</h3>
+<div class="outline-text-3" id="text-org483e3b0">
+<p>
+I've just discovered Hammock from reading a post on reddit's shoegaze sub and
+really they are fantastic. Below is a link to a full album! Their entire
+discography is available on their <a href="https://shop.hammockmusic.com/">Bandcamp page</a> for just $100 which feels
+like a bargain given that it comprises 23 releases.
+<a href="RkVeyakTrWA">RkVeyakTrWA</a>
+<a href="YnoyiVZUxUk">Rock'n'Roll Suicide live</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgd76843c" class="outline-3">
+<h3 id="orgd76843c">Some awesome Slowdive videos</h3>
+<div class="outline-text-3" id="text-orgd76843c">
+<ul class="org-ul">
+<li><a href="Z3s4KLMjsME">Catch the Breeze</a> (official video)</li>
+<li><a href="SpVXV8aXxiI">Catch the Breeze</a> (live)</li>
+<li><a href="u9Ve8hVX0C4">Blue Skied an' Clear</a></li>
+<li><a href="S3TG7d9N7J4">Primal</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc7c1bfe" class="outline-3">
+<h3 id="orgc7c1bfe">Can the emoji dream come true? :P :O :p :D Yes, yes it can 😬</h3>
+<div class="outline-text-3" id="text-orgc7c1bfe">
+<p>
+:raising<sub>hand</sub>: zenra rocks!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6cb5bb2" class="outline-3">
+<h3 id="org6cb5bb2">Testing some LaTeX fragments</h3>
+<div class="outline-text-3" id="text-org6cb5bb2">
+<p>
+\(x^2 + y^2 = z^2\)
+</p>
+
+\begin{equation*}
+  \begin{bmatrix}
+    a_1 & a_2  \\
+    a_3 & a_4  \\
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+    b_1 & b_2  \\
+    b_3 & b_4  \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    a_1+b_1 & a_2+b_2  \\
+    a_3+b_3 & a_4+b_4  \\
+  \end{bmatrix}
+\end{equation*}
+</div>
+</div>
+
+<div id="outline-container-orgb4366b1" class="outline-3">
+<h3 id="orgb4366b1">Rosie Posie</h3>
+<div class="outline-text-3" id="text-orgb4366b1">
+<ul class="org-ul">
+<li>She's the best</li>
+<li>19/9/20 was the last time I saw her before she left for Sheffield</li>
+<li>We had a fun morning, got lots gone, bought those little bits and pieces that you always need</li>
+<li>Ploughman's for lunch - yummy!!</li>
+<li>Talked quite a lot about the leaving and how awesome she's gonna be</li>
+<li>She said that she's more worried about the things she's leaving behind - she can deal with anything!</li>
+<li>Was very sad dropping her off - she waved to me from the door - tears in my eyes driving home</li>
+<li>Cried a lot at home. "What am I going to do?" - I'll endure as always.</li>
+<li>I should be happier and more thankful that she's got to this stage of her life so brilliantly.</li>
+<li>I know I'm being selfish for being so upset, I should be thinking more about her, but I am going to miss her so very much.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4c380f6" class="outline-2">
+<h2 id="org4c380f6">Bombay Bicycle Club is awesome.</h2>
+<div class="outline-text-2" id="text-org4c380f6">
+<p>
+Their website can be found <a href="https://bombaybicycle.club/">here</a>. They also have a <a href="https://www.facebook.com/bombaybicycleclub/">Facebook page</a> and a <a href="https://bombaybicycle.bandcamp.com/releases">Bandcamp page</a>. Their <a href="https://en.wikipedia.org/wiki/Bombay_Bicycle_Club">Wikipedia page</a> has a lot of information about the band, this little section is just to demonstrate org!
+</p>
+
+<p>
+They have released five studio albums:
+</p>
+<ul class="org-ul">
+<li><a href="#org71860a9">I Had the Blues But I Shook Them Loose (2009)</a></li>
+<li><a href="#org69319a2">Flaws (2010)</a></li>
+<li><a href="#orgc2ef417">A Different Kind of Fix (2011)</a></li>
+<li><a href="#org461fd59">So Long, See You Tomorrow (2014)</a></li>
+<li>Everything Else Has Gone Wrong (2020)</li>
+</ul>
+<p>
+A brief description of them is given below.
+</p>
+</div>
+
+<div id="outline-container-org71860a9" class="outline-3">
+<h3 id="org71860a9">I Had the Blues But I Shook Them Loose (2009)</h3>
+<div class="outline-text-3" id="text-org71860a9">
+
+<div class="figure">
+<p><img src="http://is5.mzstatic.com/image/thumb/Music/v4/7c/06/3f/7c063f94-084a-72a0-a964-691cccf676ea/source/10000x10000bb.jpg" alt="10000x10000bb.jpg" />
+</p>
+</div>
+
+<p>
+As a debut album, this was rather amazing eh?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org69319a2" class="outline-3">
+<h3 id="org69319a2">Flaws (2010)</h3>
+<div class="outline-text-3" id="text-org69319a2">
+<p>
+A good album right?
+</p>
+
+
+<div class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Flaws.jpg" alt="Flaws.jpg" />
+</p>
+</div>
+
+<p>
+Lol she looks a bit stoned.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc2ef417" class="outline-3">
+<h3 id="orgc2ef417">A Different Kind of Fix (2011)</h3>
+<div class="outline-text-3" id="text-orgc2ef417">
+
+<div class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Bombay_bicycyle_club_a_different_kind_of_fix.jpg" alt="Bombay_bicycyle_club_a_different_kind_of_fix.jpg" />
+</p>
+</div>
+
+<blockquote>
+<p>
+I still think this is a perfect album. &#x2013;Rob Holton, July 2020
+</p>
+</blockquote>
+
+<p>
+There are so many classic songs on this album:
+</p>
+<ol class="org-ol">
+<li><a href="https://www.youtube.com/watch?v=JBRL-y3NRZ8">Shuffle</a></li>
+<li><a href="https://www.youtube.com/watch?v=8UEnZNuxEUA">Your Eyes</a></li>
+<li>&#x2026;</li>
+</ol>
+<p>
+As is to be expected of a perfect album, they're all great!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org461fd59" class="outline-3">
+<h3 id="org461fd59">So Long, See You Tomorrow (2014)</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Rob Holton</p>
+<p class="date">Created: 2020-09-19 Sat 17:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
