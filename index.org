@@ -22,7 +22,6 @@
   - [[#an-interesting-literate-config-file][An interesting literate config file]]
   - [[#spend-some-more-time-with-fswatch][Spend some more time with fswatch]]
   - [[#install-emacs-into-wsl][Install emacs into wsl]]
-  - [[#prog-some-awesome-css-files-for-the-html-exporter][PROG Some awesome CSS files for the HTML exporter:]]
   - [[#prog-sharing-emacs-configurations][PROG Sharing emacs configurations]]
   - [[#next-how-about-a-bit-of-sumo][NEXT How about a bit of sumo?]]
   - [[#wait-how-about-a-bit-of-gnuplot][WAIT How about a bit of gnuplot?]]
@@ -73,10 +72,6 @@ fswatch --event Updated -o ~/Org/Roam/ | while read NUM ; do emacsclient -e "(pr
 #+end_src
 ** DONE Install emacs into wsl
 There is an awesome [[https://medium.com/@elecming/the-ultimate-emacs-hacking-tutorial-in-windows-10-wsl-2-cfd3ea3893e3][guide]]
-** PROG Some awesome CSS files for the HTML exporter:
-- The [[https://gongzhitaao.org/orgcss/][gongzhitaao theme]] is simple and clean and can be activated by adding a reference to the CSS file in the header -- see [[file:work.org][work.org]] for an example.
-- [[https://github.com/fniessen/org-html-themes][fniessen]] provides a couple of setup themes which are great. See above for usage.
-
 ** PROG Sharing emacs configurations
 - [[https://syncthing.net/][Syncthing]] doesn't work on two local directories - well, it could but you'd have to run two instances of the daemon on different ports. More trouble than it's worth.
 - Dear old rsync and Dropbox seems to be the way. Dropbox to share between machines and installations, rsync to synchronise the directories using a command such as:
