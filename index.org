@@ -24,7 +24,6 @@
   - [[#spend-some-more-time-with-fswatch][Spend some more time with fswatch]]
   - [[#must-investigate-org-roam-server][Must investigate org-roam-server]]
   - [[#start-new-org-file-for-tutorial][start new org file for tutorial]]
-  - [[#outline-document][outline document]]
   - [[#go-through-the-tutorial][Go through the tutorial]]
   - [[#install-emacs-into-wsl][Install emacs into wsl]]
   - [[#prog-some-awesome-css-files-for-the-html-exporter][PROG Some awesome CSS files for the HTML exporter:]]
@@ -82,9 +81,6 @@ fswatch --event Updated -o ~/Org/Roam/ | while read NUM ; do emacsclient -e "(pr
 
 ** DONE start new org file for tutorial
 This was rather easy
-
-** DONE outline document
-Outlining is cool
 
 ** DONE Go through the tutorial
 It's useful to do this to get an initial impression of what's going on. The tutorial I'm looking at is at [[https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html][the org mode home page]]. It is the document which got me to understand the basics of org after a number of failed attempts!
