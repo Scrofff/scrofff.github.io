@@ -216,17 +216,6 @@ $x^2 + y^2 = z^2$
     \end{bmatrix}
   \end{equation*}
 
-** Rosie Posie                              :noexport:
-- She's the best
-- 19/9/20 was the last time I saw her before she left for Sheffield
-- We had a fun morning, got lots gone, bought those little bits and pieces that you always need
-- Ploughman's for lunch - yummy!!
-- Talked quite a lot about the leaving and how awesome she's gonna be
-- She said that she's more worried about the things she's leaving behind - she can deal with anything!
-- Was very sad dropping her off - she waved to me from the door - tears in my eyes driving home
-- Cried a lot at home. "What am I going to do?" - I'll endure as always.
-- I should be happier and more thankful that she's got to this stage of her life so brilliantly.
-- I know I'm being selfish for being so upset, I should be thinking more about her, but I am going to miss her so very much.
 * Bombay Bicycle Club is awesome.
 Their website can be found [[https://bombaybicycle.club/][here]]. They also have a [[https://www.facebook.com/bombaybicycleclub/][Facebook page]] and a [[https://bombaybicycle.bandcamp.com/releases][Bandcamp page]]. Their [[https://en.wikipedia.org/wiki/Bombay_Bicycle_Club][Wikipedia page]] has a lot of information about the band, this little section is just to demonstrate org!
 
