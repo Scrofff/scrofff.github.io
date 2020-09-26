@@ -1,0 +1,1568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-25 Fri 21:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Walking together</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Walking together</h1>
+<p>
+“Is there anything that needs special attention today, or shall I just do
+the usual?” Hisao asks, rubbing his hands together to warm the massage
+oil.
+</p>
+
+<p>
+&ldquo;Left calf, fucker&rsquo;s sore as hell after those practice starts,&rdquo; Miki
+groans.
+</p>
+
+<p>
+&ldquo;Ah yeah, there&rsquo;s a knot the size of a golf ball.&rdquo; He works on it
+carefully, easing the tension out of the muscle. &ldquo;Is your lower back
+holding up?&rdquo;
+</p>
+
+<p>
+&ldquo;Yep your magic fingers did the trick, as always.&rdquo;
+</p>
+
+<p>
+Hisao decided to learn some sports massage to show his appreciation to
+Miki for taking over his training, though he only found the courage to
+offer his services when she limped off the track one evening. She was
+surprised by how effective it was and it became a part of their daily
+routine, soothing the aches and pains caused by her rigorous schedule.
+The trust and closeness they shared during these times carried over into
+their everyday lives and their romance blossomed. As Miki put it,
+&ldquo;you&rsquo;ve had your hands all over me for weeks, we might as well make it
+official.&rdquo;
+</p>
+
+<p>
+Some think them a mismatched couple but they each fulfil a need in the
+other. Hisao&rsquo;s protective urges are satisfied by taking care of her
+physical niggles. Miki&rsquo;s body image issues, a remnant of the accident
+that took her hand, are eased by the delight he takes in pampering her.
+</p>
+
+<p>
+Miki can tell that Hisao has finished the therapeutic phase of the
+massage because his hands have started to stray to areas unaffected by
+her training. She sits up and pulls him into a kiss. &ldquo;Hands off the
+goods lover boy, we&rsquo;ve got a movie to catch.&rdquo; She laughs at his
+disappointed groan. &ldquo;We&rsquo;ll hole up tomorrow with plenty of food and a
+big bottle of lube, and if I&rsquo;m not walking funny on Monday morning I&rsquo;ll
+be <i>very</i> disappointed!&rdquo;
+</p>
+
+<p>
+Hisao chuckles as he dresses. &ldquo;What has Molly found for us this week?&rdquo;
+</p>
+
+<p>
+&ldquo;She says its a classic of French experimental cinema. Its a good job I
+enjoy the company, her taste in movies is crap.&rdquo;
+</p>
+
+<p>
+&ldquo;And yours isn&rsquo;t?&rdquo;
+</p>
+
+<p>
+&ldquo;Oi!&rdquo; she says, clouting him with her stump, &ldquo;Chariots of Fire is a
+<i>classic</i>. Let&rsquo;s go, she&rsquo;ll be cross if we miss the bus.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Molly looks proudly at the members of her cinema club as they disembark in the city centre. Technically speaking its not an actual club, nor is it her&rsquo;s.  Nevertheless she is committed to searching out cinematic gems for their weekly outings, whether they like it or not.
+</p>
+
+<p>
+&ldquo;Any pre-film words for us this week Molly?&rdquo; Hisao asks. &ldquo;Any obscure
+symbolism or visual metaphors to look out for?&rdquo;
+</p>
+
+<p>
+&ldquo;No, I&rsquo;d rather you went into this one without any preconceptions to
+colour your experience,&rdquo; she replies airily.
+</p>
+
+<p>
+Suzu looks at her in suspicion. &ldquo;You haven&rsquo;t seen it, have you?&rdquo;
+</p>
+
+<p>
+&ldquo;Oh, is that Ikuno over there?&rdquo; Molly asks, keen to change the subject.
+</p>
+
+<p>
+They look across the busy street and see a girl in Yamaku uniform
+accompanied by a greying man in a dark suit.
+</p>
+
+<p>
+&ldquo;Yeah,&rdquo; says Miki, waving.
+</p>
+
+<p>
+Ikuno looks startled when she sees them, waves back then walks off,
+seemingly in a hurry. After a few moments the man gives them a shallow
+nod and walks after her.
+</p>
+
+<p>
+&ldquo;That&rsquo;s the first time I&rsquo;ve ever seen her with one of her parents.&rdquo;
+</p>
+
+<p>
+&ldquo;Its the first time I&rsquo;ve seen her outside of the <i>classroom</i>,&rdquo; Suzu
+adds.
+</p>
+
+<p>
+&ldquo;That&rsquo;s not saying much,&rdquo; Molly retorts. &ldquo;She could be parading around
+in her underwear and you wouldn&rsquo;t notice, if you were concentrating on
+staying awake.&rdquo;
+</p>
+
+<p>
+&ldquo;Harsh but fair,&rdquo; Suzu agrees.
+</p>
+
+<p>
+&ldquo;Creepy,&rdquo; Rin says in her deadpan voice.
+</p>
+
+<p>
+&ldquo;What is?&rdquo;
+</p>
+
+<p>
+&ldquo;Staring at my arms and your legs.&rdquo;
+</p>
+
+<p>
+&ldquo;You can&rsquo;t stare at what&rsquo;s not there.&rdquo; Molly replies, puzzled.
+</p>
+
+<p>
+&ldquo;Exactly.&rdquo;
+</p>
+
+<p>
+&ldquo;Why was she still wearing her uniform? I always dress up when my
+parents take me somewhere expensive.&rdquo;
+</p>
+
+<p>
+&ldquo;Not everyone&rsquo;s folks can afford to take them to fancy places,
+princess,&rdquo; Miki snorts.
+</p>
+
+<p>
+Suzu sticks her tongue out at Miki. &ldquo;Whatever. Come on, the movie&rsquo;s
+starting soon. Can&rsquo;t miss the beginning!&rdquo;
+</p>
+
+<p>
+&ldquo;That would never do,&rdquo; Hisao says under his breath, following them with
+a resigned step as they set off towards the arts picture house.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+&ldquo;Well at least it ended with a bang, there weren&rsquo;t many other laughs to be had,&rdquo; Miki says on the short walk from the bus stop to the dorms.
+</p>
+
+<p>
+&ldquo;That wasn&rsquo;t meant to be <i>funny</i>!&rdquo; Molly replies in exasperation. &ldquo;It
+was a metaphor for how indecision can have disastrous consequences.&rdquo;
+</p>
+
+<p>
+&ldquo;It was a series of beautiful paintings interspersed with meaningless
+narrative.&rdquo; Rin nods to herself, content with her analysis.
+</p>
+
+<p>
+&ldquo;That&#x2026; actually makes sense,&rdquo; Suzu says in wonder.
+</p>
+
+<p>
+&ldquo;It&rsquo;s the end of season track meet next week and I&rsquo;m going to the
+after-party with Hisao. Are you guys going to come?&rdquo;
+</p>
+
+<p>
+&ldquo;I am, it&rsquo;ll give me extra time to find something special for our next
+trip!&rdquo;
+</p>
+
+<p>
+&ldquo;I won&rsquo;t say I&rsquo;ll be there because that would be predicting the future.&rdquo;
+</p>
+
+<p>
+Rolling her eyes, Miki kisses Hisao. &ldquo;Go and get a good night&rsquo;s sleep,
+I&rsquo;ll be &lsquo;round bright and early with the supplies.&rdquo;
+</p>
+
+<p>
+&ldquo;Do you know what she means? I don&rsquo;t know what she means. Do I <i>want</i> to
+know what she means? I don&rsquo;t think I do.&rdquo; Suzu says to no-one in
+particular.
+</p>
+
+<p>
+Hooking an arm around Suzu&rsquo;s neck Miki says, &ldquo;let me explain <i>exactly</i>
+what my plans for tomorrow are, princess.&rdquo;
+</p>
+
+<p>
+&ldquo;Noooooo,&rdquo; Suzu shrieks, &ldquo;I still haven&rsquo;t recovered from the last time
+you <i>explained</i> something to me!&rdquo;
+</p>
+
+<p>
+Hisao walks away quickly, doing his best to tune out Miki&rsquo;s descriptions
+and the girls&rsquo; laughter. The last thing he hears before they disappear
+into their dorm is Rin asking, &ldquo;is that why Emi walks funny sometimes?&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+After a slow Monday, Hisao is enjoying the quiet of his room where they
+had retreated after post-training showers. Miki is stretched out on his
+bed, her skin gleaming from the massage oil. &ldquo;No aches and pains today?&rdquo;
+</p>
+
+<p>
+She shakes her head. &ldquo;I&rsquo;m not pushing as hard, tapering down for
+Saturday.&rdquo; Rolling onto her side and leaning her head on her stump she
+sighs and says, &ldquo;Hisao, I&rsquo;m sad,&rdquo; with a quiver in her voice.
+</p>
+
+<p>
+He frowns. &ldquo;We can&rsquo;t have that. I think you need a&#x2026; happy ending!&rdquo;
+</p>
+
+<p>
+Laughing, they pounce on each other.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+The pursuit of happiness is a hungry business, so after Miki has been thoroughly comforted they head to the cafeteria.
+</p>
+
+<p>
+&ldquo; &lsquo;Resting is training,&rsquo; so I&rsquo;ll sit here while you fetch something.&rdquo;
+</p>
+
+<p>
+Sighing at her cheeky wink, Hisao goes to the counter and picks over the
+day&rsquo;s leavings. It takes a while to find enough acceptable food for them
+both.
+</p>
+
+<p>
+&ldquo;Did you know that Takashi and Ikuno are seeing each other?&rdquo;
+</p>
+
+<p>
+&ldquo;Really? How do you know?&rdquo;
+</p>
+
+<p>
+&ldquo;While you were getting this <i>delicious</i> meal, he came in and sat next
+to her. They talked for a bit and left holding hands.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;d never have thought those two would be together. She seems so&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Meek,&rdquo; Miki finishes for him, &ldquo;and he&rsquo;s an asshole. Then again, plenty
+of people think <i>we&rsquo;re</i> a weird couple.&rdquo;
+</p>
+
+<p>
+He snorts, &ldquo;based solely on blind prejudice. I think we&rsquo;re a great fit.&rdquo;
+</p>
+
+<p>
+&ldquo;I certainly appreciate how well you fit me!&rdquo; Grinning at the blush on
+his face, she changes the subject. &ldquo;I&rsquo;m feeling really good about
+Saturday. Your handiwork lets me train harder because I&rsquo;m recovering so
+fast. I&rsquo;ve never been in this sort of form before.&rdquo;
+</p>
+
+<p>
+&ldquo;It would be great to see you beat Emi.&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, she can stare at <i>my</i> arse for a change! My best chance is the
+hundred metres, probably the two hundred as well. She&rsquo;s got the better
+build for longer distances, but I&rsquo;ve got the raw power you need for the
+sprints.&rdquo;
+</p>
+
+<p>
+&ldquo;One thing&rsquo;s for certain, <i>I&rsquo;ll</i> be staring at your arse on Saturday!&rdquo;
+</p>
+
+<p>
+Laughing she stands up. &ldquo;Come on, time to turn in. I want you well
+rested for the weekend, I intend to be doing a <i>lot</i> of celebrating!&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Wednesday morning finds class 3-3 bored by one of Mutou&rsquo;s flights of
+fancy. Hisao is looking at Ikuno; speculating about what she finds
+attractive in Takashi is far more entertaining than what&rsquo;s going on at
+the front of the class. He is interrupted by a piece of paper landing on
+his desk.
+</p>
+
+<p>
+[Missing your girlfriend so much you can&rsquo;t stop staring at her?]
+</p>
+
+<p>
+[No was wondering what Ikuno sees in Takashi]
+</p>
+
+<p>
+Shizune frowns as she reads Hisao&rsquo;s reply. [You&rsquo;d be better off ignoring
+that troublesome girl.]
+</p>
+
+<p>
+It&rsquo;s Hisao&rsquo;s turn to frown. [But she seems so quiet]
+</p>
+
+<p>
+Shizune writes angrily for a while, then thrusts the paper back. [We
+regularly get reports of her returning to campus after curfew. We fill
+out a form for each incident but the Administration doesn&rsquo;t do anything
+about her delinquent behaviour. It causes us a lot of work, it&rsquo;s
+disrespectful to the school, and she&rsquo;s a bad example to the younger
+students. We would be far better off if she were expelled.]
+</p>
+
+<p>
+[Harsh. You must have spoken to her, did she explain what was going on?]
+</p>
+
+<p>
+[She says she has family obligations to attend to, they live in the city
+apparently.]
+</p>
+
+<p>
+[Yeah we saw her with her father on Saturday. You should give her a
+break, sounds like the poor girl has enough to deal with]
+</p>
+
+<p>
+Shizune reads his reply and sneers at him. [You&rsquo;ll never get anywhere
+with that weak attitude!]
+</p>
+
+<p>
+Hisao shrugs and goes back to his speculation.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+&ldquo;No training tonight Hisao,&rdquo; Miki announces as they leave class on Friday afternoon. &ldquo;Let&rsquo;s sit in the sun for a bit.&rdquo;
+</p>
+
+<p>
+They find an unoccupied bench and settle down.
+</p>
+
+<p>
+&ldquo;Have you decided which events you&rsquo;ll enter?&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m gonna ditch the four hundred and concentrate on the sprints.
+Ritsu&rsquo;s damn near as fast as I am over that distance anyway, so I&rsquo;m not
+leaving us without a good chance to gain points. I will do the relay,
+but that&rsquo;s after the individual events so it won&rsquo;t be a problem.&rdquo;
+</p>
+
+<p>
+&ldquo;Do you think we&rsquo;ll beat Sendai Ikuei Gakuen high school?&rdquo;
+</p>
+
+<p>
+Miki shrugs. &ldquo;Not my problem, that&rsquo;s for the captain to worry about.
+I&rsquo;ve got enough on my plate. Their head coach is on Sendai University&rsquo;s
+sports scholarship committee, if I put on a good show he&rsquo;ll remember my
+name when it comes to handing them out.&rdquo;
+</p>
+
+<p>
+Hisao looks at her in surprise. &ldquo;That&rsquo;s the first time you&rsquo;ve mentioned
+plans for after graduation. I was getting a bit wor-&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah let&rsquo;s postpone this little chat, I&rsquo;ve got to get through tomorrow
+first.&rdquo;
+</p>
+
+<p>
+Taken aback by her brusque reply, he nods. &ldquo;What can I do to help you
+with that?&rdquo;
+</p>
+
+<p>
+&ldquo;Honestly, the best thing you can do is leave me alone till after I&rsquo;ve
+raced tomorrow.&rdquo;
+</p>
+
+<p>
+&ldquo;Sure you don&rsquo;t want some of that tension relieved?&rdquo; he asks with a
+nudge and a wink.
+</p>
+
+<p>
+&ldquo;I <i>told</i> you what I want, I don&rsquo;t need a fucking debate!&rdquo;
+</p>
+
+<p>
+&ldquo;OK, OK, sorry&#x2026; I haven&rsquo;t done something to upset you have I?&rdquo;
+</p>
+
+<p>
+Sighing, she takes his hand. &ldquo;No, I&rsquo;m always foul on the day before an
+event, and this is the most important one so far.&rdquo; She pauses, searching
+for the right words. &ldquo;I need to focus on <i>me</i> so I can perform properly,
+I can&rsquo;t deal with anyone else. Just&#x2026; be there for me Hisao. Sitting in
+the bleachers, staring at my arse.&rdquo;
+</p>
+
+<p>
+Laughing, he stands up. &ldquo;Go well tomorrow Miki, not for Yamaku, not for
+the track club, not even for me. Do it for yourself.&rdquo;
+</p>
+
+<p>
+She nods as he bends down to kiss her, then he leaves her to her
+thoughts.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Hisao sits with Suzu, waiting for the girls&rsquo; two hundred
+metres race. The four hundred metres went well for Yamaku, Emi winning
+easily and Ritsu just squeezing into second place by the narrowest of
+margins.
+</p>
+
+<p>
+&ldquo;There she is!&rdquo; Suzu says excitedly, tugging on his arm. &ldquo;Hisao, what
+have you <i>done</i> to her? She looks <i>magnificent</i>!&rdquo;
+</p>
+
+<p>
+The comparison between Miki and the other competitors is stark. Its not
+just that she is powerfully built; the striations in her muscles, thrown
+into sharp relief by the sunlight, are testament to the intensity with
+which she has been training.
+</p>
+
+<p>
+&ldquo;She says the massages help her train harder. You really can see the
+difference.&rdquo;
+</p>
+
+<p>
+As the girls are called to their mark Hisao starts to feel nervous. His
+heart starts to race, almost as if <i>he</i> was about to compete. The wait
+for the starting signal seems interminable; then it comes.
+</p>
+
+<p>
+Miki <i>explodes</i> and powers round the bend, each stride a study in brutal
+acceleration and flowing relaxation. The result is never in doubt;
+half-way down the finishing straight she has started to ease off, saving
+herself for the next race. She acknowledges the cheers with a small
+smile and wave then trots off to the staging area. Emi, a distant
+second, follows with a dazed expression on her face.
+</p>
+
+<p>
+&ldquo;Her power level was <i>way</i> over 9000,&rdquo; Suzu says, an awed expression on
+her face.
+</p>
+
+<p>
+&ldquo;She was holding back. We&rsquo;ll have to wait until the next race to see her
+go super saiyan.&rdquo;
+</p>
+
+<p>
+They wave at Molly when they spot her walking towards them. &ldquo;Hey guys! I
+wanted to spend one race in Emi&rsquo;s camp and one in Miki&rsquo;s,&rdquo; she says as
+she draws near, &ldquo;but I should have started here, they probably think I&rsquo;m
+deserting a sinking ship.&rdquo;
+</p>
+
+<p>
+Hisao makes room for her to sit down. &ldquo;What did you think of the race?&rdquo;
+</p>
+
+<p>
+&ldquo;I think Miki took Emi by surprise. I&rsquo;m not saying she&rsquo;s become
+complacent, but she&rsquo;s never lost before. I bet we&rsquo;ll see a different
+side to Emi when she comes out for the hundred.&rdquo;
+</p>
+
+<p>
+Hisao nods, &ldquo;do you two want any snacks or drinks from the stall? My
+shout.&rdquo;
+</p>
+
+<p>
+&ldquo;You should know the answer to that by now,&rdquo; Suzu smirks.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Hisao has just got back to their seats, laden with gloriously unhealthy treats, when the girls&rsquo; hundred metres is announced.
+</p>
+
+<p>
+&ldquo;What kept you? I was worrying that you&rsquo;d miss the race,&rdquo; Suzu chides.
+</p>
+
+<p>
+&ldquo;Long queue. I was ready to abandon the mission, but we got the prize.&rdquo;
+</p>
+
+<p>
+The competitors walk out; Emi is grimly determined, Miki radiates
+relaxed confidence. Once they take their mark both girls&rsquo; faces are a
+mask of concentration. This time Hisao is excited rather than nervous.
+</p>
+
+<p>
+The start sees Emi take a small lead, but it only lasts to the twenty
+metre mark. Miki is moving so smoothly by this point that she appears to
+be floating across the ground. There is no let up this time; she
+maintains full intensity to the finish line, the rest of the field in
+her wake.
+</p>
+
+<p>
+Pumping her arms in triumph, she races over to her friends and gathers
+them into a group hug, jumping up and down with them. &ldquo;Did you see? Did
+you <i>see</i>?!&rdquo; Miki yells, laughing, tears streaming down her face. &ldquo;It
+was <i>perfect</i>. From the b of the bang, Van-fucking-gelis playing in my
+head, to the dip at the end. Perfect!&rdquo;
+</p>
+
+<p>
+None of them know whether to laugh or cry so they do both, celebrating
+the <i>way</i> she ran as much as the result.
+</p>
+
+<p>
+All too soon they are interrupted by the team captain. &ldquo;Well done Miki,
+but we&rsquo;ve still got the relay to go. You can party as much as you want
+after that.&rdquo;
+</p>
+
+<p>
+Wiping her face, Miki shoots them a brilliant grin and says, &ldquo;hold this
+mood, I&rsquo;ll be back before you know it.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Hisao looks puzzled when he sees Miki lining up to take the first leg of the relay. &ldquo;Don&rsquo;t they put the fastest runner last?&rdquo;
+</p>
+
+<p>
+Molly nods, &ldquo;the captain is a clever fellow though. Look at the girl
+lining up against her, she&rsquo;s quaking in her boots. They&rsquo;ve lost before
+the gun goes off.&rdquo;
+</p>
+
+<p>
+Suzu sniggers, &ldquo;seems she&rsquo;s misplaced the &lsquo;confidence&rsquo; and
+&lsquo;determination&rsquo; from their dorky school motto!&rdquo;
+</p>
+
+<p>
+As Molly predicted, Miki establishes an emphatic lead in the first leg
+which Ritsu and Keiko extend in turn. Emi is left with a victory lap,
+which she takes with obvious pleasure.
+</p>
+
+<p>
+&ldquo;Well, I think it&rsquo;ll be OK to congratulate Emi now,&rdquo; Molly says, &ldquo;are
+you coming Suzu?&rdquo;
+</p>
+
+<p>
+Nodding, Suzu replies, &ldquo;Hisao&rsquo;s got <i>that look</i> on his face, I don&rsquo;t
+think it&rsquo;ll be safe to be around them for a while!&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+The medal ceremony seems to drag on forever but Hisao and Miki are finally reunited.  Walking away from the track, medals clinking around Miki&rsquo;s neck, they talk excitedly, reliving the races. As they draw near to the dorms Hisao sees something that stops him in his tracks. &ldquo;I thought Ikuno was dating Takashi?!&rdquo;
+</p>
+
+<p>
+&ldquo;That&rsquo;s what it looked like on Monday. Why?&rdquo;
+</p>
+
+<p>
+He points out Haruhiko, his own medal flashing in the sun and his arm
+firmly around Ikuno&rsquo;s waist. &ldquo;I think they&rsquo;re headed to the boys&rsquo;
+dorms.&rdquo;
+</p>
+
+<p>
+&ldquo;Huh. Do you think that&rsquo;s angry rebound sex or has she got herself a fan
+club? Good for her either way, though she could have better taste in
+boys.&rdquo; She puts on an exaggeratedly thoughtful look. &ldquo;Hmm, maybe <i>I</i>
+should get into polynomials.&rdquo;
+</p>
+
+<p>
+After racking his brain for a few seconds Hisao bursts into laughter. &ldquo;I
+think you mean <i>polyamory</i>! No thanks, I don&rsquo;t play well with others.&rdquo;
+</p>
+
+<p>
+&ldquo;Spoilsport! Doesn&rsquo;t have to be another guy, I bet Misha&rsquo;d be up for a
+bit of fun.&rdquo;
+</p>
+
+<p>
+&ldquo;Eugh! I need the mind bleach!&rdquo;
+</p>
+
+<p>
+Laughing she says, &ldquo;come on, I need to shower and change before the
+party.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Hisao is making polite conversation with members of the other school&rsquo;s track team when Miki grabs his arm.
+</p>
+
+<p>
+&ldquo;Very sorry, I don&rsquo;t mean to be rude, but may I drag my boyfriend away?&rdquo;
+At their nods she leads him to a quiet corner. &ldquo;I was talking to
+Haruhiko about seeing him with Ikuno. He said that he wanted to
+celebrate winning a medal.&rdquo;
+</p>
+
+<p>
+&ldquo;Sounds familiar!&rdquo; Hisao says, remembering how they spent the hour
+between leaving the medal ceremony and arriving at the party.
+</p>
+
+<p>
+&ldquo;Well, yeah,&rdquo; she admits, &ldquo;but the thing is, he claims that they aren&rsquo;t
+dating and said she&rsquo;s <i>anyone&rsquo;s</i> girlfriend. Then he went quiet and
+walked off. I can&rsquo;t work out if he was being mean &lsquo;cos he wanted more
+from the hook-up than she did, or if something else is going on.&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s not really any of our business,&rdquo; Hisao says uneasily, &ldquo;but that
+does seem strange. Now that I think of it, we&rsquo;ve seen her with three
+different guys in the space of a week.&rdquo;
+</p>
+
+<p>
+&ldquo;You think it <i>wasn&rsquo;t</i> her dad with her in the city?&rdquo;
+</p>
+
+<p>
+&ldquo;I hope it was, I&rsquo;m not sure what the alternative would be. I think we
+should ask around on Monday, see if anyone else has noticed anything
+odd. But let&rsquo;s leave it for now, you need to circulate and lord it over
+the losers.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;ll have you know I&rsquo;m a very humble winner!&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah yeah, go and be <i>humble</i> in Emi&rsquo;s face.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+As soon as the lunch bell rings on Monday, Miki walks over to Natsume&rsquo;s desk.
+</p>
+
+<p>
+&ldquo;If it&rsquo;s not our new queen of the track,&rdquo; Natsume&rsquo;s eyes flicker to
+Hisao, who has come to stand next to Miki. &ldquo;And her faithful soigneur.&rdquo;
+</p>
+
+<p>
+&ldquo;We should interview her for the next issue. Get the scoop on how she
+managed to beat the fastest thing on no legs,&rdquo; Naomi says excitedly.
+</p>
+
+<p>
+&ldquo;Uh yeah, an interview, great, but could we go somewhere quiet to spare
+my blushes?&rdquo;
+</p>
+
+<p>
+Natsume shoots her a knowing look and heaves herself to her feet. &ldquo;The
+clubroom should be free, but you&rsquo;ll have to excuse me if I&rsquo;m a little
+slower than you&rsquo;re used to.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Once they&rsquo;ve settled into the clubroom&rsquo;s comfortable couches Natsume opens by saying, &ldquo;Miki, in all the time I&rsquo;ve known you, you&rsquo;ve never <i>once</i> needed your blushes spared. What&rsquo;s this about?&rdquo;
+</p>
+
+<p>
+Miki smirks at Hisao. &ldquo;Told you she was the right person to talk to!
+There&rsquo;s some things we find odd about Ikuno and it would be good to hear
+what <i>you</i> think, maybe we&rsquo;re just imagining stuff.&rdquo;
+</p>
+
+<p>
+&ldquo;The quiet girl you sit next to? What could possibly be odd about
+<i>her</i>?&rdquo;
+</p>
+
+<p>
+&ldquo;A week ago we&rsquo;d have said the same, but we&rsquo;ve seen her walk out of the
+cafeteria holding hands with Takeshi, going to the boys&rsquo; dorms with
+Haruhiko all over her, and in the city with an older man who may or may
+not be her father,&rdquo; Hisao explains.
+</p>
+
+<p>
+&ldquo;Rin said she got a creepy vibe from the old guy, staring at her and
+Molly. And when I talked to Haruhiko he said that he wasn&rsquo;t dating her.&rdquo;
+</p>
+
+<p>
+&ldquo;Didn&rsquo;t he say that she was anyone&rsquo;s girlfriend?&rdquo; Seeing Miki nod he
+continues, &ldquo;Shizune told me that she regularly comes back late from
+visits to the city, supposedly dealing with family issues. She was
+<i>very</i> indignant that the school administration lets Ikuno get away with
+ignoring curfew.&rdquo;
+</p>
+
+<p>
+&ldquo;Are you thinking what I&rsquo;m thinking Nat?&rdquo;
+</p>
+
+<p>
+&ldquo;Probably. Can you grab a copy of the article the Principal spiked?&rdquo;
+Seeing Hisao and Miki share a confused look she explains, &ldquo;he stopped us
+publishing it despite Mr Ishiguro giving us the go ahead. Apparently
+it&rsquo;s not a fitting topic for a high class academy like Yamaku.&rdquo;
+</p>
+
+<p>
+The article on the participation of Japanese schoolgirls in compensated
+dating and the following discussion are a revelation to Hisao and Miki.
+</p>
+
+<p>
+&ldquo;That bit about Yamaku girls being particularly vulnerable because
+paraphiliacs can have other psychoses was extremely disturbing,&rdquo; Hisao
+says, concern in his voice.
+</p>
+
+<p>
+&ldquo;You better not be with me &lsquo;cos you&rsquo;re one of those cripple-lovers!&rdquo;
+Miki stumps Hisao playfully.
+</p>
+
+<p>
+&ldquo;I love what&rsquo;s there, not what isn&rsquo;t.&rdquo;
+</p>
+
+<p>
+As Miki blushes, Naomi chirps, &ldquo;get a room you two!&rdquo;
+</p>
+
+<p>
+&ldquo;I think I see why you were successful on Saturday,&rdquo; Natsume says, a
+twinkle in her eyes. &ldquo;Emi thought she was racing Miki, but she was
+actually up against <i>both</i> of you.&rdquo;
+</p>
+
+<p>
+&ldquo;If we could find Ikuno on one of the online notice boards you mentioned
+in the article, we&rsquo;d have our suspicions confirmed.&rdquo;
+</p>
+
+<p>
+&ldquo;We tried to get on the boards when we were doing our research, but the
+school blocks them,&rdquo; Naomi says crossly.
+</p>
+
+<p>
+&ldquo;I-I can s-show you how to use a p-proxy to bypass the s-security.&rdquo;
+</p>
+
+<p>
+Miki and Hisao look around in surprise, noticing Hanako for the first
+time. She is working quietly at a side table, typing up an article on a
+laptop.
+</p>
+
+<p>
+&ldquo;Meet the best undercover reporter the club&rsquo;s ever had!&rdquo; Naomi beams.
+</p>
+
+<p>
+&ldquo;N-not really.&rdquo;
+</p>
+
+<p>
+&ldquo;Don&rsquo;t put yourself down girl, I&rsquo;m going to be a <i>lot</i> more careful
+about what I say from now on in case you pop up from nowhere again!&rdquo;
+</p>
+
+<p>
+&ldquo;Where did you learn to do this Hanako?&rdquo; Hisao asks, fascinated as she
+runs through configuration screens.
+</p>
+
+<p>
+&ldquo;A-at the orphanage when they b-blocked WoW. I couldn&rsquo;t l-let them get
+between me and E-Elvira, undead warlock and Mistress of the D-dark!&rdquo;
+</p>
+
+<p>
+Not really understanding what she is talking about, Hisao says, &ldquo;it&rsquo;s
+very impressive. Naomi, can you remember any of the sites?&rdquo;
+</p>
+
+<p>
+&ldquo;I told you, we found out they existed but never got onto any of them.
+Besides, I don&rsquo;t like using a computer for too long, might set me off.&rdquo;
+</p>
+
+<p>
+&ldquo;Don&rsquo;t look at me,&rdquo; Natsume says holding up stiff hands, &ldquo;Hana&rsquo;s got the
+best google-fu.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+&ldquo;That&rsquo;s it, you found her!&rdquo; Miki says excitedly, pounding Hanako on the back. &ldquo;Fantastic work!&rdquo;
+</p>
+
+<p>
+&ldquo;T-thanks,&rdquo; she squeaks, overcome by both the praise and the physical
+contact.
+</p>
+
+<p>
+They inspect the picture of Ikuno looking shy in her school uniform with
+the tagline &rsquo;Can you love this katawa?&rsquo;
+</p>
+
+<p>
+&ldquo;She&rsquo;s done her market research,&rdquo; Hisao mutters.
+</p>
+
+<p>
+&ldquo;The question is, what now?&rdquo; Natsume says thoughtfully. &ldquo;If we tell the
+Administration they&rsquo;re likely to expel her.&rdquo;
+</p>
+
+<p>
+Hanako gasps, &ldquo;oh, I w-wouldn&rsquo;t w-want her to g-get in t-trouble because
+I f-found h-her p-p-profile.&rdquo;
+</p>
+
+<p>
+Hisao snorts, &ldquo;Shizune might like that, but I doubt any of us would.&rdquo;
+</p>
+
+<p>
+Seeing them shake their heads, Natsume continues, &ldquo;so we&rsquo;ve got to
+choose between pretending we know nothing, or trying to do something.&rdquo;
+</p>
+
+<p>
+&ldquo;I don&rsquo;t feel right ignoring it. Thinking about her putting herself out
+there for those sick fucks makes me want to throw up.&rdquo;
+</p>
+
+<p>
+Hisao nods in agreement, &ldquo;if anything happens to her on one of these
+&lsquo;dates&rsquo; and we hadn&rsquo;t tried <i>something</i>, I&rsquo;d be distraught.&rdquo;
+</p>
+
+<p>
+&ldquo;But what <i>can</i> we do? We don&rsquo;t have any leverage except for an empty
+threat to tell the authorities, and I think she&rsquo;d see through that,&rdquo;
+Naomi counters.
+</p>
+
+<p>
+&ldquo;M-maybe we should just t-talk to her, hear her s-side of the story.&rdquo;
+</p>
+
+<p>
+Natsume nods, &ldquo;agreed. If we can learn a little more about what&rsquo;s going
+on, maybe we&rsquo;ll get a clearer idea of where to go with this. I don&rsquo;t
+think I should talk to her, my reputation for being a little&#x2026; sharp
+might stop her opening up. Naomi of course, she can charm the pants off
+anyone.&rdquo; Naomi&rsquo;s chuckle brings a hint of colour to Natsume&rsquo;s cheeks.
+&ldquo;Hana?&rdquo;
+</p>
+
+<p>
+She shakes her head. &ldquo;I&rsquo;m s-seeing Misaki to go through her photos from
+the track m-meet.&rdquo;
+</p>
+
+<p>
+&ldquo;Oh yes, I remember now. I think we&rsquo;ll go with Miki&rsquo;s straight talking
+then, a boy might make her clam up,&rdquo; she nods an apology to Hisao.
+&ldquo;We&rsquo;ve got some of the leaflets the lady from the BOND Project sent
+through after we interviewed her, you can try giving her one. Now we
+just need a reason to get her here.&rdquo;
+</p>
+
+<p>
+&ldquo;The &lsquo;can we interview you for an update to your yearbook profile?&rsquo;
+routine never fails,&rdquo; Naomi giggles.
+</p>
+
+<p>
+&ldquo;I-t&rsquo;s an oldie b-but a goodie!&rdquo;
+</p>
+
+<p>
+&ldquo;We&rsquo;ll go with that. Right, classes will end for the day soon. Naomi,
+pick Ikuno up from class and bring her here. Miki, wait here for them.
+Go and have your meeting with Misaki, Hana. Hisao and I will wait in my
+room; meet us there once you&rsquo;ve spoken to Ikuno.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Ikuno is surprised to see Miki when she follows Naomi into the clubroom. &ldquo;You&rsquo;re not in the newspaper club, why are you here?&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m afraid I&rsquo;ve brought you here under false pretences.&rdquo;
+</p>
+
+<p>
+&ldquo;What else could you possibly want with <i>me</i>?&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s about your dating site profile. We&rsquo;re worried about you and want
+to offer you the chance to talk about it. Or if you don&rsquo;t want to talk
+to us, we&rsquo;ve got details of an organisation that will listen,&rdquo; Naomi
+holds out a leaflet to her.
+</p>
+
+<p>
+A scared look flashes across Ikuno&rsquo;s face, but she launches into what is
+obviously a well practised explanation. &ldquo;Oh, that. It&rsquo;s part of my
+one-woman campaign to subvert Japan&rsquo;s patriarchal society.
+Redistributing wealth from the reactionaries not only empowers me, but
+also funds my propaganda. I should bring some of my pamphlets in, maybe
+you&rsquo;d write an article to help me spread my ideas.&rdquo;
+</p>
+
+<p>
+Miki grows angry as she listens to Ikuno. &ldquo;Do you expect me to believe
+that drivel? Are you <i>subverting the patriarchy</i> when some perverted old
+man bends you over and does you like a dog? Are you <i>empowered</i> when
+you&rsquo;re on your knees in front of an asshole like Takashi with his cock
+in your mouth?&rdquo;
+</p>
+
+<p>
+Ikuno is shocked into dropping her pretence. &ldquo;At least they notice me
+when I&rsquo;m with them! I might as well be <i>invisible</i> given how little
+attention people pay me the rest of the time. You sit next to me in
+class, when did <i>you</i> last speak to me?&rdquo;
+</p>
+
+<p>
+Miki is taken aback, &ldquo;well, you don-&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;re lucky, you&rsquo;ve got Hisao. He doesn&rsquo;t care about being in your
+shadow, all he wants is for you to be happy. I&rsquo;ve got <i>no-one</i> except
+when I&rsquo;m on one of my dates. The rest of the time I&rsquo;m so lonely I wish I
+was <i>dead</i>.&rdquo;
+</p>
+
+<p>
+This is too much for Naomi, who tries to take Ikuno into her arms.
+</p>
+
+<p>
+&ldquo;No!&rdquo; she shouts, &ldquo;don&rsquo;t pretend to care just to make yourself feel
+better!&rdquo; She turns towards the door, pausing to snatch the leaflet from
+Naomi&rsquo;s hand. She looks back at them as she is about to leave; &ldquo;don&rsquo;t
+you <i>dare</i> speak to me again, I&rsquo;ll report you to the Principal for
+harassment if you do.&rdquo;
+</p>
+
+<p>
+&ldquo;That could&rsquo;ve gone better,&rdquo; Naomi says unsteadily.
+</p>
+
+<p>
+&ldquo;I screwed up, I shouldn&rsquo;t have got angry and said that stuff.&rdquo;
+</p>
+
+<p>
+&ldquo;I think it would&rsquo;ve ended like that however we handled it. Come on, we
+should report back.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Natsume sighs as the girls finish their account of the meeting. &ldquo;At least she took the leaflet, maybe she&rsquo;ll get in touch with someone from the BOND Project. She clearly doesn&rsquo;t want anything from us though, there&rsquo;s no point poking the bear any further.&rdquo;
+</p>
+
+<p>
+&ldquo;Let&rsquo;s take a walk Hisao, I need to clear my head.&rdquo;
+</p>
+
+<p>
+As soon as the door closes behind them Natsume asks, &ldquo;will you give me a
+hug?&rdquo;
+</p>
+
+<p>
+&ldquo;Of course! You hardly ever let me have cuddles.&rdquo;
+</p>
+
+<p>
+Settling into Naomi&rsquo;s embrace she starts to speak softly. &ldquo;I just had a
+very disturbing thought. The Principal wouldn&rsquo;t let us publish that
+article. The school won&rsquo;t punish Ikuno for ignoring curfew. She&rsquo;s
+confident that the Principal will take her side in a dispute with us.&rdquo;
+</p>
+
+<p>
+Naomi goes pale. &ldquo;Oh <i>shit</i>.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Miki and Hisao walk in silence for a
+while, letting the sunshine lighten their mood.
+</p>
+
+<p>
+&ldquo;So, &lsquo;love what&rsquo;s there&rsquo;?&rdquo;
+</p>
+
+<p>
+&ldquo;Truly, madly, deeply. Problem?&rdquo;
+</p>
+
+<p>
+Her answer is a fierce hug that threatens to mash them into a single,
+conjoined entity.
+</p>
+
+<p>
+&ldquo;Hisao&#x2026;&rdquo;
+</p>
+
+<p>
+Surprised by her hesitant tone he disengages just far enough to see a
+troubled expression on her face.
+</p>
+
+<p>
+&ldquo;Something Ikuno said is bothering me. After she stopped spouting
+bollocks she said that I didn&rsquo;t know how lucky I was to have a man like
+you. Thinking about it, you&rsquo;ve always got my back, you&rsquo;re always there
+for me. I know what <i>I</i> get from us being together, but what about you?
+Is it enough?&rdquo;
+</p>
+
+<p>
+He takes her hand and kisses it, wanting a little time to think so he
+doesn&rsquo;t misspeak. &ldquo;Do you remember when I walked into class on my first
+day?&rdquo;
+</p>
+
+<p>
+&ldquo;Not really.&rdquo;
+</p>
+
+<p>
+Hisao laughs, &ldquo;yeah, that sums it up nicely. I am going to answer you,
+but will you tell me why you decided to get me running with you?&rdquo;
+</p>
+
+<p>
+She shrugs, &ldquo;that&rsquo;s easy. Emi was moaning on about you skipping
+mornings, how lazy you were, how you didn&rsquo;t appreciate what she was
+doing for you. I figured I could kill two birds with one stone: piss her
+off by showing her that <i>she</i> was the problem, and have Mutou&rsquo;s new BFF
+under my thumb so I could copy his homework. First one worked out just
+fine but you never did let me copy, stingy bastard.&rdquo;
+</p>
+
+<p>
+&ldquo;I did better than that, people want to copy <i>your</i> homework now! OK so
+what changed, when did I go from forgettable to dateable?&rdquo;
+</p>
+
+<p>
+&ldquo;Hmm. Well you stopped being a scared little boy and you worked hard. I
+could see how difficult running was for you to begin with, but you
+didn&rsquo;t let that stop you. But I didn&rsquo;t realise how <i>much</i> you&rsquo;d changed
+until I tweaked a hamstring and you offered to massage it. I was
+expecting it to do fuck all good but I was curious to see if you were
+brave enough to follow through; I bet you heard that I&rsquo;ve decked boys
+for trying to get handsy with me.&rdquo;
+</p>
+
+<p>
+He nods.
+</p>
+
+<p>
+&ldquo;But you were brave enough and it did help. I was back to full training
+<i>days</i> earlier than normal. And I&rsquo;m not gonna lie, once I realised you
+weren&rsquo;t just trying to grope me, I <i>loved</i> the feel of your strong, warm
+hands on my body. Then you said that&rsquo;d you&rsquo;d been learning about massage
+because you&rsquo;d hoped to be able to help me&#x2026; Hisao, you don&rsquo;t know how
+long its been since someone did anything for me without wanting
+something in return.&rdquo;
+</p>
+
+<p>
+&ldquo;<i>You</i> were the catalyst for those changes, seeing how you approach life
+taught me to be brave again. I&rsquo;m not saying that I wouldn&rsquo;t have got
+there on my own but it would have taken a <i>lot</i> longer. I&rsquo;m a better
+version of me when I&rsquo;m with you, Hisao 2.0. Thanks to you I&rsquo;ve become
+this fine specimen of manhood who can look after his woman.&rdquo; He strikes
+a manly pose.
+</p>
+
+<p>
+&ldquo;I&rsquo;m no man&rsquo;s woman!&rdquo;
+</p>
+
+<p>
+&ldquo;I know and that&rsquo;s just one of the reasons why it&rsquo;s so amazing to be
+with you.&rdquo;
+</p>
+
+<p>
+Cupping his face affectionately she says, &ldquo;We need to talk about this
+compensated dating thing though.&rdquo;
+</p>
+
+<p>
+&ldquo;You get plenty of compensation. Awesome massages, world class science
+tuition&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;I dunno Hisao, I feel like you&rsquo;re undervaluing all this,&rdquo; she gestures
+at her toned body and walks off towards the cafeteria.
+</p>
+
+<p>
+Shaking his head and chuckling he says, &ldquo;never change Miki Miura!&rdquo; and
+falls into step with her, side by side, walking together.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-25 Fri 21:45</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

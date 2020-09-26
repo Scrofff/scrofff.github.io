@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-26 Sat 21:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Memories</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Memories</h1>
+<p>
+Miki hugs herself to keep in the warmth as she walks down to the track.
+An hour after dawn, the temperature hovers just above freezing, and the
+late winter sun makes the frost patches sparkle. She smiles as she sees
+a handful of the Track Team training, and watches quietly for a while.
+</p>
+
+<p>
+&ldquo;Pick those feet up Asahi! You&rsquo;re gonna be racing at a cross country
+meet, not some namby-pamby track event!&rdquo; she yells as the group runs by.
+</p>
+
+<p>
+&ldquo;As if I&rsquo;d take advice from a <i>sprinter</i>,&rdquo; he replies with a grin and a
+wave.
+</p>
+
+<p>
+She sticks her tongue out in response and continues her tour of the part
+of Yamaku she will miss the most. She smiles wickedly as she passes the
+track shed. &rsquo;There&rsquo;s still time for us to leave our mark here, though I
+kinda wish I&rsquo;d thought about it back in summer&#x2026;&rsquo;
+</p>
+
+<p>
+Coming around to the bleachers, she sees a trestle table set up with
+insulated flasks and disposable cups, and a boy dressed in what looks
+like <i>all</i> of his training kit.
+</p>
+
+<p>
+&ldquo;Hi Yuuto. How long&rsquo;ve you been playing tea-boy?&rdquo;
+</p>
+
+<p>
+&ldquo;If you ever came to morning practice Miki, you&rsquo;d&rsquo;ve known we started
+offering hot drinks when I took over as captain. I thought it might
+tempt more people to show up.&rdquo;
+</p>
+
+<p>
+&ldquo;It <i>is</i> a good idea but getting students out at this time of day is a
+hard sell at the best of times, let alone in the middle of winter.&rdquo;
+</p>
+
+<p>
+&ldquo;I bet a tonne of people would turn up if they thought <i>you</i> were gonna
+be here.&rdquo;
+</p>
+
+<p>
+&ldquo;I highly doubt it, Emi&rsquo;s the popular one, all that peppy &lsquo;fastest thing
+on no legs&rsquo; and cutesy twintails.&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;d be surprised.&rdquo; He looks down and shuffles his feet.
+&ldquo;I&rsquo;m&#x2026;/we&rsquo;re/ going to miss you. It won&rsquo;t feel the same when you&rsquo;re
+gone. I don&rsquo;t think you know how much people appreciate the banter, the
+encouragement. I swear Yui grew two centimetres when you said her
+sprinting form was first rate.&rdquo;
+</p>
+
+<p>
+&ldquo;Hey, I got a lot out of being on the team too, it&rsquo;s gonna be hard to
+leave you guys behind.&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s the right time for you to move on though. You&rsquo;re the real deal
+Miki, you need more challenging competition to stretch you.&rdquo;
+</p>
+
+<p>
+&ldquo;We&rsquo;ll see. Maybe I won&rsquo;t be able to hack it in the real world. Maybe
+I&rsquo;ll come running back with my tail between my legs.&rdquo;
+</p>
+
+<p>
+&ldquo;Nah, Miki Miura runs from <i>nothing</i>!&rdquo;
+</p>
+
+<p>
+She reaches out and ruffles his hair affectionately. &ldquo;Thanks man, I
+appreciate the confidence. One thing&rsquo;s for sure, I&rsquo;m looking forward to
+being invited back to present the prizes at the end of season meet!&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah yeah, let us know when you&rsquo;ve got your Olympic medal and we&rsquo;ll
+think about it!&rdquo;
+</p>
+
+<p>
+With a laugh she turns and sets of towards the main building, a grin on
+her face and a spring in her stride.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Mutou looks up from his science journal to see Miki walking into the
+classroom. &ldquo;You know seniors don&rsquo;t have classes, Miura?&rdquo;
+</p>
+
+<p>
+&ldquo;Of course I do. And call me Miki, surnames are too stuffy.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;ve been declining that offer since we first met, what makes you think
+I&rsquo;d change my mind now?&rdquo;
+</p>
+
+<p>
+&ldquo;I mean it&rsquo;s pretty much your last chance, live a little!&rdquo;
+</p>
+
+<p>
+He smiles awkwardly. &ldquo;I believe I can resist the temptation. Do you need
+something from me?&rdquo;
+</p>
+
+<p>
+&ldquo;Not really, I&rsquo;m just&#x2026;restless. I&rsquo;m not used to having this much time
+on my hand.&rdquo;
+</p>
+
+<p>
+&ldquo;Ah yes, your satellites have managed to escape your gravitational well
+for a while. It was a relief when you three found a mutually acceptable
+centre of mass to orbit around, I wasn&rsquo;t looking forward to dealing with
+the big bang I thought was inevitable.&rdquo;
+</p>
+
+<p>
+&ldquo;I have absolutely no clue what any of that means.&rdquo;
+</p>
+
+<p>
+&ldquo;I was referring to Suzuki and Nakai.&rdquo; Seeing the embarrassed expression
+on her face, he continues, &ldquo;while it&rsquo;s part of a teacher&rsquo;s job to have a
+general idea of their students&rsquo; relationships, that doesn&rsquo;t include
+prying into things which are none of their business. However, I&rsquo;ve seen
+how much you benefit from each others&rsquo; support and I hope it&rsquo;ll continue
+past high school.&rdquo;
+</p>
+
+<p>
+&ldquo;Well yeah, we&rsquo;re planning on ending up in the same place.&rdquo;
+</p>
+
+<p>
+Mutou nods approvingly. &ldquo;Good. How will that work with your
+sponsorship?&rdquo;
+</p>
+
+<p>
+&ldquo;They said it doesn&rsquo;t matter where I train as long as it&rsquo;s with a
+qualified coach, and the universities Suzu and Hisao are trying for have
+strong athletics teams.&rdquo;
+</p>
+
+<p>
+&ldquo;At first I wasn&rsquo;t sure about this ambassador rôle you&rsquo;re going into,
+but the more I think about it, the more I realise it suits you. What
+point would there be for you to struggle through a university course
+you&rsquo;re not interested in, only to fall into a career you hate? This way
+you can inspire others in your position and help educate the public.
+Heaven knows this country&rsquo;s attitude towards the disabled needs shaking
+up, we shouldn&rsquo;t need places like Yamaku for kids like you to be given a
+fair chance at life.&rdquo;
+</p>
+
+<p>
+He fiddles with the journal, avoiding looking at her. &ldquo;I hope you
+realise that being in the public eye comes with many pitfalls. The
+recent scandals involving those pop idols show how easily a career can
+be torn down.&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, but I&rsquo;m gonna be a runner not a singer. Which is a blessing, my
+voice is nothing to write home about. And there&rsquo;s no way I&rsquo;d touch any
+of the filthy drugs they were caught with.&rdquo;
+</p>
+
+<p>
+&ldquo;Then there&rsquo;s the case of the politician who was photographed leaving
+his mistress&rsquo;s apartment when he was supposed to be on paternity leave.&rdquo;
+</p>
+
+<p>
+&ldquo;What are you going on about? I&rsquo;m not even married, let alone a parent.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m just trying to&#x2026;&rdquo; He sighs and looks up at her. &ldquo;I don&rsquo;t want you
+to be unprepared. You need to realise that <i>all</i> aspects of your life
+will be under scrutiny if your athletics career takes off, you&rsquo;ll need
+to make sure you at least appear to be abiding by society&rsquo;s norms.&rdquo;
+</p>
+
+<p>
+&ldquo;I don&rsquo;t know wha-&rdquo; Miki splutters.
+</p>
+
+<p>
+&ldquo;Just remember it&rsquo;s not only you who could be affected. Anyway, speaking
+of scrutiny, it&rsquo;s high time I got on with this grading. I&rsquo;ll see you at
+graduation, Miura.&rdquo;
+</p>
+
+<p>
+&ldquo;Um, yeah, thanks I guess.&rdquo; With that, Miki leaves the classroom for the
+last time.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+&ldquo;Hello, Miki, I thought I&rsquo;d be seeing you sooner rather than later,&rdquo;
+Nurse says as she walks into his office.
+</p>
+
+<p>
+&ldquo;Really? What are you, some sort of mind reader?&rdquo;
+</p>
+
+<p>
+&ldquo;When Hisao picked up his prescriptions early because he was going away
+for a few days, closely followed by Suzu asking for something to help
+her concentrate in some upcoming entrance exams, I put two and two
+together and realised you&rsquo;d be bored without your&#x2026;support mechanisms.
+And you only ever come to see me when you&rsquo;re bored.&rdquo;
+</p>
+
+<p>
+Miki cannot help laughing at the exaggeratedly glum expression on his
+face before scowling and saying, &ldquo;I don&rsquo;t like it when you give her that
+shit, it can&rsquo;t be good for her.&rdquo;
+</p>
+
+<p>
+&ldquo;Your concern for your friend is commendable, but I&rsquo;d appreciate it if
+you treated me as a member of staff. Don&rsquo;t presume too much on our long
+acquaintanceship.&rdquo; When she nods apologetically, he continues, &ldquo;the
+studies haven&rsquo;t found long-term issues with anything I might
+hypothetically prescribe for a narcoleptic. Keep being suspicious of
+drugs though, there are many temptations in the world you&rsquo;re about to
+set foot into.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;ll <i>never</i> end up like Marion fu- um, flipping Jones.&rdquo;
+</p>
+
+<p>
+&ldquo;Good. You know, I&rsquo;ve felt more than a little guilty about prioritising
+Emi over you since we arrived, but you&rsquo;ve hardly needed any support. You
+adapted pretty quickly to life here, as long as we don&rsquo;t mention the
+shaky start,&rdquo; he adds with a cheeky grin.
+</p>
+
+<p>
+&ldquo;Hey, it&rsquo;s <i>years</i> since I got into a fight.&rdquo;
+</p>
+
+<p>
+&ldquo;Thank goodness. You can ill afford to have that hand out of action. But
+as I said, we won&rsquo;t mention that. Let&rsquo;s focus on the positives, like how
+well you&rsquo;ve managed to rebuild your life, like how you&rsquo;ve found
+something to run <i>towards</i>. Thanks in no small part to Suzu!&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;d&rsquo;ve kicked up a fuss about baby-sitting her if you hadn&rsquo;t already
+brain-washed me into doing whatever you told me to.&rdquo;
+</p>
+
+<p>
+&ldquo;You shouldn&rsquo;t question the wisdom of your elders. My plans never fail!
+Well, almost never. I didn&rsquo;t anticipate how things would turn out with
+Hisao&#x2026;&rdquo;
+</p>
+
+<p>
+He laughs when Miki&rsquo;s stomach growls loudly. &ldquo;I bet you forgot breakfast
+without anyone to nag you. Go and get some lunch, I don&rsquo;t want to have
+to scrape you off the track because you fainted from hunger while
+training! In case I don&rsquo;t see you again before graduation, I&rsquo;d like to
+say it&rsquo;s been an honour working with you Ms. Miura, and I look forward
+to watching you compete on the world stage. Now stop bothering me and
+let me get on with my work!&rdquo;
+</p>
+
+<p>
+Grinning at the stunned expression on her face, he ushers her out of his
+office and gently closes the door.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Miki walks into the cafeteria and joins the queue, scanning the day&rsquo;s
+offerings. &rsquo;I&rsquo;m gonna miss the free food, even if it <i>is</i> bland as
+hell!&rsquo; she thinks, depositing a bowl of ramen and a bottle of Pocari
+sweat on a tray which she lifts carefully and steadies on her stump.
+Looking around for a seat, she spots a shock of blonde hair and makes
+her way to where Naomi is sitting. &ldquo;Fancy some company?&rdquo;
+</p>
+
+<p>
+&ldquo;Hi Miki, that&rsquo;d be lovely. It&rsquo;s pretty quiet now most of the seniors
+aren&rsquo;t around. How come you&rsquo;re on your own? We don&rsquo;t often see you
+without Suzu or Hisao in tow.&rdquo;
+</p>
+
+<p>
+&ldquo;I could say the same about you and Natsume. They&rsquo;re away doing entrance
+exams, they figured out they could take in three different campuses on
+consecutive days, so they went on a tour. Madness, if you ask me, but at
+least they&rsquo;re due home later this afternoon.&rdquo;
+</p>
+
+<p>
+Naomi shudders. &ldquo;I can&rsquo;t imagine putting myself through something like
+that! It&rsquo;s tiring enough taking one exam, and when you factor in the
+travel&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Is Natsume off doing exams too?&rdquo; Miki is surprised to see Naomi&rsquo;s eyes
+suddenly glisten with unshed tears.
+</p>
+
+<p>
+&ldquo;I-I don&rsquo;t know. I&rsquo;ve hardly seen her since we finished classes and
+handed over the Newspaper Club to the juniors. It feels like she&rsquo;s
+avoiding me.&rdquo;
+</p>
+
+<p>
+&ldquo;What the hell? You two have been practically inseperable since first
+year. Did you fight or something?&rdquo;
+</p>
+
+<p>
+Naomi shakes her head, tears starting to leak from the corner of her
+eyes. &ldquo;I really can&rsquo;t think of anything I might have done to offend her.
+I&rsquo;m scared Miki. What if she&rsquo;s decided she&rsquo;s outgrown me and is planning
+on going it alone?&rdquo;
+</p>
+
+<p>
+&ldquo;Nah, I can&rsquo;t believe that, I&rsquo;ve seen the way she looks at you. It must
+be some sort of misunderstanding. Maybe she thinks you&rsquo;re gonna leave
+her behind?&rdquo;
+</p>
+
+<p>
+&ldquo;Oh no, I&rsquo;d never do anything like that! I&rsquo;m at my wits&rsquo; end, what am I
+supposed to do?&rdquo;
+</p>
+
+<p>
+Miki takes Naomi&rsquo;s hand reassuringly. &ldquo;You&rsquo;ve gotta find her and talk it
+out. You&rsquo;ll kick yourself if you let it slide and never see her again.&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;re right!&rdquo; Naomi stands up decisively and wipes her eyes. &ldquo;Thank
+you. I wish I&rsquo;d talked to you earlier, I should&rsquo;ve known someone in your
+position would give good relationship advice!&rdquo;
+</p>
+
+<p>
+&ldquo;Fuck&rsquo;s sake,&rdquo; Miki mutters under her breath as Naomi rushes out of the
+cafeteria. &ldquo;Does <i>everyone</i> know our business? At least she&rsquo;s got enough
+sense not to shoot her mouth off about it.&rdquo; Finishing her lunch, she
+stretches and decides to have a nap before training.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Miki comes around the bend of her final warm down lap and sees a
+familiar pair of spectators sitting in the bleachers. With a whoop of
+joy she shifts into top gear and sprints towards them, impatient to be
+reunited. Gathering them into a tight hug she says, &ldquo;welcome home, how
+were the exams?&rdquo;
+</p>
+
+<p>
+&ldquo;Ewww, Miki, you&rsquo;re gross! But I&rsquo;ll allow it &lsquo;cos it&rsquo;s your birthday. I
+think it&rsquo;s fair to say we&rsquo;re cautiously optimistic, right Hisao?&rdquo;
+</p>
+
+<p>
+He pulls them closer and nods. &ldquo;Missed you <i>so</i> much.&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah yeah, I find that hard to believe when you&rsquo;ve had this saucy minx
+all to yourself for the past few days!&rdquo;
+</p>
+
+<p>
+&ldquo;To be honest, we&rsquo;ve been too stressed and tired to do more than
+cuddle.&rdquo;
+</p>
+
+<p>
+&ldquo;Fuck&rsquo;s sake you two, I know what <i>I&rsquo;d</i> get up to if I had the chance to
+stay in a room with a big bed and soundproof walls!&rdquo;
+</p>
+
+<p>
+He disengages from the hug and offers Miki a bag of souvenirs they had
+picked up on their travels. &ldquo;Happy birthday!&rdquo;
+</p>
+
+<p>
+&ldquo;Aww guys, you didn&rsquo;t have to get me anything. Having you back is the
+best present I could&rsquo;ve wished for.&rdquo;
+</p>
+
+<p>
+&ldquo;Oh, so you don&rsquo;t want <i>this</i> then?&rdquo; Suzu giggles, waving an ornate
+envelope.
+</p>
+
+<p>
+Miki grabs it and fumbles it open, an intrigued look on her face. When
+she sees what it contains she gasps. &ldquo;The Imperial Suite at the Westin
+Hotel? Suzu, are you mad? This must&rsquo;ve cost a fortu-&rdquo;
+</p>
+
+<p>
+Suzu stands on tiptoes and kisses her soundly, cutting off her protests.
+&ldquo;You&rsquo;re worth every Yen. Being away from you was torture for both of us.
+Don&rsquo;t you want to <i>show</i> us what you&rsquo;d get up to in a room with a big
+bed and soundproof walls?&rdquo;
+</p>
+
+<p>
+Miki&rsquo;s grin is almost broad enough to split her face in half. &ldquo;Hell
+yeah, you have no idea what I&rsquo;ve been dreaming up while you were away.
+Come on, we&rsquo;re heading into town as soon as I&rsquo;ve showered and changed.
+I&rsquo;m not gonna waste a <i>second</i> of this!&rdquo;
+</p>
+
+<p>
+&ldquo;Think of it as a taste of things to come. When we leave school we&rsquo;ll be
+able to get a little apartment together. Imagine having a place where we
+can be ourselves, where we won&rsquo;t have to hide!&rdquo; There is no mistaking
+the excitement in Suzu&rsquo;s voice.
+</p>
+
+<p>
+&ldquo;Maybe this growing up and moving on business isn&rsquo;t so bad after all!&rdquo;
+With that said, Miki leads them away from the track, towards their
+future.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-26 Sat 21:31</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

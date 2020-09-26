@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-25 Fri 19:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thoroughly modern pirates</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Thoroughly modern pirates</h1>
+<p>
+“Omigosh Hisao, I&rsquo;m not <i>that</i> far behind, you don&rsquo;t have to frog-march me in here! Besides, what use does a pirate have for science?”
+</p>
+
+<p>
+“I don&rsquo;t think there&rsquo;s many openings for pirates right now and even if there are, you&rsquo;ll need to be up on 21st century pirating techniques. It&rsquo;s not all cutlasses and wooden legs these days.”
+</p>
+
+<p>
+“And just what would <i>you</i> know about pirates, mister? It&rsquo;s not like you&rsquo;re president of the Advances in Pirating club!”
+</p>
+
+<p>
+Hisao waves dismissively. “It stands to reason they&rsquo;ve updated their ways to compete in the modern world.”
+</p>
+
+<p>
+“Shame,” she sighs. “I&rsquo;m more cut out for traditional swashbuckling.”
+</p>
+
+<p>
+“You can buckle my swash any day!”
+</p>
+
+<p>
+“Cheeky!” She slaps him playfully on the arm. “You do know I&rsquo;m kidding about the whole pirate thing?”
+</p>
+
+<p>
+“Well I certainly <i>hope</i> you are&#x2026;“ He draws her into an affectionate hug which she returns with a happy sigh as she buries her face into his chest.
+</p>
+
+<p>
+“No canoodling in the library you two! Umm I m-mean you shouldn&rsquo;t be disturbing the other students with your&#x2026; you know&#x2026;”
+</p>
+
+<p>
+“Sorry Yuuko,” they chorus, ending the hug but holding hands as they make their way to a cubicle set up for group work.
+</p>
+
+<p>
+“You don&rsquo;t <i>have</i> to torture me with revision. This booth is pretty secluded, if we&rsquo;re quiet I bet we could get away wi-”
+</p>
+
+<p>
+Chuckling, he places a finger on her lips and does his best to ignore the puppy-dog eyes. “I thought we agreed you weren&rsquo;t going to distract me like that anymore?”
+</p>
+
+<p>
+“Don&rsquo;t you enjoy my distraction techniques?” she pouts.
+</p>
+
+<p>
+Blushing, he replies, “well yeah, but there&rsquo;s a time and place for everything.”
+</p>
+
+<p>
+“You&rsquo;re a hard taskmaster Hisao!” She pushes him onto a chair and hops on his lap, squirming suggestively. “Talking about being <i>hard</i>&#x2026;”
+</p>
+
+<p>
+“Could you not do that in public?! Tell you what, give me two hours of study then we can distract each other to our hearts&rsquo; content.”
+</p>
+
+<p>
+“Ninety minutes and not a second longer!”
+</p>
+
+<p>
+“Heh, I would&rsquo;ve settled for sixty.” He puts his finger on her lips again. “Nuh-uh, no takesy-backsies! Time will fly when you get into it, this stuff is really interesting.”
+</p>
+
+<p>
+Rolling her eyes, she takes a seat next to Hisao and drags her books from her backpack. “Nerd.”
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Emi sighs in relief when the alarm on Hisao&rsquo;s phone brings their session to an end.
+</p>
+
+<p>
+“See, it wasn&rsquo;t so bad. I think you even had fun once you got the hang of it.”
+</p>
+
+<p>
+“I admit it wasn&rsquo;t <i>too</i> awful, though I don&rsquo;t get why you&rsquo;re going all out on this. What happened to living in the moment?”
+</p>
+
+<p>
+“Do you remember I said we&rsquo;ll go on living until we stop?” When she nods he continues, “I realised the other day that one of us is going to be left behind with memories of the time we had together.”
+</p>
+
+<p>
+“Hisao, I swear I&rsquo;ll <i>kill</i> you if you up and die! You promised to stay with me.”
+</p>
+
+<p>
+“I&rsquo;m doing my best to make sure I stick around as long as I can. If we want to have memories of happy times, not just of struggling to live hand-to-mouth, we need to find decent jobs. And the first step to <i>that</i> is performing well in our exams.”
+</p>
+
+<p>
+“I dunno Hisao, mom said some of the best times she had with dad were in the early days before things got too settled.”
+</p>
+
+<p>
+“That&rsquo;s good to hear.” He hesitates. “But memories aren&rsquo;t the only thing which could be left behind&hellip;”
+</p>
+
+<p>
+“Huh?”
+</p>
+
+<p>
+“I know it&rsquo;s far too soon to be talking about this stuff but I can&rsquo;t help thinking about it.”
+</p>
+
+<p>
+“Talk about what? Give me a clue here, Hisao.”
+</p>
+
+<p>
+“History repeating itself.” Seeing the puzzled look on her face he says, “/your/ history.”
+</p>
+
+<p>
+Emi blushes as she realises what he means. “Yes, it&rsquo;s <i>much</i> too soon to be thinking about what could happen to little Rin.”
+</p>
+
+<p>
+“Or little Akio. Or both.”
+</p>
+
+<p>
+“Not little Kenji?” She laughs when she sees him shudder. “OK, not Kenji.”
+</p>
+
+<p>
+“I know it&rsquo;s presumptuous of me to think you&rsquo;d want to-”
+</p>
+
+<p>
+Emi stops him with a kiss. “I love you too. And that does mean a family somewhere down the line. <i>Far</i> down the line,” she giggles as he wraps her in a fierce hug.
+</p>
+
+<p>
+“Hearing you say that makes me happy and scared all at the same time.” He draws back a little and looks at her uneasily. “Is it selfish of me to want littl&rsquo;uns when I know my time could be cut short?”
+</p>
+
+<p>
+“Damn you Hisao, you&rsquo;re making me worry about the future too!”
+</p>
+
+<p>
+“Sorry.”
+</p>
+
+<p>
+“Just let me think for a bit.”
+</p>
+
+<p>
+He leans out of the hug and takes her hand, trying to quiet his nerves by stroking it gently. As he watches, a range of emotions play on Emi&rsquo;s face until a look of determination emerges.
+</p>
+
+<p>
+“Done thinking?”
+</p>
+
+<p>
+Emi nods decisively. “ ‘These things happen.’ Remember? I&rsquo;m done with letting what <i>might</i> happen hold me back from living my life.” Seeing his relieved expression she holds up a finger sternly. “That doesn&rsquo;t give you free rein to die on me, mister! And don&rsquo;t think I&rsquo;m gonna let you repeat <i>your</i> history.”
+</p>
+
+<p>
+“Eh?”
+</p>
+
+<p>
+“How much time do you spend with your parents?”
+</p>
+
+<p>
+“Ah, yeah. Work-life balance will be particularly important for us.”
+</p>
+
+<p>
+“Right? Come on, I&rsquo;m getting hungry.”
+</p>
+
+<p>
+They pack their books away and head out of the library, hand in hand, ignoring Yuuko&rsquo;s disapproving stare.
+</p>
+
+<p>
+“So, Hisao.”
+</p>
+
+<p>
+“Hmm?”
+</p>
+
+<p>
+“I need to make sure you&rsquo;re up to the job of becoming a father.”
+</p>
+
+<p>
+“You said it&rsquo;s much too soo-”
+</p>
+
+<p>
+“It&rsquo;s <i>never</i> too soon to practice!” Laughing, she drags a not-so-reluctant Hisao in the direction of the girls&rsquo; dorm.
+</p>
+
+<p>
+“You&rsquo;ll be the death of me, Emi Ibarazaki!”
+</p>
+
+<p>
+&ldquo;And you&rsquo;re gonna kill me too!&rdquo;
+</p>
+
+<p>
+``Is this deadly as well?&rsquo;&rsquo;
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-25 Fri 19:34</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
