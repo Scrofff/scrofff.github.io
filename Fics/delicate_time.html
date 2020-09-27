@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-27 Sun 14:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A delicate balance</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">A delicate balance</h1>
+<p>
+&ldquo; &lsquo;A beginning is the time for taking the most delicate care that the
+balances are correct.&rsquo; ” Suzu&rsquo;s copy of Dune is nearly as dog-eared as
+mine, must be one of her favourites too. &rdquo;See? We absolutely <i>do</i> need
+to take some time to make sure we&rsquo;re properly in balance. I feel like
+there&rsquo;s been too many distractions here, we&rsquo;ve had no opportunity to
+figure out how to <i>be</i> together.&ldquo;
+</p>
+
+<p>
+&ldquo;Look if you want a holiday just say so, you don&rsquo;t have to come out with
+some fancy quote. I&rsquo;m definitely up for a week of sun, sea and sex!&rdquo;
+</p>
+
+<p>
+I can&rsquo;t help rolling my eyes at Miki. &ldquo;What do you mean by balance
+Suzu?&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s one thing to run yourself half to death then have a tearful
+reconciliation in the heat of the moment, it&rsquo;s another to actually make
+this work. Miki said we have a lot to talk about, which is true, but we
+haven&rsquo;t done <i>anything</i>. Be honest, what has changed since then?&rdquo;
+</p>
+
+<p>
+&ldquo;To be fair we&rsquo;ve been snowed under with exams, projects, training for
+the meet. You two are, umm, intimate again so that&rsquo;s changed.&rdquo; Maybe
+saying I&rsquo;d rather share Miki than lose her wasn&rsquo;t the right thing to do
+but I couldn&rsquo;t have done anything else, the thought of breaking up
+almost gave me a panic attack. I&rsquo;ve never had feelings this strong
+before, it&rsquo;s kinda scary. Sometimes I worry that I&rsquo;m obsessed by her. I
+don&rsquo;t think I am, I&rsquo;m not showing any of the unhealthy signs, but I
+can&rsquo;t deny she captures most of my attention.
+</p>
+
+<p>
+&ldquo;Well yeah, and I&rsquo;m doin&rsquo; my best to make sure you don&rsquo;t feel left out.&rdquo;
+</p>
+
+<p>
+Is that a guilty look on Miki&rsquo;s face? I wanted to make her happy, not
+stress her out. &ldquo;No no, I don&rsquo;t feel&#x2026;/abandoned/, I&rsquo;ve hardly noticed
+a difference with all the studying we&rsquo;ve been doing. Suzu&rsquo;s probably
+right, we should take some time away and work this out.&rdquo;
+</p>
+
+<p>
+&ldquo;Like I said, I&rsquo;m always up for a holiday. Can you con your parents into
+letting us use their beach house Suzu?&rdquo;
+</p>
+
+<p>
+&ldquo;No con required, they suggested I take some friends down. They&rsquo;re in
+Europe for six weeks, they&rsquo;ve finally got tickets for Bayreuth, so as
+usual they&rsquo;re throwing stuff at me so they don&rsquo;t feel guilty for never
+seeing me. They said we could borrow one of the cars too, have you got a
+licence Hisao?&rdquo;
+</p>
+
+<p>
+Wow, she&rsquo;s very matter-of-fact about her relationship with her parents.
+&ldquo;No, I was keen to learn but my hospital stay delayed everything&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Oh well, I suppose the train&rsquo;s reasonably convenient. When shall we
+go?&rdquo;
+</p>
+
+<p>
+&ldquo;How about Monday? Gives me time to do a bit of shopping over the
+weekend.&rdquo;
+</p>
+
+<p>
+&ldquo;You shopping?! What are you planning on buying?&rdquo; I&rsquo;m as surprised as
+Suzu but I&rsquo;m not brave enough to say anything.
+</p>
+
+<p>
+&ldquo;Just some&#x2026;stuff. And things, can&rsquo;t forget the things. I need a new
+bikini too, I&rsquo;ve grown out of my old one.&rdquo;
+</p>
+
+<p>
+Ooh I can&rsquo;t wait to see her in a bikini!
+</p>
+
+<p>
+&ldquo;Anyway, I&rsquo;m off to bed. Thanks for dinner Suzu, it&rsquo;s your turn to cook
+next Hisao! I&rsquo;ll catch you two tomorrow, thank fuck it&rsquo;s only a half day
+until the break.&rdquo;
+</p>
+
+<p>
+I find myself staring mournfully after Miki as she walks out of Suzu&rsquo;s
+room. &ldquo;I guess I should be going as well. See you in the morning.&rdquo;
+</p>
+
+<p>
+&ldquo;Bye Hisao.&rdquo;
+</p>
+
+<p>
+She&rsquo;s looking a bit miserable too. At least we&rsquo;ve got a holiday to look
+forward to now, hopefully we&rsquo;ll cheer up once we&rsquo;re away from the
+pressures here and get a chance to talk things through.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+We&rsquo;re up early to catch the first train down to the beach house but even
+though we&rsquo;re off on an adventure, there&rsquo;s not much enthusiasm on
+display. Suzu&rsquo;s obviously struggling with the sleepies and Miki&rsquo;s
+looking strained, the tension in her jaw tells me her phantom pains are
+bad. They&rsquo;re both so brave, there&rsquo;s not a word of complaint as we make
+our way from the bus stop to the platform. Miki&rsquo;s on one side of Suzu
+and I&rsquo;m on the other, making sure she&rsquo;s walking in the right direction
+and not bumping into anything. I guide us to a bench and put our luggage
+in Miki&rsquo;s sight. &ldquo;I&rsquo;m going to grab something from the Kiosk, do you two
+want anything?&rdquo;
+</p>
+
+<p>
+&ldquo;Coffee!&rdquo; they chorus. Yeah, me too. I&rsquo;m not feeling as bad as they are
+but my insomnia didn&rsquo;t let me get much sleep. We must have all suffered
+alone in our rooms, it would&rsquo;ve been better to get together for support
+like we used to.
+</p>
+
+<p>
+I buy the coffees, add tooth-rotting amounts of sugar to the girls&rsquo;, and
+walk back to where they&rsquo;re slumped against each other. &ldquo;Coffee&rsquo;s up! The
+train will be here soon and we&rsquo;ll be able to relax for a while.&rdquo; It&rsquo;s
+good to see them trying to smile, let&rsquo;s hope this rough start won&rsquo;t cast
+a shadow over the whole holiday. No, I can&rsquo;t see that happening, Miki is
+never down for long and her mood is infectious. Besides, seaside! Who
+can be gloomy when they&rsquo;re near the sea?
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+The change at Morioka gave us a chance to buy fresh coffees as we walked
+to the platform where we caught the train to Miyako. This leg of the
+journey will take a couple of hours so we&rsquo;ve got time to make ourselves
+comfortable. I&rsquo;m glad Miki and Suzu are looking happier than they did
+earlier this morning. I&rsquo;m sitting opposite them, a table between us
+which we&rsquo;ve stacked some snacks and drinks on. I attempt to read the
+article on applications of group theory which Mutou recommended but it&rsquo;s
+hard to stay focused. Last night&rsquo;s lack of sleep and the beautiful
+countryside we&rsquo;re travelling through are distracting, though not as
+distracting as the sight of Miki and Suzu cuddled together. Shouldn&rsquo;t I
+be feeling jealous? Resenting Suzu for coming between us? <i>Something</i> is
+troubling me but I can&rsquo;t figure out what. Come on Hisao, analyse!
+</p>
+
+<p>
+OK the most important thing is I believe Miki won&rsquo;t ditch me now that
+she can be with Suzu too. I don&rsquo;t feel threatened by Suzu because what I
+know of their history tells me she accepts she can&rsquo;t monopolise Miki,
+she&rsquo;s not going to try to break us up. Same for me, I understand that I
+don&rsquo;t have the right to tell Miki what to do. Suzu&rsquo;s always been
+friendly and welcoming, being around her is great fun thanks to her wry
+sense of humour and our shared love of reading. Truth be told, I&rsquo;ve
+become really fond of her. I didn&rsquo;t like seeing her miserable on Friday
+so it&rsquo;s good to see a happy little smile on her face as she leans in to
+Miki. Am I feeling left out right now? Yes, I&rsquo;d love to be in that
+cuddle, my troubles melt away when we&rsquo;re touching. But that&rsquo;s not enough
+to explain what&rsquo;s bothering me.
+</p>
+
+<p>
+I can&rsquo;t stop worrying about the guilty expression on Miki&rsquo;s face the
+other night. Was it a mistake to make her split herself between Suzu and
+me? There&rsquo;s something <i>right</i> about the way they look together, Miki
+holding her protectively, Suzu&rsquo;s head on her shoulder. They&rsquo;ve been
+through so much, have such a strong bond, maybe it&rsquo;s me who&rsquo;s come
+between <i>them</i>. Maybe I should step out of their lives, get off at the
+next station and go back to Yamaku. Oh, she&rsquo;s not asleep. And just like
+that, all my uncertainties are swept away as she flashes her dazzling
+smile and reaches out to me. I clasp her hand and smile back. There&rsquo;s no
+guilt on her face now, only a satisfied smile as she squeezes my hand
+and snuggles into Suzu.
+</p>
+
+<p>
+&ldquo;Stand guard Hisao, don&rsquo;t let us miss our stop. I&rsquo;ll make it up to you.&rdquo;
+</p>
+
+<p>
+I squeeze back and she sighs happily as she closes her eyes. They have
+given me nothing but understanding and affection and in return I was
+thinking about abandoning them. What sort of scumbag would do that? No,
+I won&rsquo;t run away but we do have to puzzle out how we&rsquo;re going to work
+together, make sure we&rsquo;re OK with the situation. The look on her face
+tells me she wants this, there must be a way for us all to be happy.
+Damned if I know what it is though&#x2026;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+The taxi ride to Suzu&rsquo;s beach house didn&rsquo;t take long and I was surprised
+by how reassured I felt when we passed a hospital. Standing on the drive
+where we&rsquo;d been dropped off, I&rsquo;m impressed by the size of the house and
+its secluded location.
+</p>
+
+<p>
+Suzu points to a wrought iron gate in the hedge. &ldquo;That path goes to the
+beach, it&rsquo;s not private but we only really share it with visitors to the
+local country club and they&rsquo;re usually busy playing golf.&rdquo; She picks up
+her bag and walks to the door. &ldquo;Plausible deniability requires us to
+pick a bedroom each.&rdquo;
+</p>
+
+<p>
+Miki laughs at my puzzled look. &ldquo;The Suzuki family retainers come in
+every few days to clean and re-stock, we have to maintain appearances.&rdquo;
+</p>
+
+<p>
+&ldquo;The Kobayashis aren&rsquo;t <i>retainers</i>, just a sweet old couple who look
+after this place. We don&rsquo;t want to be giving them a heart atta- oh sorry
+Hisao, that was probably rude.&rdquo;
+</p>
+
+<p>
+I shrug, &ldquo;not at all, having had a heart attack I don&rsquo;t want to be the
+cause of one.&rdquo;
+</p>
+
+<p>
+Miki grabs her rucksack and trots past Suzu as she opens the door.
+&ldquo;Noooo!&rdquo; Suzu shrieks as Miki puts on a burst of speed. &ldquo;She <i>always</i>
+gets the master bedroom, it&rsquo;s not fair!&rdquo;
+</p>
+
+<p>
+&ldquo;You Snuzu, you lose-u!&rdquo; I look up to see Miki on the balcony smiling
+smugly; how on earth did she get there so fast?
+</p>
+
+<p>
+&ldquo;I&rsquo;m taking the Green Room then! Hisao, you&rsquo;re in the room next to the
+kitchen, which means you&rsquo;re on morning coffee duty.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m changing into my bikini now~&rdquo;
+</p>
+
+<p>
+Ummm, yeah, not gonna lie but I&rsquo;ve been looking forward to seeing this
+since she mentioned going shopping on Friday. I go through the door Suzu
+pointed out to me and find a large room with a bed which looks <i>much</i>
+more comfortable than the one at Yamaku. I grab swimming shorts and a
+t-shirt from my case and change quickly enough to be back in the hall in
+time to see Miki sashaying down the stairs wearing&#x2026; Well it&rsquo;s
+<i>technically</i> decent but oh my! That warm yellow is set off perfectly by
+her tanned skin and those ties! I imagine pulling them slowly, the bows
+unravelling, the top coming undone&#x2026;
+</p>
+
+<p>
+&ldquo;Stop drooling Hisao!&rdquo;
+</p>
+
+<p>
+I look around and see Suzu smirking at me. &ldquo;You have to admit it looks
+stunning on her!&rdquo; She&rsquo;s looking pretty good in her bikini too. It&rsquo;s the
+same colour as her hair with a plunge neckline which makes the most of
+her figure.
+</p>
+
+<p>
+&ldquo;This old thing?&rdquo; Miki laughs as she throws an arm around each of us and
+breathes in ostentatiously.
+</p>
+
+<p>
+It&rsquo;s my turn to smirk. &ldquo;Who&rsquo;s drooling now?&rdquo;
+</p>
+
+<p>
+Suzu giggles, &ldquo;you&rsquo;re right, she <i>does</i> look stunning. Are you two OK
+with having a lazy afternoon around the house? I&rsquo;m still a bit zonked
+out, I&rsquo;d rather not risk another attack of the sleepies and need hauling
+home.&rdquo;
+</p>
+
+<p>
+Miki nods, &ldquo;yeah that suits me fine. Come on, let&rsquo;s not rot inside, I
+ain&rsquo;t going back more pale than when I left.&rdquo;
+</p>
+
+<p>
+We walk through the kitchen into the backyard. It&rsquo;s beautifully
+maintained with immaculate lawns, a patio with outdoor seating, and a
+corner shaded by a gorgeous black pine. Miki heads to the lawns closely
+followed by Suzu who spreads out the towels she&rsquo;s carrying and offers me
+a bottle of suncream. &ldquo;Would you mind? She makes such a fuss when I ask
+her.&rdquo;
+</p>
+
+<p>
+&ldquo;Hey, it&rsquo;s not easy doing that one handed and I hate getting all gunky!&rdquo;
+</p>
+
+<p>
+I nod and take the bottle. Suzu smiles her thanks and lies on her
+stomach while I do my best to give her an even coating. I can&rsquo;t help
+noticing that her skin is smooth and warm but she doesn&rsquo;t have the
+layers of muscle Miki has. She feels different but far from unpleasant.
+Finishing, I look up to see Miki sprawled on her side, head propped on
+her stump, smiling at me. &ldquo;Do you want me to do you too?&rdquo;
+</p>
+
+<p>
+&ldquo;I s&rsquo;pose so, shouldn&rsquo;t risk this glorious hide!&rdquo;
+</p>
+
+<p>
+Yeah, she&rsquo;s iron under velvet compared to Suzu who&rsquo;s soft and yielding.
+Somehow I manage to complete the task without undoing those tempting
+ties on her bikini. I steal a kiss and say, &ldquo;I&rsquo;ll be reading by that
+tree, it&rsquo;s too bright here to concentrate. Enjoy the sun, ladies!&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+I wake in the late afternoon and the girls are nowhere to be seen, the
+rumbling noises my stomach is making probably drove them inside. I head
+into the kitchen and look around for easy things to cook. I have a fair
+few B-kyu gurume recipes at my fingertips due to being left to my own
+devices for much of my teens. I find ingredients to make the infamous
+Nakai Tofu Omurice and get busy.
+</p>
+
+<p>
+The rice ready, I&rsquo;m about to make the omelettes when I feel arms
+encircling my waist, a body pressing against my back, a kiss on my neck.
+</p>
+
+<p>
+&ldquo;You&rsquo;re a life-saver! I was about to <i>die</i> of hunger.&rdquo;
+</p>
+
+<p>
+I lean back into the hug with a smile. &ldquo;It&rsquo;ll be finished in a couple of
+minutes. Is Suzu OK?&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, I brought her in when I noticed she&rsquo;d dropped off. Overdone Suzu
+is nothing you want to be around!&rdquo;
+</p>
+
+<p>
+With a laugh I set the tamagoyaki pan on the hob and beat some eggs
+while it heats. By the time I&rsquo;ve completed the first two, Miki returns
+with a sleepy Suzu in tow. &ldquo;Here&rsquo;s yours, I&rsquo;ll be in when mine&rsquo;s done.
+Do you know where the ketchup is Suzu?&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, I&rsquo;ll take it through.&rdquo;
+</p>
+
+<p>
+I&rsquo;m greeted by a chorus of thanks as I walk into the dining area. Suzu&rsquo;s
+made a good start on her&rsquo;s while Miki&rsquo;s plate is empty and gleaming,
+looking suspiciously like she&rsquo;s licked it clean.
+</p>
+
+<p>
+&ldquo;That was really tasty Hisao, but as you know I&rsquo;m a woman-&rdquo;
+</p>
+
+<p>
+&ldquo;-with insatiable appetites. Yeah, I made you secondsies.&rdquo; The look of
+relief on her face as I give her another portion of food is comical.
+</p>
+
+<p>
+&ldquo;You&rsquo;re going to hate life when your metabolism slows down,&rdquo; Suzu says
+in amusement.
+</p>
+
+<p>
+&ldquo;It shouldn&rsquo;t be a problem as long as I keep running, muscle takes a lot
+of upkeep. I think I&rsquo;ll have some space left for dessert, whatcha got
+Hisao?&rdquo;
+</p>
+
+<p>
+I shrug, &ldquo;I got nothing. Suzu?&rdquo;
+</p>
+
+<p>
+&ldquo;Let me dig around, there&rsquo;s probably something sweet in a cupboard
+somewhere.&rdquo; She collects our plates and sets off to the kitchen.
+</p>
+
+<p>
+&ldquo;This place is really impressive, what do Suzu&rsquo;s parents do?&rdquo;
+</p>
+
+<p>
+&ldquo;They&rsquo;re related to <i>those</i> Suzukis, old man Osamu might be tight with
+the company purse strings but that doesn&rsquo;t seem to apply to family. She
+hasn&rsquo;t turned out too bad for someone who gets everything she wants.&rdquo;
+</p>
+
+<p>
+&ldquo;I dunno Miki, the way she was talking about her family made me think
+they don&rsquo;t have much of a relationship. I know I don&rsquo;t see much of mine
+but I feel&#x2026;loved.&rdquo;
+</p>
+
+<p>
+&ldquo;Same. Mum was broken up when my dad insisted I go to Yamaku, pretty
+sure he only put his foot down &lsquo;cos he felt guilty. Hey, do you want to
+come and meet her? I&rsquo;ll be going back home later in the holidays and
+Suzu usually tags along, one extra won&rsquo;t be a problem.&rdquo;
+</p>
+
+<p>
+&ldquo;Errr, well yeah, but what&rsquo;ll she think about <i>us</i>?&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m not gonna tell her the whole story! When I say we&rsquo;re dating, she&rsquo;ll
+be glad that Suzu&rsquo;s around to keep an eye on us.&rdquo;
+</p>
+
+<p>
+We&rsquo;re still laughing when Suzu reappears carrying a tray with tea and
+some rakugan. &ldquo;What&rsquo;s so funny?&rdquo;
+</p>
+
+<p>
+&ldquo;The thought of you being our chaperone when we visit my mum.&rdquo;
+</p>
+
+<p>
+&ldquo;Oh we&rsquo;re going to see her again this summer? Good, Miyuki&rsquo;s awesome.
+How about a trip to your parents&rsquo; place Hisao? We could do a grand
+tour.&rdquo;
+</p>
+
+<p>
+&ldquo;I can ask, fitting all of us in the house will be a challenge but I&rsquo;m
+sure my mum&rsquo;ll find a way.&rdquo;
+</p>
+
+<p>
+&ldquo;If only you had your driving licence, we wouldn&rsquo;t have to stick to
+train schedules!&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah yeah, message received loud and clear. I&rsquo;ll look into lessons as
+soon as we get back.&rdquo;
+</p>
+
+<p>
+&ldquo;Let&rsquo;s make ourselves comfortable while we eat these, maybe there&rsquo;ll be
+something not too awful on telly.&rdquo;
+</p>
+
+<p>
+It was a forlorn hope so after some channel hopping we settle on a music
+station in the background as we chat about anything and nothing: school
+gossip, holiday plans&#x2026;everything but what we need to talk about.
+</p>
+
+<p>
+&ldquo;I&rsquo;m sorry guys, the narcolepsy is really kicking my butt today. I know
+we&rsquo;re supposed to be sorting things out but I can&rsquo;t concentrate on what
+I want to say.&rdquo;
+</p>
+
+<p>
+&ldquo;No biggie princess. I haven&rsquo;t seen you like this for ages, any idea why
+it&rsquo;s so bad?&rdquo;
+</p>
+
+<p>
+&ldquo;I guess it&rsquo;s because the last couple of weeks have been intense and
+I&rsquo;ve been pushing myself through with a little help from Nurse.&rdquo;
+</p>
+
+<p>
+&ldquo;You on the modiodal again? I&rsquo;m gonna have words with that fucker when
+we get back.&rdquo;
+</p>
+
+<p>
+&ldquo;Calm down Miki! Yes, I had a strictly limited supply of a mild
+stimulant that&rsquo;s less addictive than caffeine. You know he wouldn&rsquo;t have
+prescribed it for me if it does more harm than good.&rdquo;
+</p>
+
+<p>
+Miki&rsquo;s reaction has piqued my interest. &ldquo;Is it only that stuff you don&rsquo;t
+approve of or is it medicine in general?&rdquo; I have a horrible thought.
+&ldquo;You&rsquo;re not an anti-vaxxer are you?&rdquo;
+</p>
+
+<p>
+&ldquo;I don&rsquo;t know what that is, sounds painful. I just think putting
+unnecessary chemicals in your body is not the way to go.&rdquo;
+</p>
+
+<p>
+Suzu snorts. &ldquo;The woman who&rsquo;d live off pizza and burgers given half a
+chance is worried about what she puts into her body?&rdquo;
+</p>
+
+<p>
+&ldquo;Chemicals! I googled that shit last time you were on it, apparently
+they don&rsquo;t even understand how it fucking works!&rdquo;
+</p>
+
+<p>
+&ldquo;You looked it up? For me? You hate using computers.&rdquo;
+</p>
+
+<p>
+&ldquo;Don&rsquo;t go getting all mushy, I was just trying to find out what I&rsquo;d be
+dealing with when it messed you up.&rdquo;
+</p>
+
+<p>
+&ldquo;Of course you were.&rdquo; Suzu leans in and kisses her tenderly. &ldquo;Thank-you
+for caring about me.&rdquo;
+</p>
+
+<p>
+I&rsquo;ve never seen Miki so embarrassed! &ldquo;If you tried that with my meds
+you&rsquo;d be there all day.&rdquo; She&rsquo;s blushing now. &ldquo;You did?&rdquo;
+</p>
+
+<p>
+&ldquo;For fuck&rsquo;s sake, is it so hard to believe I&rsquo;d want to know about the
+crap you two are dealing with?&rdquo;
+</p>
+
+<p>
+&ldquo;You could&rsquo;ve asked, we&rsquo;d have talked you through it, right Hisao?&rdquo;
+</p>
+
+<p>
+Umm&#x2026;oh hell, why not? &ldquo;I haven&rsquo;t really discussed my issues with
+anyone but I think I&rsquo;m ready to tell you about them.&rdquo;
+</p>
+
+<p>
+&ldquo;OK OK, I get the message, we&rsquo;ll add it to the list. Not tonight tho&rsquo;,
+it&rsquo;s not only Suzu who looks like an extra from a zombie movie.&rdquo;
+</p>
+
+<p>
+My afternoon nap helped but Suzu&rsquo;s right about how hectic it&rsquo;s been,
+it&rsquo;ll be a few more lazy days before I&rsquo;m running on full again. &ldquo;You OK
+getting to your room Suzu?&rdquo; When she nods I stand up and say, &ldquo;What
+about training in the morning?&rdquo;
+</p>
+
+<p>
+&ldquo;Nah, let yourself sleep through, we&rsquo;ll take it from there.&rdquo;
+</p>
+
+<p>
+&ldquo;See you tomorrow then, sleep well.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+After a good night&rsquo;s sleep in the most comfortable bed I&rsquo;ve ever had the
+pleasure of using, I walk into the kitchen and see Suzu holding a folded
+piece of paper. &ldquo;Good morning! What have you got there?&rdquo;
+</p>
+
+<p>
+&ldquo;Morning Hisao. I was looking for coffee but found this note, it&rsquo;s
+addressed to both of us.&rdquo;
+</p>
+
+<p>
+I peer over her shoulder when she opens it and recognise Miki&rsquo;s
+<i>distinctive</i> hand-writing. It says:
+</p>
+
+<blockquote>
+<p>
+If we&rsquo;re gonna do this we&rsquo;re gonna do it right. Not me and Suzu, me
+and Hisao. The three of us sharing <i>everything</i>. I&rsquo;m giving you two some
+time alone and a care package, you&rsquo;ll find what you need in there to
+make this isosceles triangle equilateral. If you don&rsquo;t have
+shit-eating grins on your faces when I get back, we&rsquo;re done.
+</p>
+</blockquote>
+
+<p>
+Who knew Miki paid attention in geometry class? &ldquo;Does she mean what I
+think she means?&rdquo; I can&rsquo;t bring myself to meet Suzu&rsquo;s gaze but from the
+corner of my eye I see her nodding, her face as red as mine feels.
+</p>
+
+<p>
+&ldquo;So this is why she&rsquo;s been on edge, I thought it was exams but I
+should&rsquo;ve known better. I reckon swapping between us was bringing back
+bad memories of her dad. Which is fair enough, it&rsquo;s not what I intended
+either.&rdquo;
+</p>
+
+<p>
+What does she mean by that? I notice a shoebox on the worktop which
+wasn&rsquo;t there when I went to bed so I open it. &ldquo;I wonder what she&rsquo;s left
+for us.&rdquo; There&rsquo;s a bottle of lube, some condoms, a scented candle
+and&#x2026;is that a pair of handcuffs? What the hell?
+</p>
+
+<p>
+&ldquo;Hisao.&rdquo;
+</p>
+
+<p>
+I turn to see an uncertain expression on Suzu&rsquo;s face.
+</p>
+
+<p>
+&ldquo;I&rsquo;ve only ever been with Miki, I don&rsquo;t really know what to do with a
+boy.&rdquo;
+</p>
+
+<p>
+&ldquo;Wait, we&rsquo;re doing this?&rdquo;
+</p>
+
+<p>
+&ldquo;I know I&rsquo;m not much compared to her, I&rsquo;ll understand if you&rsquo;re not
+interested.&rdquo;
+</p>
+
+<p>
+That was <i>not</i> what I meant. &ldquo;No, that&rsquo;s not&#x2026; When I said I was OK
+with sharing I meant I would give you two some space. I didn&rsquo;t expect
+<i>this</i>.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;ve dreamed about us all being together properly and honestly Hisao,
+it&rsquo;s <i>so</i> good and I&rsquo;m not even talking about the sex. That&rsquo;s why I made
+such a nuisance of myself, I was trying to make it happen. It looks like
+it&rsquo;s what Miki wants too. The question is, what do <i>you</i> want?&rdquo;
+</p>
+
+<p>
+I want to be with Miki. I&rsquo;m fond of Suzu but I&rsquo;m not sure about being in
+a relationship with her too, I&rsquo;m still getting used to having a
+girlfriend! Then again, aren&rsquo;t we already in a relationship? The three
+of us do most things together, decide things together. How different
+would it be to the way it is now? Apart from the obvious&#x2026; I don&rsquo;t know
+what Suzu&rsquo;s been dreaming but I&rsquo;d say we work well as a group, it only
+gets awkward around bedtime. Miki&rsquo;s spent a lot of nights alone
+recently, I guess I understand why now.
+</p>
+
+<p>
+Instead of rushing into something for fear of losing Miki, I need to
+think this through carefully. I need to have positive reasons. Even if
+it means breaking up with Miki? We&rsquo;d break up anyway if I force myself
+do something I&rsquo;m not comfortable with. It&rsquo;d make Miki happy and Suzu
+just said it&rsquo;s what she wanted all along, are they enough positives?
+</p>
+
+<p>
+&ldquo;Well Hisao, do you like what you see?&rdquo;
+</p>
+
+<p>
+I realise I&rsquo;ve been staring at her all this time. <i>Do</i> I like what I
+see? Miki lights a fire inside me, my feelings for her are fierce and
+hot. It&rsquo;s not that way with Suzu, I feel&#x2026;protective? Not exactly,
+she&rsquo;s too independent for that, but I want to be there when she needs
+someone. When I&rsquo;m with Miki, Suzu&rsquo;s the first person I look for as I
+enter a room; when I&rsquo;m not she&rsquo;s the second. I feel at ease around her,
+even when her narcolepsy forces her to tune us out. Looking at her
+without being blinded by Miki I can see how cute she is. Her messy hair
+suits her perfectly and that adorable nose is just crying out for boops,
+those lips for kisses. The t-shirt she slept in is clinging to her in
+interesting ways&#x2026;
+</p>
+
+<p>
+&ldquo;Very much. But I wouldn&rsquo;t, umm, <i>share</i> with you just because you&rsquo;re
+cute or to avoid breaking up with Miki, I&rsquo;m too fond of you for that. I
+haven&rsquo;t thought about you in that way before now, I&rsquo;ve been focused on
+Miki, but I&rsquo;m realising there&rsquo;s a lot of things about you I&rsquo;m attracted
+to.&rdquo;
+</p>
+
+<p>
+&ldquo;Well I&rsquo;ve thought about <i>you</i> that way. I&rsquo;m not saying you make me go
+weak at the knees but I&rsquo;d like you to be my first boy.&rdquo;
+</p>
+
+<p>
+No pressure then! Do I actually have any reasons for <i>not</i> doing this? I
+know I care for Suzu and I&rsquo;m starting to see how desirable she is in her
+own right. It&rsquo;s hardly socially acceptable, but as long as we don&rsquo;t make
+a spectacle of ourselves we can probably get away with it. It would make
+two of my favourite people in the world happier and I get to have sex
+with another girl without my girlfriend killing me. When you put it like
+that&#x2026; &ldquo;I&rsquo;ve only been with Miki too, I don&rsquo;t really know what to do
+with a Suzu.&rdquo; She laughs, I&rsquo;m glad she seems a bit less nervous, makes
+me feel less nervous too.
+</p>
+
+<p>
+&ldquo;I&rsquo;m sure we&rsquo;ll work it out together.&rdquo;
+</p>
+
+<p>
+I take a deep breath and hold out my arms for a hug. She&rsquo;s in them like
+a flash, holding me tight with a quiet sigh of relief. She&rsquo;s small,
+thinner than Miki&#x2026; No, stop comparing them. This is Suzu, I should
+concentrate on being with <i>her</i>. I pick her up like a princess, carry
+her into my room and sit on the bed.
+</p>
+
+<p>
+&ldquo;Ooh very manly Hisao!&rdquo;
+</p>
+
+<p>
+That&rsquo;s a cute giggle. I didn&rsquo;t realise she&rsquo;s so agile, she&rsquo;s straddled
+my waist and locked her legs around me. This feels exciting, her t-shirt
+is riding up, she&rsquo;s not wearing much else. I kiss her, she holds me
+tighter, opens her mouth to invite my tongue in. I&rsquo;m happy to oblige.
+She tastes sweet, like the energy drink she&rsquo;s always guzzling. This is
+good, she&rsquo;s really into it, <i>I&rsquo;m</i> really into it. I didn&rsquo;t think she&rsquo;d
+be this forceful.
+</p>
+
+<p>
+&ldquo;I&rsquo;d say you&rsquo;ve warmed up to the idea, let&rsquo;s get this off.&rdquo;
+</p>
+
+<p>
+Oh no, that&rsquo;s <i>not</i> good, she&rsquo;s unbuttoning my pyjama jacket. The scar!
+</p>
+
+<p>
+&ldquo;Hisao? You&rsquo;ve gone all stiff and not in a good way. What&rsquo;s wrong?&rdquo;
+</p>
+
+<p>
+&ldquo;You know about my heart.&rdquo;
+</p>
+
+<p>
+&ldquo;Of course. Why?&rdquo;
+</p>
+
+<p>
+&ldquo;They made a bit of a mess of me when they operated.&rdquo;
+</p>
+
+<p>
+&ldquo;If it&rsquo;ll make you feel more relaxed&#x2026;&rdquo;
+</p>
+
+<p>
+I gasp as she tugs her t-shirt off leaving her in just a pair of green
+striped panties. Her breasts are small but perky, the nipples standing
+out against her pale skin. I can&rsquo;t resist, I take one in my mouth and
+run my tongue around it, sucking gently. Going by the noises she&rsquo;s
+making I&rsquo;d say she enjoys this as much as Miki does. There goes my top.
+I really don&rsquo;t care about my scar right now, I&rsquo;m more concerned with how
+tight my pants suddenly are.
+</p>
+
+<p>
+I manoeuvre her so she&rsquo;s lying on her back, she&rsquo;s still got her legs
+wrapped around me, rubbing herself against me, moaning softly.
+</p>
+
+<p>
+&ldquo;Hisao, I need more&#x2026;&rdquo;
+</p>
+
+<p>
+I shift again, unwrapping her legs so I can lie on my side. I kiss her
+hard, tongues fighting, and trail my hand down her body, circle my
+fingers round her belly button. She groans and struggles out of her
+panties, pushes my hand between her thighs. Aggressive! I feel a
+familiar, addictive slickness as I part her lips. Her clit is hard, more
+prominent than Miki&rsquo;s, and she shivers when I apply a little pressure to
+the hood. She&rsquo;s very wet, we won&rsquo;t be needing the lube. Condoms! Damn.
+</p>
+
+<p>
+&ldquo;Where do you think you&rsquo;re going?&rdquo; she asks as I start to get up.
+</p>
+
+<p>
+&ldquo;I left the condoms in the kitchen.&rdquo;
+</p>
+
+<p>
+&ldquo;Smoooooth. Hurry up or I&rsquo;ll finish without you!&rdquo;
+</p>
+
+<p>
+I&rsquo;m back in a flash and take the opportunity to discard the rest of my
+pyjamas. Suzu grasps me and giggles.
+</p>
+
+<p>
+&ldquo;It&rsquo;s hot! And hard, and a bit squishy. Get that condom on, I want to
+feel what it&rsquo;s like inside me.&rdquo;
+</p>
+
+<p>
+&ldquo;Won&rsquo;t it hurt? You said it&rsquo;s your first time with a boy.&rdquo;
+</p>
+
+<p>
+Another giggle. &ldquo;It won&rsquo;t be the first time I&rsquo;ve been&#x2026;penetrated. I
+bet you&rsquo;re not as rough as Miki is.&rdquo;
+</p>
+
+<p>
+Miki&rsquo;s rough? She&rsquo;s pretty laid back with me. I position myself between
+her legs and she reaches down to guide me. She lets out a happy sigh as
+I push all the way in and wraps herself around me.
+</p>
+
+<p>
+&ldquo;Mmmm I like how close we are, it&rsquo;s cuddling but better!&rdquo;
+</p>
+
+<p>
+Yeah, but she&rsquo;s got such a strong hold on me that I can&rsquo;t
+really&#x2026;/thrust/. OK Hisao, if you can&rsquo;t move in one dimension, try the
+others. I circle my hips which makes her moan in pleasure and grip me
+even harder. It feels good to be in her, tight and hot, but it sounds
+like she&rsquo;s enjoying it more than I am. That&rsquo;s fine, there&rsquo;s nothing
+wrong with making our first time all about her. I speed up a little, add
+some extra pressure. She gasps and shudders, bites my shoulder. I study
+her reactions, investigate how different angles or changes in pace make
+her react. Suddenly she contracts and the force she exerts deep inside
+has me flinching.
+</p>
+
+<p>
+&ldquo;Ahhh Hisao, stop, please&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Sorry sorry, are you OK?&rdquo;
+</p>
+
+<p>
+&ldquo;Oh yes, I just get really sensitive after I&#x2026;you know.&rdquo;
+</p>
+
+<p>
+Heh, mission accomplished. I withdraw carefully and lie on my back, arms
+around her. She nestles in to me, rests her head on my chest and plays
+with my hair.
+</p>
+
+<p>
+&ldquo;That was <i>very</i> good; different, but good. Being able to hold you close
+felt wonderful.&rdquo;
+</p>
+
+<p>
+&ldquo;Well you <i>are</i> a notorious snuggle bunny!&rdquo;
+</p>
+
+<p>
+She laughs. &ldquo;Is it supposed to stay hard?&rdquo;
+</p>
+
+<p>
+&ldquo;I didn&rsquo;t, errrr, finish yet.&rdquo;
+</p>
+
+<p>
+&ldquo;D-didn&rsquo;t I make you feel good?&rdquo;
+</p>
+
+<p>
+I can&rsquo;t let her think she&rsquo;s done something wrong. &ldquo;It felt great! I was
+concentrating on you though, I wanted it to be special for you.&rdquo;
+</p>
+
+<p>
+She kisses me deeply. &ldquo;You&rsquo;re a lovely boy Hisao, the only other person
+who cares for me like you do is Miki. She says I have clever hands,
+let&rsquo;s see if you think so too.&rdquo;
+</p>
+
+<p>
+I feel her take hold of me, tentatively at first but with more
+confidence as my reactions show her I&rsquo;m enjoying her touch. I&rsquo;m starting
+to understand what she likes about this closeness. The sensation of her
+body against mine, her breasts pressed against my chest, the smell of
+her hair, combined with the steady rhythm she&rsquo;s established means I&rsquo;m
+reaching my limit fast. Wait, what?
+</p>
+
+<p>
+&ldquo;Err Suzu, is anything wrong?&rdquo;
+</p>
+
+<p>
+She giggles and kisses me. &ldquo;Deal with it Hisao, endure a little bit of
+torment now to have a higher high later.&rdquo;
+</p>
+
+<p>
+The third time she brings me to the brink is almost painful, my hips are
+bucking and I&rsquo;m moaning. She sits up and I feel a warm wetness which
+sends me over the edge. When I can think again I find Suzu in my arms,
+resting a hand on my heart.
+</p>
+
+<p>
+&ldquo;I just realised that might not have been the best idea&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Miki&rsquo;s made sure my heart won&rsquo;t give out so easily.&rdquo; Why&rsquo;s she raising
+her eyebrows at me? Oh. &ldquo;The running! This is the fittest I&rsquo;ve ever been
+and you didn&rsquo;t do anything sudden, it was all gradual build up. Where
+did you learn to do that? You said I&rsquo;m the first boy you&rsquo;ve been with.&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s not very different from what I do with Miki, though I don&rsquo;t
+usually let her off so easy.&rdquo;
+</p>
+
+<p>
+That was being let off <i>easy</i>?!
+</p>
+
+<p>
+&ldquo;It&rsquo;s mostly about being observant, seeing what builds pleasure, gauging
+how close you are to the point of no return. Your reactions weren&rsquo;t hard
+to read so staying in control of you was straightforward. Do you know
+what <i>mudita</i> means?&rdquo;
+</p>
+
+<p>
+I&rsquo;m sure that&rsquo;s something my Buddhist grandma talked about but I can&rsquo;t
+dredge up a definition from my memory so I shake my head.
+</p>
+
+<p>
+&ldquo;The delight you take in others&rsquo; joy. Making you react that way was
+truly satisfying, I feel like I understand you better now.&rdquo;
+</p>
+
+<p>
+&ldquo;Do you think I could do that? It&rsquo;d be nice to return the favour.&rdquo;
+</p>
+
+<p>
+&ldquo;Of course you can, as I said it&rsquo;s all about paying attention. But I
+don&rsquo;t like it, it&rsquo;s too much for me. I get so sensitive it hurts.&rdquo;
+</p>
+
+<p>
+&ldquo;What would you like instead?&rdquo; I can&rsquo;t believe she&rsquo;s suddenly blushing!
+&ldquo;Really? After what we&rsquo;ve just done, how we&rsquo;ve been talking, asking what
+I can do for you is embarrassing?&rdquo;
+</p>
+
+<p>
+&ldquo;Not exactly&#x2026;it&rsquo;s just&#x2026;what I want might sound weird.&rdquo;
+</p>
+
+<p>
+&ldquo;Try me. You didn&rsquo;t judge my scar, I&rsquo;m not going to judge you.&rdquo;
+</p>
+
+<p>
+&ldquo;I want to pleasure both of you at the same time, see if I can make you
+finish simultaneously.&rdquo;
+</p>
+
+<p>
+I give her a little squeeze. &ldquo;Yeah, I get you wanting that. How would it
+even work though?&rdquo;
+</p>
+
+<p>
+She giggles. &ldquo;I&rsquo;ve had a couple of ideas. When Miki gets back, do you
+want to try them?&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+A watched kettle never boils when you and your new lover are in need of
+coffee. I know that&rsquo;s not a saying, but it should be. While I wait, I&rsquo;m
+daydreaming about what I&rsquo;ve been doing with Suzu when the door to the
+backyard opens and a sweaty Miki walks in.
+</p>
+
+<p>
+&ldquo;Well?&rdquo; I do my best approximation of a shit-eating grin, she punches me
+on the shoulder. &ldquo;Don&rsquo;t smirk at me, this is important!&rdquo;
+</p>
+
+<p>
+Oops. &ldquo;It was supposed to be a shit-eating grin.&rdquo;
+</p>
+
+<p>
+&ldquo;What? Oh! Fuck yeah!&rdquo;
+</p>
+
+<p>
+Suddenly there&rsquo;s a sobbing girl in my arms. &ldquo;Hey hey, what&rsquo;s wrong?&rdquo;
+I&rsquo;ve never seen her like this before, she seems overcome and relieved at
+the same time. She draws back a little and I look at her snotty, tear
+stained face. I guess it must be love if she&rsquo;s beautiful to me even in
+this state.
+</p>
+
+<p>
+&ldquo;I was scared you wouldn&rsquo;t do it, that we&rsquo;d be finished and I&rsquo;d never
+get with either of you again.&rdquo;
+</p>
+
+<p>
+I feel Suzu join the hug and Miki leans over to kiss her.
+</p>
+
+<p>
+&ldquo;Eww Miki, you&rsquo;re gross! Have you been running yourself to death again?&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;re a bit fragrant too princess! Hisao gave you a workout eh?&rdquo;
+</p>
+
+<p>
+&ldquo;I wish, more like I&rsquo;ve been doing the hard work while he lies back and
+enjoys himself.&rdquo;
+</p>
+
+<p>
+That&rsquo;s not how I remember it, but OK.
+</p>
+
+<p>
+Suzu flicks the note which is still sitting on the worktop. &ldquo;I&rsquo;m not
+saying I disagree with the results, but what brought this on? Thinking
+about your dad?&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, my head understood I wasn&rsquo;t sneaking around behind anyone&rsquo;s back
+but my heart wasn&rsquo;t convinced. It was eating me up and this was the
+first chance I&rsquo;ve had to do anything about it.&rdquo;
+</p>
+
+<p>
+&ldquo;Why didn&rsquo;t you <i>say</i> something? You were taking a pretty big risk, what
+if we&rsquo;d read that and locked ourselves in our rooms?&rdquo;
+</p>
+
+<p>
+&ldquo;If you couldn&rsquo;t balance out this triangle then it was dead in the
+water. You might think it was fun to have my pick of partners but it
+fucking sucked. Whenever I chose one the other acted like a hurt puppy.
+No, don&rsquo;t look at me like that, you know it&rsquo;s true.&rdquo;
+</p>
+
+<p>
+I glance guiltily at Suzu who nods ruefully.
+</p>
+
+<p>
+&ldquo;I was giving you the opportunity to get it on when I left early those
+nights, but you dumbasses went to bed alone.&rdquo;
+</p>
+
+<p>
+I sigh in exasperation. &ldquo;How the hell were we supposed to know that&rsquo;s
+what you were doing? Suzu&rsquo;s right, you should&rsquo;ve said something.&rdquo;
+</p>
+
+<p>
+&ldquo;You know I&rsquo;m not so good with words. I understand what I&rsquo;m feeling but
+when I try to say it, it comes out scrambled and I end up wanting to hit
+stuff.&rdquo;
+</p>
+
+<p>
+&ldquo;Well it&rsquo;s done now.&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, how was it? You didn&rsquo;t do it just to keep me sweet? There&rsquo;s
+some&#x2026;thing between you that&rsquo;d make you want to do it again?&rdquo;
+</p>
+
+<p>
+I nod, &ldquo;now I&rsquo;ve thought through how I feel about her, properly looked
+at her, it turns out I&rsquo;m kinda attracted to her. It was good,
+educational actually.&rdquo;
+</p>
+
+<p>
+Suzu giggles and pats my cheek affectionately. &ldquo;You always were a bit
+slow Hisao, but I&rsquo;m willing to forgive you since you performed
+adequately.&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah yeah. &lsquo;Oh Hisao, stop, I am undone by your manly prowess!&rsquo; &rdquo;
+</p>
+
+<p>
+Joining in the laughter, I realise how much I&rsquo;ve missed joking around
+like this. Miki sets the mood and she&rsquo;s been stressed out so it makes
+sense that we&rsquo;ve been a little downbeat recently. Now there&rsquo;s a
+joyfulness about us, as if the cork&rsquo;s been popped and we&rsquo;re fizzing all
+over the place. Suzu certainly popped <i>my</i> cork!
+</p>
+
+<p>
+&ldquo;Come on, let&rsquo;s investigate the new bathroom your parents have had put
+in. There&rsquo;s enough shower heads for all of us and a <i>huge</i> hot tub!&rdquo;
+</p>
+
+<p>
+Suzu pouts, &ldquo;don&rsquo;t want a huge tub. How am I supposed to get cuddles if
+you&rsquo;re all spread out?&rdquo;
+</p>
+
+<p>
+I kiss her on the top of the head. &ldquo;We&rsquo;ll stay close, can&rsquo;t have you
+being cuddle-deprived! When we&rsquo;ve finished soaking, are you going to run
+your experiment?&rdquo; Seeing a puzzled look from Miki I say, &ldquo;Suzu has a
+theory about what she&rsquo;d like instead of that&#x2026;teasing thing she does,
+but she needs both of us to try it out.&rdquo; I can&rsquo;t help laughing at the
+enormous grin which threatens to split Miki&rsquo;s face in half and let
+myself be dragged upstairs.
+</p>
+
+<p>
+As I go to meet my fate I have a sudden feeling of completeness, which
+is weird because I had no idea there was anything missing from my life.
+With the filling of a Suzu-shaped hole comes the realisation that, for
+the first time since my heart attack, I&rsquo;m excited about where my future
+will take me, will take <i>us</i>: I can&rsquo;t imagine going there without them.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-27 Sun 14:41</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
