@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-28 Mon 11:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lullaby</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Lullaby</h1>
+<p>
+We&rsquo;re sitting in the common room on another tedious Saturday afternoon.
+We should be making the most of the mid-September weather before we&rsquo;re
+confined to barracks for the winter but no, this bunch of
+stick-in-the-muds wants to hang around inside. The teachers have eased
+up on supervising us now we&rsquo;re in our second term and the senior class
+reps who&rsquo;re supposed to keep us in line while we&rsquo;re in the dorms are
+busy with school work, chores, or fucking if the noises coming from
+Yuna&rsquo;s room are anything to go by. So we&rsquo;ve been left to our own devices
+and I gotta say, boredom is setting in. There&rsquo;s nothing good on telly,
+one of the girls who thinks she&rsquo;s cool has commandeered the remote and
+is making us watch prehistoric music videos. I remember my dad listening
+to this a lot when I was a kid, before he&#x2026;nah don&rsquo;t dwell on that,
+he&rsquo;s not worth the effort.
+</p>
+
+<p>
+&ldquo;Noooo, turn it off, turn it OFF!&rdquo;
+</p>
+
+<p>
+What&rsquo;s got into Suzu? Shit, she&rsquo;s bluescreened. &ldquo;Coming through, shift
+your arses.&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, don&rsquo;t get between her and her <i>girlfriend</i>.&rdquo;
+</p>
+
+<p>
+Stuck up bitch! &ldquo;Now now, no need to be jealous, I&rsquo;m sure you&rsquo;ll find
+someone one day. Oh wait, I forgot, you&rsquo;ve already tried it on with half
+the boys in the school. Maybe you&rsquo;ll get lucky before you&rsquo;ve gone
+through the other half.&rdquo;
+</p>
+
+<p>
+&ldquo;You cow, I ought to-&rdquo;
+</p>
+
+<p>
+&ldquo;Leave it Ritsu, you know she&rsquo;ll hurt you if you try anything.&rdquo;
+</p>
+
+<p>
+You better believe Miki Miura will put you down if you fuck with her.
+The boys have wised up, they mostly treat me like a person instead of a
+pair of tits on legs, there&rsquo;s just a couple of girls who need to be
+brought into line now.
+</p>
+
+<p>
+I scoop Suzu up and head to my room. It&rsquo;s a pain juggling her rigid body
+as I try to get my keys out, even more so when I go to grab them with my
+stump. Why can&rsquo;t I get used to not having that hand? Once I&rsquo;m through
+the door I dump her on the bed and check her vital signs like Nurse
+showed me. All good, so I sit at my desk and pick up this week&rsquo;s Number
+while I wait for her to reboot. Ugh, do they <i>have</i> to put gross sumo
+wrestlers on the front cover?
+</p>
+
+<p>
+&ldquo;I&rsquo;m sorry Miki.&rdquo;
+</p>
+
+<p>
+&ldquo;Hey, what for?&rdquo; I move over and perch on the side of the bed. Big
+mistake, she limpets on to me as soon as I&rsquo;m in range. I try to
+disengage before the power of the sleepy puppy eyes makes me accept my
+fate.
+</p>
+
+<p>
+&ldquo;You know I&rsquo;m not unconscious during an episode, I heard you fighting
+with Ritsu.&rdquo;
+</p>
+
+<p>
+&ldquo;Not your fault she&rsquo;s a bitch.&rdquo;
+</p>
+
+<p>
+&ldquo;You wouldn&rsquo;t have to deal with her bitchiness if it wasn&rsquo;t for me. I
+don&rsquo;t understand why you care for me, but I&rsquo;m thankful that you do.&rdquo;
+</p>
+
+<p>
+Yeah, I&rsquo;m not admitting that Nurse was right when he told me looking out
+for someone would help me feel less empty inside. &ldquo;What set you off? You
+haven&rsquo;t had one of those attacks since we came back after the summer
+break.&rdquo;
+</p>
+
+<p>
+&ldquo;The way he was paralysed on the bed with that creepy guy coming for
+him.&rdquo;
+</p>
+
+<p>
+&ldquo;I guess it <i>is</i> a freaky video for such a pretty tune, but it&rsquo;s only
+make-believe, nothing to get upset over.&rdquo;
+</p>
+
+<p>
+She shivers. &ldquo;It brought back bad memories.&rdquo;
+</p>
+
+<p>
+&ldquo;Anything you wanna talk about, or are those sleeping dogs better left
+to lie?&rdquo; Oof, I had no idea she could squeeze so hard.
+</p>
+
+<p>
+&ldquo;People are mean, Miki. Ever since I&rsquo;ve been having cataplexy attacks
+someone has thought it funny to mess with me. You can&rsquo;t imagine how it
+feels to know they&rsquo;re going to do something humiliating to you but not
+be able to stop them. It hasn&rsquo;t been so bad here once you took me under
+your wing, which is another thing I&rsquo;ve got to be thankful for.&rdquo;
+</p>
+
+<p>
+&ldquo;They&rsquo;ve learnt not to fuck with Miki&rsquo;s pals.&rdquo;
+</p>
+
+<p>
+&ldquo;I swear, if I didn&rsquo;t know better, I&rsquo;d think you&rsquo;ve been using me as an
+excuse to get into fights&#x2026;&rdquo;
+</p>
+
+<p>
+Ouch. I shouldn&rsquo;t underestimate this girl, her sleepy face hides a
+shrewd judge of character. &ldquo;Pfff as if I need an excuse to get into a
+fight!&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah well, anyway I&rsquo;m glad that I&rsquo;m left alone now and you&rsquo;re not
+having to get your knuckles patched up by Nurse quite so often.&rdquo;
+</p>
+
+<p>
+&ldquo;Wait, you&rsquo;re trying to tell me remembering being given a sharpie
+moustache set you off? That doesn&rsquo;t fit with the other times, they were
+triggered by a shock or getting angry enough to spit feathers.&rdquo;
+</p>
+
+<p>
+&ldquo;Are you keeping track of my episodes Miki?&rdquo;
+</p>
+
+<p>
+&ldquo;Don&rsquo;t laugh at me! I like to be prepared, to anticipate if I&rsquo;ve gotta
+jump in. I had no reason to think you were gonna have a problem today so
+I was slow to react.&rdquo;
+</p>
+
+<p>
+&ldquo;Well you didn&rsquo;t seem slow to me. Thank you.&rdquo;
+</p>
+
+<p>
+Where does she get off kissing me? Lucky it&rsquo;s just on the cheek, if
+she&rsquo;d taken proper liberties I&rsquo;d have&#x2026;no, don&rsquo;t get sidetracked Miki,
+she&rsquo;s trying to bamboozle you. &ldquo;I&rsquo;m not buying your story Suzu and a
+half-hearted smooch isn&rsquo;t gonna distract me.&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;re saying you want me to try harder?&rdquo;
+</p>
+
+<p>
+&ldquo;No! I&rsquo;m saying start making sense or tell me to fuck off if you don&rsquo;t
+wanna talk about it. Either way, don&rsquo;t insult my intelligence.&rdquo; Shit, is
+she going lights out again? &ldquo;Hey, sorry, I shouldn&rsquo;t push you, it&rsquo;s none
+of my business.&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s OK, I need to talk about it, I want someone to know, it&rsquo;s really
+difficult though.&rdquo;
+</p>
+
+<p>
+Damn, she sounds grim. &ldquo;But is that &lsquo;someone&rsquo; me? The school&rsquo;s got
+counsellors, the shy girl in our class sees one.&rdquo; So did I, until I made
+a deal&#x2026; I don&rsquo;t have a problem with the <i>concept</i> of counselling, it
+just wasn&rsquo;t working for me.
+</p>
+
+<p>
+&ldquo;I&rsquo;m not a nut-job!&rdquo;
+</p>
+
+<p>
+&ldquo;Nor is she. You said yourself that you need to talk and they&rsquo;re
+professionals, they could help a lot more than some bolshie teen.&rdquo;
+</p>
+
+<p>
+&ldquo;I want to talk to someone I trust, someone I l&#x2026;like. Right now,
+that&rsquo;s you.&rdquo;
+</p>
+
+<p>
+Yay for me. &ldquo;OK but I don&rsquo;t know what you&rsquo;re expecting from me.&rdquo;
+</p>
+
+<p>
+&ldquo;Just listen a-and don&rsquo;t hate me.&rdquo;
+</p>
+
+<p>
+<i>Hate</i> her? &ldquo;I can&rsquo;t imagine you doing anything hateful. You&rsquo;re
+manipulative, judgemental, a bit spoilt, but you&rsquo;ve got a kind heart.&rdquo;
+</p>
+
+<p>
+&ldquo;Wow, thanks for the ringing endorsement, I totally see why you put up
+with me!&rdquo;
+</p>
+
+<p>
+Oops. &ldquo;I meant that in a good way, I wouldn&rsquo;t hang out with you if I
+didn&rsquo;t think you were OK.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;ll save my analysis of your character till later. Do you know what he
+was singing when the scary guy was creeping up on him?&rdquo;
+</p>
+
+<p>
+&ldquo;No, I&rsquo;m not bad at reading English but don&rsquo;t follow well when it&rsquo;s
+spoken.&rdquo;
+</p>
+
+<p>
+&ldquo;Hold on.&rdquo; Her phone is very fancy, makes my second-hand jobbie look
+like an antique. &ldquo;Here&rsquo;s the lyrics, the second verse was being sung
+when I flipped out.&rdquo;
+</p>
+
+<p>
+What. The. Fuck. &ldquo;Who? I will cut his fucking balls off and stuff them
+down his throat. No-one does shit like that to my-&rdquo;
+</p>
+
+<p>
+&ldquo;Calm down Miki, it&rsquo;s OK, I&rsquo;m safe here.&rdquo;
+</p>
+
+<p>
+&ldquo;What the fuck do you mean &lsquo;it&rsquo;s OK&rsquo;? It&rsquo;s not OK, it&rsquo;s never OK. How
+can you say it&rsquo;s OK?&rdquo;
+</p>
+
+<p>
+&ldquo;Like I said, I&rsquo;m safe here. It won&rsquo;t happen again, especially with you
+to care for me. My mum is an alcoholic and-&rdquo;
+</p>
+
+<p>
+&ldquo;Your <i>mum</i>?&rdquo;
+</p>
+
+<p>
+&ldquo;Looking back I can see she was odd, intrusive, but I didn&rsquo;t question
+her behaviour when I was growing up. I could never please her. It didn&rsquo;t
+matter how high my grades were or how hard I tried with my
+extracurriculars, she always found fault, always pointed out how I could
+do better, how I would never be as good as her. Things came to a head
+when I started getting my periods. She completely freaked out, called me
+a dirty whore who was trying to steal her husband.&rdquo;
+</p>
+
+<p>
+&ldquo;Fuck, what did your dad do?&rdquo;
+</p>
+
+<p>
+&ldquo;She&rsquo;s relatively normal when he&rsquo;s around and made sure we weren&rsquo;t alone
+together, which was easy because of his long hours. When he came home
+I&rsquo;d be allowed to talk to him for a few minutes then I&rsquo;d be packed off
+to bed so he could eat in peace. Some days he wouldn&rsquo;t be back till
+after I was sent up, other times I&rsquo;d be so out of it that I might as
+well not have been there.&rdquo;
+</p>
+
+<p>
+She wipes her eyes and glares at me defiantly. &ldquo;He&rsquo;s a good man, he
+always looks for the best in people so it didn&rsquo;t occur to him she was
+trying to drive a wedge between us. He finds my narcolepsy hard to deal
+with, he hates that I have to cope with the sleepies and the attacks,
+and I think he blames himself for not being able to fix me. It&rsquo;s only
+because he wanted to tuck me in one night when he was late home that he
+found out what she was doing to me.&rdquo;
+</p>
+
+<p>
+I don&rsquo;t know if I can listen to much more of this, it&rsquo;s seriously
+freaking me out, my heart is thumping like I&rsquo;m in the last twenty metres
+of the closest race of my life. Oh get over yourself Miki, you&rsquo;re
+supposed to be a bad-ass and you&rsquo;re not even brave enough to hear your
+friend out? This is about her, not you.
+</p>
+
+<p>
+&ldquo;Nights when he was back late were the worst. She&rsquo;d get drunk, come to
+my room and start laying in to me about my failings. That night she
+worked herself into a rage, screaming she&rsquo;d make sure that dad would
+never want my rancid cunt. I was so shocked I had an episode and there
+was nothing I could do when she came at me with a lemon reamer. I lay
+there terrified of what she was going to do, unable to move or even
+scream, when dad walked in and told her to go downstairs and wait for
+him. He was super calm but <i>so</i> scary, she went as pale as a sheet and
+stumbled out.&rdquo;
+</p>
+
+<p>
+&ldquo;Holy shit Suzu, no wonder the video freaked you out. What happened
+then?&rdquo;
+</p>
+
+<p>
+&ldquo;He held me and stroked my hair. When I could move again I clung on to
+him and sobbed. He said how sorry he was that this happened, how he was
+a failure for being too distant from us to see it coming. Then he said
+divorcing her was out of the question but he would make sure I would be
+protected in future. And I was, the next day he brought home a governess
+who was more Molly Millions than Mary Poppins.&rdquo;
+</p>
+
+<p>
+&ldquo;So he didn&rsquo;t actually solve the problem? Took the coward&rsquo;s way out?&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s not that easy Miki, a divorce would cause huge problems with both
+families and I&rsquo;m already an embarrassment.&rdquo;
+</p>
+
+<p>
+&ldquo;Well if he really cared for you-&rdquo;
+</p>
+
+<p>
+&ldquo;I said it&rsquo;s not that simple!&rdquo;
+</p>
+
+<p>
+Wow, the kitten&rsquo;s got claws. &ldquo;OK, OK. How much did it fuck you up?&rdquo;
+Good, she can smile about it.
+</p>
+
+<p>
+&ldquo;The nightmares were dreadful for a few weeks, but when I saw how broken
+she&rsquo;d become, drinking all day, not taking care of herself, I realised
+that <i>I</i> was the strong one, the survivor. I didn&rsquo;t exactly feel sorry
+for her, but I found it hard to hate her. Spending time with dad and
+getting to know him helped too.&rdquo;
+</p>
+
+<p>
+&ldquo;Almost sounds like a happy ending, so how come you&rsquo;re here?&rdquo;
+</p>
+
+<p>
+&ldquo;I wouldn&rsquo;t say it was a happy ending. It was extremely uncomfortable
+for us to be in the same house, to be reminded of what she&rsquo;d tried to do
+when I saw her every day. Even worse was the hypocrisy, having to
+present a united front at family events. I understand why but it was
+awful, it hurt to see dad treating her as if nothing had happened. I was
+in the last year of middle school while this was going on and when he
+suggested going to Yamaku I jumped at the chance. I&rsquo;m hundreds of
+kilometres away from her, I&rsquo;m getting proper medical care, a decent
+education, I feel like I&rsquo;m able to be a normal teen.&rdquo;
+</p>
+
+<p>
+Normal? Yeah, now that I think about it, everyone here has their issues
+but when it comes down to it we&rsquo;re all just high-schoolers muddling our
+way through life.
+</p>
+
+<p>
+&ldquo;Apart from missing my dad, I&rsquo;m pretty happy. There&rsquo;s much less pressure
+on me and most of the teachers know I&rsquo;m not being lazy when I fall
+asleep in class. And I found you, I&rsquo;ve never had someone watch over me
+like you do.&rdquo;
+</p>
+
+<p>
+The squeezing again! &ldquo;Don&rsquo;t get the wrong idea, I&rsquo;m just looking out for
+the underdog. How are you feeling? Ready to go back to the common room?&rdquo;
+</p>
+
+<p>
+&ldquo;No, I can&rsquo;t be bothered with those cows right now. Do you want to head
+into town for pizza, my treat?&rdquo;
+</p>
+
+<p>
+&ldquo;You just said the magic words! Your card better not be maxed out, I&rsquo;m
+ordering a large with extra toppings. I&rsquo;ll need the energy if I have to
+lug you all the way back&#x2026;&rdquo; Though to be honest carrying her isn&rsquo;t a
+burden, not even those last few winding turns up to the main gate; she&rsquo;s
+light enough to pierce my gloom.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-28 Mon 11:45</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
