@@ -70,12 +70,12 @@ body pre.src {
   font-size: 16px;
 }
 body code {
-  background: #eee;
+  background: #fff;
   border: none;
   padding: 0px 4px;
   color: #666;
   overflow-x: auto;
-  font-size: .9em;
+  font-size: 1.0em;
 }
 body li {
   margin-bottom: 1em;

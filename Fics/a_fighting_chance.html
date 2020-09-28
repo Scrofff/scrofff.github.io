@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-28 Mon 13:54 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tokyo nightlife</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Tokyo nightlife</h1>
+<p>
+Kōki looks around the rabbit warren of streets on the edge of Tokyo&rsquo;s
+Shimokitazawa district, trying to spot the bar that Miki had chosen for
+their night out. As always when in public he is conscious of his size,
+uncomfortable with the attention that his height and bulk attract. He is
+careful to avoid jostling the other pedestrians, his movements as
+controlled and precise as a dancer&rsquo;s as he searches for some sign of his
+destination. A shout away to his left catches his attention and he sees
+a drunk man stumbling out of a bar, colliding with passersby who voice
+their displeasure. A dimly lit sign announces that the bar is called The
+Shanghai.
+</p>
+
+<p>
+&ldquo;Really Miki?&rdquo; he says under his breath as he heads towards the
+entrance. The low doorway forces him to duck and when he straightens he
+spots her at a corner table giving him a cheeky grin. Waving, he walks
+over and carefully sits down, ready for the stool to give way under his
+weight. When it shows no sign of doing so he sighs and says, &ldquo;well Miki,
+you certainly found a&#x2026;/colourful/ place to meet!&rdquo; He looks around at
+the dimly lit room, the nicotine yellow ceiling and shabby posters on
+the walls, the gaudy splash of light coming from the beer pumps.
+</p>
+
+<p>
+&ldquo;Its got character and the beer&rsquo;s cheap, dive in.&rdquo; She gestures to the
+pitcher and empty mug sitting on table next to her half-filled mug.
+&ldquo;There&rsquo;s a tea house with the same name close to my old school so I
+wanted to check it out, but the service here is bad enough to make me
+want Yuuko back!&rdquo; She waves away his puzzled look. &ldquo;It&rsquo;s good to see you
+big man, missed you last month.&rdquo;
+</p>
+
+<p>
+&ldquo;I suspect you were far too busy for that to be true, but I appreciate
+the sentiment. Congratulations on being selected for the world
+championships!&rdquo;
+</p>
+
+<p>
+She grimaces, &ldquo;thanks, it was only supposed to be for the relay but I
+ended up being subbed into the hurdles too. I fucking <i>hate</i> the
+hurdles!&rdquo;
+</p>
+
+<p>
+&ldquo; &lsquo;Only&rsquo; she says! Weren&rsquo;t you the youngest member of the team? A
+massive achievement if you ask me.&rdquo;
+</p>
+
+<p>
+&ldquo;Well, a step in the right direction. Congratulations to you too,
+rocking the second division these days!&rdquo;
+</p>
+
+<p>
+He chuckles, &ldquo;thank-you! I feel like I&rsquo;ve got the measure of most of the
+other rikishi in the division, though it&rsquo;s still a big step to the next.
+I got a pretty brutal lesson in sumo from one of the yokozuna at the
+last tournament.&rdquo;
+</p>
+
+<p>
+&ldquo;Still, it shows that the Professional Sports Association can&rsquo;t spot
+talent. That baseball player who beat us to the best newcomer award last
+year is nowhere to be seen.&rdquo;
+</p>
+
+<p>
+&ldquo;Still brooding about that Miki? As far as I&rsquo;m concerned it was just a
+free dinner and a very welcome opportunity to make a new friend.&rdquo; He
+bows his head to her.
+</p>
+
+<p>
+&ldquo;The food wasn&rsquo;t even that good but I guess the friend I found doesn&rsquo;t
+totally suck,&rdquo; she laughs. &ldquo;But seriously, I really appreciate being
+close to someone who&rsquo;s also an athlete, Hisao and Suzu are pretty low
+energy.&rdquo; Seeing concern starting to appear on his face she says, &ldquo;don&rsquo;t
+get me wrong, I love them to bits. I absolutely need that calmness in my
+life but it&rsquo;s great to blow off a bit of steam sometimes. They really
+wouldn&rsquo;t approve of the sort of pranks we get caught up in&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Maybe not. I don&rsquo;t know how much longer we&rsquo;ll keep getting away with it
+though, both of us are starting to get coverage in the sports pages and
+it&rsquo;s a short step from there to being on the radar of the tabloid
+journalists.&rdquo;
+</p>
+
+<p>
+&ldquo;I can do without that, I resent anything that distracts me. All I want
+is to get on with training so I can keep winning. Prime example, my
+agent is pressuring me to go to a photo-shoot for one of the teen mags,
+fuckers want to dress me up all girly. I <i>hate</i> that shit, I never look
+right. Give me training kit any day.&rdquo;
+</p>
+
+<p>
+&ldquo;You look great in anything! You&rsquo;re just wearing jeans and a tank top
+and you&rsquo;re the best looking woman here.&rdquo;
+</p>
+
+<p>
+&ldquo;Kōki, I&rsquo;m the <i>only</i> woman in this bar!&rdquo;
+</p>
+
+<p>
+&ldquo;A mere technicality. It doesn&rsquo;t matter where we go, the women hate you
+for looking so good and the men hate me for being with you.&rdquo;
+</p>
+
+<p>
+She sighs, &ldquo;I appreciate what you&rsquo;re trying to do but I just don&rsquo;t get
+it. When I see pictures of myself all I see is what&rsquo;s wrong, starting
+with this.&rdquo; She holds up her stump.
+</p>
+
+<p>
+&ldquo;Miki, listen! You&rsquo;re beautiful by any standard, you must be the only
+person in the world who can&rsquo;t see it.&rdquo;
+</p>
+
+<p>
+&ldquo;Is this a play to get into my pants Kōki? You know I&rsquo;m taken,&rdquo; she says
+in amusement.
+</p>
+
+<p>
+&ldquo;I said you&rsquo;re beautiful, not that I&rsquo;m attracted to you. Like a tree or
+a poem&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah but I doubt you&rsquo;d want to fuck a tree or a poem.&rdquo;
+</p>
+
+<p>
+&ldquo;I don&rsquo;t want to fuck you either!&rdquo;
+</p>
+
+<p>
+&ldquo;Make your mind up big man, you say I&rsquo;m sexy but you don&rsquo;t want to get
+it on?&rdquo;
+</p>
+
+<p>
+&ldquo;<i>Beautiful</i>, what&rsquo;s so hard to understand about that?&rdquo;
+</p>
+
+<p>
+&ldquo;So what does float your boat?&rdquo; Miki asks, her interest piqued. He
+trides to hide behind his beer mug, hoping his blush goes unnoticed.
+&ldquo;I&rsquo;ve seen some of the female rikishi, is that more your speed?&rdquo;
+</p>
+
+<p>
+&ldquo;Miki! No, I&#x2026;look it&rsquo;s all hypothetical anyway, I&rsquo;m never going to
+attract anyone looking like <i>this</i>.&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;re not so bad, you&rsquo;ve got the whole rugged thing going on. Wait til
+you get promoted a few more times, you&rsquo;ll be beating the girls off.&rdquo;
+</p>
+
+<p>
+&ldquo;That&rsquo;s not what I want! I want something genuine, loving. I&rsquo;m quite
+envious of what you have, I was a bit surprised when I worked it out but
+it&rsquo;s so stable, so supportive, so much love.&rdquo;
+</p>
+
+<p>
+&ldquo; &lsquo;Surprised&rsquo; doesn&rsquo;t describe the look on your face when you cottoned
+on! We&rsquo;re glad you figured it out, it didn&rsquo;t feel right hiding it but I
+couldn&rsquo;t work out how to tell you. You know Suzu adores you? She&rsquo;s
+always asking when her teddy bear is going to visit again. I think Hisao
+was intimidated by you to start with but you did that manly bonding over
+sport teams thing,&rdquo; she says with a roll of her eyes. &ldquo;And stop trying
+to change the subject, you still haven&rsquo;t said what you&rsquo;re into. You know
+my sordid secrets so it&rsquo;s only fair you share some of yours.&rdquo;
+</p>
+
+<p>
+He sighs, &ldquo;look Miki, this isn&rsquo;t something I have any experience with.
+Sumo is my whole life, the only thing I&rsquo;ve ever wanted to do, the only
+thing I&rsquo;m <i>good</i> at. When the head of the Association said there&rsquo;s no
+homosexuality in sumo it wasn&rsquo;t an assessment of the situation, it was a
+threat&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Oh shit Kōki, that sucks. I&rsquo;m sorry for teasing you.&rdquo;
+</p>
+
+<p>
+He nods, &ldquo;there&rsquo;s no realistic possibility of me having a relationship
+so I try not to think about it.&rdquo;
+</p>
+
+<p>
+&ldquo;I hope you don&rsquo;t think I&rsquo;ve been rubbing your nose in it? It seems
+unfair that I&rsquo;ve got Suzu and Hisao and you&rsquo;ve got no-one,&rdquo; Miki asks
+hesitantly.
+</p>
+
+<p>
+&ldquo;Of course not. I didn&rsquo;t say anything about my personal life, how could
+you have known? I&rsquo;ve wanted to but I was worried about damaging our
+friendship.&rdquo;
+</p>
+
+<p>
+&ldquo;Idiot.&rdquo; She punches him on the shoulder. &ldquo;What the hell made you think
+I would have a problem with that?&rdquo;
+</p>
+
+<p>
+&ldquo;I didn&rsquo;t say you would, I said that I was <i>worried</i> that you would. I
+get a lot of irrational thoughts bouncing around in my head whenever I
+try to think about relationships or the future.&rdquo; He bows his head. &ldquo;To
+tell the truth I&rsquo;m almost ready to call it quits and do something else.&rdquo;
+</p>
+
+<p>
+&ldquo;What the hell?!&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s not only my personal situation, it&rsquo;s the scandals and the cheating
+too. I <i>hate</i> feeling like the public is looking at me and wondering if
+I&rsquo;m throwing matches for the Yakuza or having drug-fueled orgies every
+ten minutes. Last tournament one of the ozeki tried to bribe me to throw
+a match so he could stay on the gravy train a bit longer.&rdquo;
+</p>
+
+<p>
+Miki raises an eyebrow. &ldquo;Your response?&rdquo;
+</p>
+
+<p>
+&ldquo;Dumped the bastard on his arse in two seconds flat, perfect nichonage
+if I say so myself. There&rsquo;s a lot of less overt pressure too. If I get
+my eight wins early in a tournament I start getting suggestions to take
+it easy, give myself time to recover, don&rsquo;t let poor so-and-so be
+demoted &lsquo;cos his mother is ill in hospital&#x2026; It&rsquo;s endless and I hate
+it. It&rsquo;s not what sumo is supposed to be.&rdquo;
+</p>
+
+<p>
+Miki takes one of his huge arms and hugs it tight. &ldquo;I understand. Marion
+fucking Jones was my idol when I was a kid, turns out she was rotten to
+the core. Devastated me. But you know what I did? What I <i>do</i>? I try
+harder. Every time I set foot on a track I try to prove that you can win
+clean.&rdquo; She puts her palm on his cheek and gently turns his face so she
+can look him in the eyes. &ldquo;You&rsquo;ve got it in you to be the first home
+grown yokozuna this century, the greatest since Chiyonofuji. Are you
+seriously gonna let that go?&rdquo;
+</p>
+
+<p>
+&ldquo;Well ain&rsquo;t this cute, a fat man and a cripple getting it on in the back
+of my bar.&rdquo;
+</p>
+
+<p>
+They turn to see a drunk man laughing in their direction. He&rsquo;s wearing
+black leather jeans and matching leather jacket with patches declaring
+allegiance to an out of town street gang sewn on to it.
+</p>
+
+<p>
+Miki snorts derisively, &ldquo;no way this is your bar pretty boy, go back to
+your farm before you make even more of a fool of yourself.&rdquo;
+</p>
+
+<p>
+&ldquo;Looks like you&rsquo;re the one making a fool of herself. Ditch the ogre and
+we&rsquo;ll show you a good time.&rdquo; He gestures to three similarly dressed men
+standing behind him.
+</p>
+
+<p>
+&ldquo;I&rsquo;ll give you country boys one last chance. Fuck off and leave us alone
+and you&rsquo;ll stay out of trouble.&rdquo;
+</p>
+
+<p>
+&ldquo;The mouthy bitch needs a lesso-&rdquo;
+</p>
+
+<p>
+Miki <i>explodes</i> into action. The speed she moves does not surprise Kōki,
+they have trained together and she has helped him improve his tachi-ai,
+the opening charge of a sumo bout. It is her total commitment to action
+that shocks him, the intense focus on her goal, the way she ignores
+anything that is <i>not</i> her goal. He recognises it as an important lesson
+that he will need time to reflect on &#x2013; time that he does not have as he
+moves to protect Miki&rsquo;s back.
+</p>
+
+<p>
+She grabs the would-be hard man by the throat and starts punching him in
+the face with her stump. Kōki sees that she can handle him so
+concentrates on controlling the other three using leg sweeps and throws
+to put them down and open-handed strikes to encourage them to stay down.
+He is careful not to hurt them badly but the weight of his blows is far
+greater than they had experienced in street brawls against weaker
+opponents and the fight soon leaves them. When he steps back warily they
+take the opportunity to scramble to their feet and run to the door,
+yelling to their leader. Realising that he is now outnumbered as well as
+outclassed, he pushes Miki into Kōki and follows them.
+</p>
+
+<p>
+&ldquo;Come back you bastards! I&rsquo;ll beat you with one hand tied behind my
+back!&rdquo; Miki yells as they disappear out of the bar. They stop and stare
+at each other, realising it was a ridiculous thing for a one-handed
+woman to say, and burst out laughing as they lean against a wall to
+catch their breath.
+</p>
+
+<p>
+&ldquo;So Kōki, where are you taking me next month? You&rsquo;re gonna have to go
+some to top this!&rdquo;
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-28 Mon 13:54</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

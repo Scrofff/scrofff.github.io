@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-28 Mon 13:10 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&ldquo;You are not alone&#x2026;&rdquo;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">&ldquo;You are not alone&#x2026;&rdquo;</h1>
+<p>
+Miki and Hisao sit leaning against each other, arms entwined, Suzu
+draped across their laps. Miki absentmindedly plays with Suzu&rsquo;s hair, a
+tender expression on her face as she ignores whatever mindless reality
+show is currently on the television in the common room. Hisao is
+entranced by the sight of Miki in repose, a sharp contrast to her usual
+restless energy. Without warning Suzu jerks awake and cries, &ldquo;She&rsquo;s
+alone!&rdquo; and starts to sob.
+</p>
+
+<p>
+Suzu&rsquo;s habit of waking suddenly and bringing her dreams with her still
+unnerves Hisao, as does the way she does not distinguish greatly between
+waking and sleeping experiences. Miki, who has learnt to take Suzu&rsquo;s
+peculiarities in her stride, leans over to kiss her before asking,
+&ldquo;Who&rsquo;s alone? And what&rsquo;s so sad about it?&rdquo;
+</p>
+
+<p>
+&ldquo;Hanako! Who does she have now that Lilly&rsquo;s gone? It&rsquo;s not like first
+year, she&rsquo;s got used to her little family and it&rsquo;s been ripped away from
+her.&rdquo;
+</p>
+
+<p>
+Miki gently wipes the tears from Suzu&rsquo;s face and makes gentle shushing
+noises while Hisao rubs her feet in an attempt to help calm her.
+</p>
+
+<p>
+&ldquo;No-one deserves that and I bet no-one will even notice her falling back
+into her old ways. If we don&rsquo;t do something we&rsquo;ll wake up one morning to
+her being carried out in a body bag!&rdquo;
+</p>
+
+<p>
+&ldquo;Is that what you saw? Is that what woke you?&rdquo; Hisao asks in what he
+hopes is a soothing tone of voice.
+</p>
+
+<p>
+&ldquo;Yes! No&#x2026; She was alone in her room, suffocated by the black thoughts
+that were pouring out of her. So dark, no hope. No-one deserves that,&rdquo;
+she repeats. &ldquo;Hisao, you need to work out how we&rsquo;re going to keep her
+from drowning in her isolation.&rdquo;
+</p>
+
+<p>
+Demands to <i>do something</i> are another of Suzu&rsquo;s quirks that he is still
+getting used to. She will bring some crazy, impossible, idea from her
+dreams and expect him to make it real. And yet, none of her demands have
+proved to be impossible so far. Suzu&rsquo;s absolute confidence combined with
+Miki&rsquo;s drive and energy have motivated him to try things he never would
+have attempted before. It is exhausting, nerve-wracking, <i>exhilarating</i>;
+he has never felt more alive.
+</p>
+
+<p>
+&ldquo;Hey, you looking to expand your harem? We&rsquo;re not enough for you?&rdquo; Miki
+teases, keen to lighten the mood.
+</p>
+
+<p>
+&ldquo;What? No! It&rsquo;s not like that.&rdquo; A blush spreads across Suzu&rsquo;s face. &ldquo;You
+know what they always say at the start of year assembly. Well she <i>is</i>
+alone and it is up to us to be the better person. People.&rdquo;
+</p>
+
+<p>
+&ldquo;You better not go to her with pity in your heart or any shit like that.
+People like us, we see it a mile off and don&rsquo;t take kindly to it.&rdquo;
+</p>
+
+<p>
+&ldquo;Where does concern end and pity begin?&rdquo; Suzu asks rhetorically. &ldquo; I
+can&rsquo;t unsee what I saw and I won&rsquo;t ignore it either. They&rsquo;ve said a
+million times that it&rsquo;s a hard world for &lsquo;people like us&rsquo;, that we
+should look out for each other. I just want to put that into practice.&rdquo;
+</p>
+
+<p>
+&ldquo;What&rsquo;s the bridge between Hanako and us?&rdquo; Hisao asks. &ldquo;How do we get
+her to&#x2026;engage? If we could find some common ground I think we&rsquo;d be
+able to get her to open up to us with some perseverance and patience.&rdquo;
+</p>
+
+<p>
+&ldquo;You nerds always have your head in a book, that&rsquo;s got to count for
+something?&rdquo;
+</p>
+
+<p>
+Hisao kisses Miki enthusiastically. &ldquo;Yes! Did you submit your review of
+<i>Life of Pi</i> to the newspaper yet, Suzu? That was the book she was
+reading when I first arrived, you could ask her for some feedback on
+what you&rsquo;ve written. And I saw her with <i>Lord of the Flies</i> the other
+day, I spotted something when I read it in the hospital, I could run
+that by her.&rdquo; He thinks for a while, rubbing Suzu&rsquo;s foot with one hand
+and stroking Miki&rsquo;s hair with the other. &ldquo;Food! Miki, you like to eat
+and she likes to cook!&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah but her stuff can be a bit out there, I remember being in the
+kitchen when one of her experiments went wrong&#x2026; Besides she&rsquo;s into
+boring stuff.&rdquo;
+</p>
+
+<p>
+&ldquo;You mean <i>healthy</i> food, not pizza or burgers?&rdquo; Suzu giggles. &ldquo;She&rsquo;s
+low-key fashionable when she wants to be, maybe you could ask her for
+some tips for something other than jeans and a tank top?&rdquo;
+</p>
+
+<p>
+&ldquo;Dude! That&rsquo;s my signature look and I&rsquo;m not about to change it!&rdquo; She
+thinks for a while. &ldquo;I suppose I could try to get her to go shopping
+with me, she&rsquo;ll probably understand my take on clothes better than some
+people.&rdquo; She shoots Suzu a meaningful look. &ldquo;Anyway it&rsquo;s getting late,
+we can&rsquo;t do anything right now and Suzu here is in need of some
+comforting.&rdquo;
+</p>
+
+<p>
+&ldquo;No, I don&rsquo;t feel so bad, we&rsquo;ve got a pla-&rdquo;
+</p>
+
+<p>
+&ldquo;Hush you. Hisao&rsquo;s looking a bit shell shocked, I bet he&rsquo;s in need of
+some comfort.&rdquo;
+</p>
+
+<p>
+&ldquo;Umm, not really&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;For fuck&rsquo;s sake, do I have to spell it out? Fine. Let&rsquo;s go to bed, for
+some unknown reason I want to have sex with you dumbasses.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+&ldquo;Hanako?&rdquo;
+</p>
+
+<p>
+She looks up from her book to see Suzu slumped over at her desk, head
+resting on one arm while she lazily waves a sheet of paper. &ldquo;Natsume
+nagged me into writing a review of <i>Life of Pi</i> for the newspaper, could
+you take a look at it before I give it to her? I&rsquo;d be interested in your
+opinion on it.&rdquo;
+</p>
+
+<p>
+&ldquo;S-sure.&rdquo; She walks over and carefully takes the review. Suzu lets her
+arm drop to the desk with a sigh of relief. &ldquo;Umm, are you o-ok?&rdquo;
+</p>
+
+<p>
+&ldquo;Oh, yes. Sort of. Mostly. My insomnia kept me awake last night so I
+ended up here early, but now the sleepies have kicked in and I&rsquo;m not
+gonna make it through the morning. If I haven&rsquo;t moved by lunchtime, call
+in the cavalry!&rdquo;
+</p>
+
+<p>
+With a quiet giggle, Hanako goes back to her desk, grabs her green pen
+and starts reading Suzu&rsquo;s review.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+&ldquo;Did you spot the huge mistake Golding made?&rdquo;
+</p>
+
+<p>
+Hanako looks up in surprise to see Hisao smiling at her from an adjacent
+beanbag. &ldquo;P-pardon me?&rdquo; she replies nervously.
+</p>
+
+<p>
+&ldquo;The mistake! Piggy&rsquo;s glasses!&rdquo;
+</p>
+
+<p>
+&ldquo;W-what about his glasses?&rdquo;
+</p>
+
+<p>
+&ldquo;He was <i>short-sighted</i>!&rdquo; Seeing that she did not realise the
+significance of this he adds, &ldquo;You can&rsquo;t start a fire with glasses that
+correct short sight.&rdquo;
+</p>
+
+<p>
+&ldquo;Oh! T-that would change so much! It would remove several points of
+conflict a-and that big confrontation near the end. They probably
+wouldn&rsquo;t even have been r-rescued if they hadn&rsquo;t set fire to the
+forest.&rdquo; She shudders suddenly. &ldquo;I h-hated that bit.&rdquo;
+</p>
+
+<p>
+&ldquo;I wonder why he made such a basic error? It made me doubt the rest of
+the story, since he got that wrong maybe he got the boys&rsquo; descent into
+savagery wrong too.&rdquo;
+</p>
+
+<p>
+&ldquo;Oh no, I found that v-very convincing, kids can be n-nasty even under
+normal conditions,&rdquo; she replies sadly. &ldquo;But I think it probably doesn&rsquo;t
+matter that he made a mistake. Piggy had to w-wear glasses to establish
+him i-in the outgroup and I interpreted his s-short sight as symbolising
+the blindness of pure intellectualism.&rdquo;
+</p>
+
+<p>
+Hisao sits up in surprise. &ldquo;You&rsquo;re right! I didn&rsquo;t think of that, I was
+so fixated on the science being wrong that I didn&rsquo;t go any deeper. Jeez
+Hanako, how come we haven&rsquo;t talked books before? What are you reading
+next? Maybe I could read it too and discuss it with you when we&rsquo;ve
+finished.&rdquo;
+</p>
+
+<p>
+&ldquo;I-I think I&rsquo;d like that. I&rsquo;m on a f-first novel kick at the moment and
+there&rsquo;s a b-book called <i>The Wasp Factory</i> that sounds very
+i-interesting&#x2026;&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Hanako pushes open the kitchen door and sees Miki staring at the
+microwave oven with a predatory expression on her face. She hesitates
+for a moment but decides to go in anyway. She agreed with her therapist
+to do her best to reach out to people after Lilly left and her recent
+interactions with Suzu and Hisao have bolstered her confidence a little.
+She finds Miki&rsquo;s boisterous nature intimidating, but the way she has
+supported Suzu over the years makes her think that she has a kind heart.
+</p>
+
+<p>
+&ldquo;H-hi M-Miki,&rdquo; she says, disappointed that her voice has betrayed how
+nervous she is feeling.
+</p>
+
+<p>
+Miki spins round quickly and puts on a welcoming smile when she sees
+Hanako flinch. &ldquo;Oh hi Hanako. Wow, don&rsquo;t you look cute today?&rdquo;
+</p>
+
+<p>
+&ldquo;W-what?&rdquo;
+</p>
+
+<p>
+&ldquo;That outfit! It really suits you.&rdquo; She pauses and Hanako is surprised
+to see a hint of embarrassment appear on her face. &ldquo;Listen, do you think
+you could help me out?&rdquo;
+</p>
+
+<p>
+&ldquo;M-me? Umm well yes, if I c-can.&rdquo;
+</p>
+
+<p>
+&ldquo;I was thinking about getting some new clothes but I really can&rsquo;t go
+shopping with Suzu, she throws money around like it&rsquo;s nothing. I don&rsquo;t
+mean to be rude but I figured that you&rsquo;d understand what it&rsquo;s like to be
+on a tight budget.&rdquo;
+</p>
+
+<p>
+&ldquo;O-oh yes, I do. I felt the same about s-shopping with Lilly, but going
+with another bargain h-hunter might be fun.&rdquo;
+</p>
+
+<p>
+&ldquo;Great! Come on then.&rdquo;
+</p>
+
+<p>
+&ldquo;N-now?&rdquo;
+</p>
+
+<p>
+&ldquo;You got anything better to do?&rdquo;
+</p>
+
+<p>
+Hanako thinks for a moment then smiles and shakes her head. &ldquo;What about
+t-that?&rdquo; she asks, pointing at the oven.
+</p>
+
+<p>
+&ldquo;Pffff,&rdquo; Miki replies with a dismissive wave. &ldquo;Microwave pizza probably
+isn&rsquo;t the best breakfast. We can get ice cream in the city.&rdquo;
+</p>
+
+<p>
+&ldquo;Miki! You r-really need to be eating properly.&rdquo;
+</p>
+
+<p>
+&ldquo;Whatever <i>mom</i>.&rdquo;
+</p>
+
+<p>
+&ldquo;I b-bet you&rsquo;d be even f-faster if you improved your diet.&rdquo;
+</p>
+
+<p>
+&ldquo;Really? Hmm. Maybe I should enlist you as my dietician as well as my
+fashion guru&#x2026;&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+&ldquo;Hi you, did you have fun with Hanako? I don&rsquo;t see any shopping bags,
+what have you been doing all day?&rdquo; Suzu asks when Miki lets herself into
+Hisao&rsquo;s room.
+</p>
+
+<p>
+&ldquo;Actually we had a great time. Shopping kinda got abandoned when we saw
+that the university&rsquo;s cinema club were running an all-day Arjuna
+marathon.&rdquo;
+</p>
+
+<p>
+&ldquo;You spent the whole day watching magical girl anime with Hanako?&rdquo; Hisao
+asks incredulously.
+</p>
+
+<p>
+&ldquo;Arjuna isn&rsquo;t a magical girl anime, it&rsquo;s a modern day re-interpretation
+of an ancient saga! It&rsquo;s badass.&rdquo;
+</p>
+
+<p>
+&ldquo;Are you sure it wasn&rsquo;t just an excuse for you and Hanako to ogle cute
+anime girls? I didn&rsquo;t know she swings that way,&rdquo; Suzu giggles.
+</p>
+
+<p>
+&ldquo;I&rsquo;m not sure she knows which way she swings&#x2026; She&rsquo;s such a sweetheart
+though, I hope someone sees how beautiful she is, inside and out, and
+does right by her.&rdquo;
+</p>
+
+<p>
+Hisao pulls her into a hug. &ldquo;She&rsquo;s found her way into that big heart of
+yours eh?&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah. What is it with me and waifs and strays?&rdquo; She returns Hisao&rsquo;s hug
+and buries her head into his chest. &ldquo;You guys better get used to her
+being around. She&rsquo;s gonna look into high-performance diets for me and
+we&rsquo;ve got a manga evening planned.&rdquo; She glares at a sniggering Suzu.
+&ldquo;Manga is literature too! I&rsquo;m just saying that I&rsquo;m not dropping her when
+we think her issues are sorted.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m pretty sure that dropping her wasn&rsquo;t part of the plan. We&rsquo;ve got
+some books we&rsquo;re going to read and discuss.&rdquo;
+</p>
+
+<p>
+&ldquo;And we&rsquo;re going to write some reviews together.&rdquo; Suzu adds. &ldquo;She came
+with me to hand in our review of <i>Life of Pi</i> and seemed pretty
+interested in what they were doing in the Newspaper Club. I wouldn&rsquo;t be
+surprised if she ended up ditching me in favour of them!&rdquo;
+</p>
+
+<p>
+&ldquo;Getting closer to her does bring up an interesting question though. Do
+we tell her about us?&rdquo; Hisao asks. &ldquo;We could hardly call her a friend
+and then keep it from her, but I really don&rsquo;t know how she&rsquo;d react.&rdquo;
+</p>
+
+<p>
+&ldquo;Well <i>I</i> want to tell her. It&rsquo;s OK for you two, everyone knows you&rsquo;re
+dating. But that leaves me feeling like the other woman, sneaking around
+and seeing her lovers in secret. I&rsquo;m damn proud of what we&rsquo;ve made
+together, of how far we&rsquo;ve come, and I&rsquo;m literally going to <i>burst</i> if I
+don&rsquo;t tell someone soon!&rdquo;
+</p>
+
+<p>
+Miki and Hisao move to the bed and sit on either side of her. &ldquo;I know
+it&rsquo;s rough on you babe and I want to shout it from the rooftops too. But
+at least you&rsquo;ve got a support group, telling her too soon could scare
+her away from us, send her back to that room with her dark thoughts.&rdquo;
+</p>
+
+<p>
+Suzu sighs and rests her head on Miki&rsquo;s shoulder. &ldquo;When did you get so
+smart? We will tell her when we think she can handle it, right?&rdquo;
+</p>
+
+<p>
+Miki kisses her forehead. &ldquo;I&rsquo;ve always been this smart, you just didn&rsquo;t
+notice. We shouldn&rsquo;t wait too long, I think she&rsquo;d appreciate us putting
+our trust in her. And going by the way she was so set on improving my
+diet, I get the feeling that she wants to prove she can be a friend to
+be relied on. Convincing her that we see her that way would-&rdquo;
+</p>
+
+<p>
+She is interrupted by a quiet knock on Hisao&rsquo;s door. They share a look
+before Hisao goes to open it, revealing a nervously smiling Hanako
+holding a book.
+</p>
+
+<p>
+&ldquo;I b-bought my own copy of this today s-so you can have the
+l-library&rsquo;s.&rdquo;
+</p>
+
+<p>
+&ldquo;That&rsquo;s very thoughtful of you Hanako, the way you described it made me
+want to start reading right away! Do you want to come in? Miki&rsquo;s here
+too.&rdquo;
+</p>
+
+<p>
+&ldquo;Oh I d-don&rsquo;t want to intrude.&rdquo;
+</p>
+
+<p>
+&ldquo;Contrary to popular belief, I <i>can</i> keep my hand to myself. For a
+little while anyway,&rdquo; Miki laughs.
+</p>
+
+<p>
+&ldquo;Hiya, Miki said you had fun watching anime instead of shopping today,&rdquo;
+Suzu says as Hanako sits on the chair by the desk.
+</p>
+
+<p>
+&ldquo;Y-yes, I loved that show when I was little and it was interesting to
+watch it again, now that I&rsquo;ve read the s-saga it was based on. I thought
+they did a g-good job of bringing the story up to date and the
+environmental i-issues it tackles are very topical.&rdquo;
+</p>
+
+<p>
+&ldquo;See? Told you it wasn&rsquo;t just cute anime girls!&rdquo;
+</p>
+
+<p>
+&ldquo;I knew that Hanako would be paying attention to the plot, doesn&rsquo;t mean
+that <i>you</i> were!&rdquo;
+</p>
+
+<p>
+&ldquo;Hey, just cos you can never stay awake to the end of an episode,
+doesn&rsquo;t mean that the rest of us can&rsquo;t!&rdquo;
+</p>
+
+<p>
+Hisao sees a wistful look on Hanako&rsquo;s face as she watches the girls
+squabbling playfully. &ldquo;Are you alright Hanako?&rdquo;
+</p>
+
+<p>
+&ldquo;Oh, y-yes. It&rsquo;s just that you&rsquo;re all such good friends. W-why are you
+even bothering with me? It&rsquo;s not like you n-need anyone else.&rdquo;
+</p>
+
+<p>
+&ldquo;Hey, spending time with you is no bother! Did I look like I was forcing
+myself to have fun today?&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s not about whether we <i>need</i> other people,&rdquo; Suzu adds. &ldquo;Friendship
+is like love: the more you have, the greater your capacity to express it
+becomes.&rdquo;
+</p>
+
+<p>
+&ldquo;But you must have all a-agreed to start talking to me, made some sort
+of p-plan. Why?&rdquo;
+</p>
+
+<p>
+Hisao clears his throat in embarrassment. &ldquo;Suzu had a dream.&rdquo;
+</p>
+
+<p>
+&ldquo;We don&rsquo;t ignore her dreams, not after that one time&#x2026;&rdquo; Miki says with
+a shudder.
+</p>
+
+<p>
+&ldquo;Umm w-what sort of dream?&rdquo;
+</p>
+
+<p>
+Suzu rushes over to hug Hanako, whose eyes go wide in surprise. &ldquo;It was
+horrible, you were so alone. I was scared for you.&rdquo;
+</p>
+
+<p>
+&ldquo;Scared for me or s-sorry for me?&rdquo;
+</p>
+
+<p>
+&ldquo;Scared!&rdquo; they chorus.
+</p>
+
+<p>
+Hanako hesitantly brings her arms up to return the hug. &ldquo;A-and now?&rdquo; She
+is surprised to see unshed tears when Suzu leans back a little, but
+cannot help smiling back at her.
+</p>
+
+<p>
+&ldquo;Now I&rsquo;m sad that I waited this long to get to know you. Think of all
+the fun we&rsquo;ve missed out on.&rdquo;
+</p>
+
+<p>
+&ldquo;We&rsquo;ll just have to make up for lost t-time then,&rdquo; she replies with a
+giggle. &ldquo;Have you played D&amp;D? I&rsquo;ve been working on a c-campaign for
+<i>years</i> and I&rsquo;d love to guide you t-through it&#x2026;&rdquo;
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-28 Mon 13:10</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
