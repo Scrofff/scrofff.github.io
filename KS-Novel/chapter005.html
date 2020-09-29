@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-29 Tue 16:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Parfaits and such</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Parfaits and such</h1>
+<div class="epigraph">
+<p>
+Well that was a bit odd, I thought there&rsquo;d be more than me, the sponsor and the Principal at the meeting. He was a very distinguished gentleman and the restaurant we went to looked incredibly expensive. I got super nervous when the Principal left us to take a call but he was very easy to talk to. He gave me a bracelet when we left, it&rsquo;s hideous! I wonder how much I can sell it for.
+</p>
+<div class="attrib">
+<p>
+&#x2014;Ikuno Komaki, 2005-05-15
+</p>
+
+</div>
+
+</div>
+
+<p>
+&ldquo;I wonder what hairstyle she&rsquo;ll be rocking this time,&rdquo; Naomi giggles as
+she opens the door to Sembikiya&rsquo;s fruit parlour.
+</p>
+
+<p>
+&ldquo;It&rsquo;s only been a couple of months since we last met, I doubt it&rsquo;ll be
+that differe-&rdquo; Natsume&rsquo;s eyes open wide when she spots Misha sitting at
+a corner table, dressed in a neatly tailored suit, her shoulder-length
+golden brown hair curling elegantly to frame her face.
+</p>
+
+<p>
+&ldquo;Misha? Wow! What happened?&rdquo; Naomi grabs the menu from Misha&rsquo;s hands as
+she plops down in the seat next to her.
+</p>
+
+<p>
+&ldquo;Wah- umm I mean hello Nach-Naomi, Natsume.&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, what <i>did</i> happen?&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m cultivating my professional image, I&rsquo;m tired of being treated like
+I was still a student.&rdquo;
+</p>
+
+<p>
+&ldquo;I thought you&rsquo;d settled in well, didn&rsquo;t Mutou give you a <i>warm</i>
+welcome?&rdquo; Naomi asks with a cheeky wink.
+</p>
+
+<p>
+&ldquo;I think he had a nervous breakdown the first time we met in the staff
+room. He&rsquo;s been lovely, which is more than I can say about some of the
+other faculty who didn&rsquo;t know me as well. So I&rsquo;m making sure there&rsquo;s
+nothing they can criticise.&rdquo;
+</p>
+
+<p>
+&ldquo;Is the teaching still going well? You were buzzing last time, saying
+how you&rsquo;d finally found what you were meant to do.&rdquo;
+</p>
+
+<p>
+&ldquo;I think that&rsquo;s part of the problem. I overhead a couple of them saying
+I made them look bad, but all I want is to do my best and inspire the
+students!&rdquo;
+</p>
+
+<p>
+With a meaningful look at Naomi, Natsume asks, &ldquo;has the Principal been
+supportive?&rdquo;
+</p>
+
+<p>
+&ldquo;Hmm? I don&rsquo;t see much of him. Mutou&rsquo;s always having to cover his
+duties, he spends a lot of time away doing his political stuff.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m sure you&rsquo;re wondering why we set up this meeting, apart from the
+pleasure of your company of course. We want to talk to you about him and
+Ikuno, about things that happened ten years ago, about things that might
+be happening now&#x2026;&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+&ldquo;Natchan, you can&rsquo;t be serious? Of course I remember Ikuno changing
+class but Shicchan couldn&rsquo;t find out why and now you&rsquo;re telling me
+<i>this</i>?&rdquo;
+</p>
+
+<p>
+&ldquo;I know it&rsquo;s a lot to take in but do you think you can accept we have
+evidence and strong suspicions?&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m not stupid, I know you wouldn&rsquo;t bring me all the way here unless
+you were very sure. It&rsquo;s just a shock that a man I admired might be
+capable of something so horrible. How can someone whose life revolves
+around helping others be like&#x2026;&rdquo; She trails off and tears spring into
+her eyes.
+</p>
+
+<p>
+Naomi sighs and puts a comforting arm around Misha&rsquo;s shoulders. &ldquo;We
+don&rsquo;t know, but we&rsquo;ve seen people corrupted by money or a desire for
+power, or just being good at putting on a fake personality like that
+disgusting British DJ. We may never know but no matter how rotten he is,
+it doesn&rsquo;t affect what Yamaku stands for and that is just as important
+today as it was when it was founded.&rdquo;
+</p>
+
+<p>
+Misha shrugs Naomi&rsquo;s arm off angrily. &ldquo;Why did you tell me? How am I
+supposed to go back to work knowing this? What did you think would
+happen the next time I see him?&rdquo;
+</p>
+
+<p>
+&ldquo;I know it&rsquo;s hard Misha,&rdquo; Natsume says, fixing her with an intent stare.
+&ldquo;We&rsquo;ve been living with this for a decade. Don&rsquo;t you want to <i>know</i>, to
+do something about it? To make sure no-one else can be hurt like Ikuno
+was?&rdquo;
+</p>
+
+<p>
+Misha slumps into her chair. &ldquo;Of course, but what do you think <i>I</i> can
+do? I&rsquo;m just the annoying nobody they laugh about behind her back.&rdquo;
+</p>
+
+<p>
+&ldquo;The students love you Misha,&rdquo; Naomi says gently, rubbing her back.
+&ldquo;You&rsquo;re in a unique position to help them, they&rsquo;ll talk to you. You can
+advise them not to fall into the life Ikuno did.&rdquo;
+</p>
+
+<p>
+Natsume leans across the table and looks deep into Misha&rsquo;s eyes. &ldquo;At the
+same time you can help us bring him down by letting us know what he&rsquo;s
+doing, who he&rsquo;s trying to corrupt. You&rsquo;re the only person who can do
+these things; we need you, Yamaku needs you. The students need you.&rdquo;
+</p>
+
+<p>
+&ldquo;You two always were awful bullies. If you really think silly old Misha
+can do this&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Misha! Don&rsquo;t put yourself down. You&rsquo;ve told us some of the other
+teachers feel threatened by how well you do your job. You&rsquo;ve told us how
+much the students relate to you. There&rsquo;s no-one else who <i>can</i> do this.
+Now finish that ridiculously expensive parfait while we think about what
+we&rsquo;re going to do.&rdquo;
+</p>
+
+<p>
+&ldquo;Wahaha! It&rsquo;s worth every Yen Natchan, I&rsquo;ve never tasted fruit this good
+before.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+&ldquo;OK, recap time. We&rsquo;ll go through the newsletter and see if we can pick
+out any deaths in the last five years that seem suspicious. I&rsquo;ll contact
+you with the details and you&rsquo;ll see what their classmates remember. Have
+you got the USB stick with the steganography software?&rdquo; Natsume asks.
+</p>
+
+<p>
+&ldquo;Yes, I&rsquo;m so looking forward to getting all those cute cat pictures from
+you!&rdquo;
+</p>
+
+<p>
+&ldquo;You <i>do</i> remember how to use it? Never mind, I&rsquo;m sure you&rsquo;ll work it
+out. Just don&rsquo;t leave it plugged in to one of the library computers!
+What level of access do you have to student records, particularly
+medical records?&rdquo;
+</p>
+
+<p>
+&ldquo;No no no Natchan, that&rsquo;s too much. Besides, Nurse guards his records
+with his life.&rdquo;
+</p>
+
+<p>
+&ldquo;Quite right Misha,&rdquo; Naomi says with a warning frown at Natsume. &ldquo;Now,
+what are you going to call the club?&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m still not sure, I want to attract the quiet, lonely ones without
+the thirsty ones butting in. Maybe the Lonely Heartstrings Club?&rdquo;
+</p>
+
+<p>
+&ldquo;That sounds lovely. If you need help working up the charter then just
+ask. You probably want to talk to Nurse too, he has an uncanny knack of
+knowing who&rsquo;s struggling, who needs a friend, who&rsquo;s too stubborn to ask
+for help&#x2026;&rdquo; Naomi says with a fond look at Natsume.
+</p>
+
+<p>
+Natsume&rsquo;s reply is interrupted by her phone which she answers with a
+sharp, &ldquo;Ooe here. Oh hello Hanako. Wait, slow down, I can&rsquo;t
+understand&#x2026; Oh <i>shit</i>. Yes, we&rsquo;re not that far from you, we&rsquo;ll get
+there as soon as we can.&rdquo; She pushes herself to her feet. &ldquo;What are your
+plans for tonight Misha? As you heard, something urgent has come up.&rdquo;
+</p>
+
+<p>
+&ldquo;Was that our Hanako? It would be nice to see her again.&rdquo;
+</p>
+
+<p>
+&ldquo;It sounded serious, maybe this wouldn&rsquo;t be the best time to-&rdquo;
+</p>
+
+<p>
+&ldquo;I think she should come, perhaps it will convince her to co-operate
+fully when she understands what we&rsquo;re dealing with.&rdquo;
+</p>
+
+<p>
+&ldquo;I said I&rsquo;ll help as much as I can!&rdquo;
+</p>
+
+<p>
+&ldquo;Let&rsquo;s see what happens to your &lsquo;can&rsquo; after you hear what happened.&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;re scaring me Natchan.&rdquo;
+</p>
+
+<p>
+&ldquo;Good. Come one.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Hanako answers the door and says in surprise, &ldquo;Misha?&rdquo;
+</p>
+
+<p>
+&ldquo;Hello Hanako, it&rsquo;s been a long time! I like your hair.&rdquo;
+</p>
+
+<p>
+&ldquo;Is that Natsume and Naomi?&rdquo; Lilly calls.
+</p>
+
+<p>
+&ldquo;Yes, and they&rsquo;ve got Misha with them.&rdquo;
+</p>
+
+<p>
+&ldquo;Hopefully Naomi will be able to understand what&rsquo;s upset Rin so much, I
+can&rsquo;t make much sense of what she&rsquo;s to saying.&rdquo;
+</p>
+
+<p>
+They walk into the comfortable sitting room to see Rin sitting on the
+couch enveloped in Lilly&rsquo;s arms, a blank expression on her face, her
+eyes dim. Her posture is rigid, she is neither accepting nor rejecting
+Lilly&rsquo;s attempts to comfort her.
+</p>
+
+<p>
+As Naomi kneels in front of Rin, Natsume holds Misha back at the door. &ldquo;I
+know you want to help but let Naomi try and get the story, she has an
+uncanny knack for being able to understand Rin and translate to us mere
+mortals. I don&rsquo;t want her getting distracted by seeing you.&rdquo;
+</p>
+
+<p>
+Misha nods unhappily, every instinct urging her to push Lilly out of the
+way and enfold Rin in her arms. She leans against the wall and watches
+Naomi gently caressing Rin&rsquo;s cheek.
+</p>
+
+<p>
+&ldquo;Rin, can you try and show me what happened?&rdquo;
+</p>
+
+<p>
+&ldquo;Naomi? Did she send the butterflies to get you? You can&rsquo;t have been
+very far away, they don&rsquo;t move very fast.&rdquo;
+</p>
+
+<p>
+&ldquo;Don&rsquo;t worry about that, focus on what happened. Make pictures for me.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Rin was tired from spending so much time walking the streets. It was not
+just the walking that tired her, she found it exhausting to ask her
+fellow street artists about Ikuno. A surprising number of them
+remembered seeing her, always in the company of large, interchangeable,
+men. Always dressed in her trademark leather outfit, always presenting
+that confusing mixture of arrogance and humility. Sometimes freshly
+lacerated, sometimes being half-carried to a waiting car. Rin had not
+learned much new information for all her efforts, but what little she
+had been told helped her form a picture in her mind.
+</p>
+
+<p>
+Satisfied that she knew how to portray Ikuno, she was making her way
+home when a very ordinary grey car pulled up next to her and an electric
+window whirred open.
+</p>
+
+<p>
+&ldquo;My dear, I know rich and powerful men who would be <i>very</i> happy to
+spend time in your company. Join me, we can discuss mutually beneficial
+arrangements.&rdquo;
+</p>
+
+<p>
+Rin carried on walking; she was used to ignoring unwanted attention from
+passersby who found her revolting or amusing. People were cruel but
+usually not violent. She was irritated that the car matched her pace as
+she kept up her steady pace.
+</p>
+
+<ul class="org-ul">
+<li>Picked up by the frail man, who says she would make a great novelty</li>
+
+<li>she of couse isn&rsquo;t interested and barely understands what he means</li>
+
+<li>Misaki was out photographing graffiti and saw Rin and the frail man.
+She phoned Koki, who rescued Rin and took her to Lilly and Hanako who
+phoned Natsume</li>
+
+<li>her vision of Ikuno is of her body with a thousand cuts and a dragon
+emerging like smoke from them</li>
+</ul>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Naomi takes Natsume&rsquo;s hand. &ldquo;Doesn&rsquo;t this sound like the same man Kōki
+encountered?&rdquo;
+</p>
+
+<p>
+Misaki nods emphatically. &ldquo;Yes, I was reminded of his story when I set
+eyes on him.&rdquo;
+</p>
+
+<p>
+Natsume squeezes Naomi&rsquo;s hand. &ldquo;I know you fancy yourself as an
+undercover agent but are you sure you know what you&rsquo;re letting yourself
+in for if we go through with this crazy plan of yours?&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s not <i>that</i> crazy,&rdquo; Naomi protests. &ldquo;It only seems crazy because
+you&rsquo;re so damn protective! I&rsquo;m not a little doll.&rdquo;
+</p>
+
+<p>
+She sighs. &ldquo;Yes, I know you&rsquo;re not, but you are a impulsive woman who is
+prone to getting herself in trouble.&rdquo;
+</p>
+
+<p>
+And then soemthing weird happened
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-29 Tue 16:37</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

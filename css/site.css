@@ -10,18 +10,34 @@ body {
 .epigraph {
   background: #fff;
   font-size: 16px;
+  font-style: italic;
   border-left: 0px solid #ccc;
-  margin-left: 13.5em;
-  margin-right: 3.5em;
-  padding-left: 10px;
+  margin-left: 11.0em;
+  margin-right: 2.0em;
+  padding-left: 0px;
+  padding-top: 0ex;
   quotes: "\201C""\201D""\2018""\2019";
 }
 .epigraph p {
     text-align: justify;
 }
+.title {
+    padding-top: 3ex;
+    padding-bottom: 3ex;
+}
+ul li {
+    line-height:40px;
+}
+
+ul li li {
+    line-height:10px;
+}
 .attrib {
+    border-top: 2px solid #ccc;
     line-height: 0.1;
+    font-style: normal;
     display: flex;
+    padding-top: 1.4ex;
     justify-content: flex-end;
 }
 @media (max-width: 799px) {

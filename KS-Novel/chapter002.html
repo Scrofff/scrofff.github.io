@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-29 Tue 11:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Sorrow Shared</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">A Sorrow Shared</h1>
+<div class="epigraph">
+<p>
+My homeroom is class 1-3, Ms Kirino is nice enough but some of the other girls are scary. I sit next to Miura who is terrifying, so cold and angry. The sleepy girl and the legless girl seem OK, hopefully I&rsquo;ll be able to make friends with them. There&rsquo;s a couple of cute boys, I sit next to one and the red-head in the back row is really hot!
+</p>
+
+<div class="attrib">
+<p>
+&#x2014;Ikuno&rsquo;s diary, 2005-04-04
+</p>
+
+</div>
+
+</div>
+
+<p>
+Natsume starts the laborious process of working through her inbox. The
+usual assortment of trash emails, threats and angry denunciations are
+deleted without a second thought. She flags a couple of messages from
+agencies to look at later and spots the latest Yamaku alumni newsletter.
+Settling back with a sigh she grabs her coffee mug and starts to browse
+through it. After a while she stiffens and calls out, &ldquo;Naomi!&rdquo;
+</p>
+
+<p>
+&ldquo;Nooo,&rdquo; comes the sleepy reply from the bedroom.
+</p>
+
+<p>
+&ldquo;Did you know that Suzu died?&rdquo; She hears Naomi swear as she stubs her
+toe in her haste to join her.
+</p>
+
+<p>
+&ldquo;Suzu?&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, in our class at Yamaku. You must have read at least one of her
+book reviews.&rdquo;
+</p>
+
+<p>
+&ldquo;Of course, it&rsquo;s just a surprise. She&rsquo;s so young, <i>was</i> so young. How
+did you find out?&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;m reading the Yamaku newsletter, there&rsquo;s an obituary and a quote from
+Hisao.&rdquo;
+</p>
+
+<p>
+&ldquo;Just when her career was taking off, it feels so unfair. I never
+would&rsquo;ve thought that she&rsquo;d be the first of our classmates to go. I
+wonder why Hisao was quoted? I would have expected something from Miki.
+I guess they&rsquo;re still together then.&rdquo;
+</p>
+
+<p>
+&ldquo;Suzu&rsquo;s reviews were very insightful, rigorous but accessible. I&rsquo;m going
+to miss seeing how she would have developed.&rdquo;
+</p>
+
+<p>
+&ldquo;Miki&rsquo;s obviously got a high profile, but I haven&rsquo;t heard anything about
+Hisao since school.&rdquo;
+</p>
+
+<p>
+Natsume snorts, &ldquo;obviously you&rsquo;re not keeping up with medical physics
+research, he&rsquo;s been developing mathematical tools for modelling
+electrical processes in the human body. His publications get a lot of
+citations so I think it&rsquo;s significant work.&rdquo;
+</p>
+
+<p>
+Naomi kisses Natsume on the neck as she leans over to read the article.
+&ldquo;Cancer! I thought it would have been something related to her
+narcolepsy.&rdquo;
+</p>
+
+<p>
+&ldquo;Look at what he&rsquo;s written, it seems they missed warning signs because
+she was used to being tired all the time. Oh Hisao, so brave, so like
+you to try to get people to look after themselves. Don&rsquo;t know about you,
+I&rsquo;m scheduling a check-up as soon as I can.&rdquo;
+</p>
+
+<p>
+&ldquo;Do we have contact details for him? I&rsquo;d like to send my condolences.&rdquo;
+</p>
+
+<p>
+Natsume gives her a sideways look, &ldquo;and, knowing you, find out why <i>he</i>
+was quoted instead of Miki.&rdquo;
+</p>
+
+<p>
+Naomi pouts, &ldquo;you&rsquo;re curious too! But I do want to give him my best
+wishes, he was always kind and thoughtful to us, the nicest of the boys
+in our class by far.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;ll get up one of his publications, it&rsquo;ll have an email address for
+him.&rdquo; As she is about to switch to a browser, she spots a small notice
+under Suzu&rsquo;s obituary. &ldquo;Oh shit, Ikuno&rsquo;s dead too!&rdquo;
+</p>
+
+<p>
+&ldquo;No, she can&rsquo;t be! I was in contact with her just three days ago!&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s a last minute addition, it says there will be a proper obituary in
+the next edition. I don&rsquo;t know whether to be impressed or scared by how
+well informed they are&#x2026;&rdquo;
+</p>
+
+<p>
+Naomi hugs Natsume tightly. &ldquo;Do you think it has anything to do with
+what she was talking to us about?&rdquo;
+</p>
+
+<p>
+Natsume shakes her head. &ldquo;We shouldn&rsquo;t speculate until we know how she
+died.&rdquo; She draws back and looks sternly at Naomi. &ldquo;You know we did
+nothing. We can&rsquo;t take the blame if it was foul play, it&rsquo;s never our
+fault if bad people do bad things.&rdquo;
+</p>
+
+<p>
+Naomi sighs, &ldquo;yes of course, but I find it really difficult when people
+get hurt when we-&rdquo;
+</p>
+
+<p>
+&ldquo;What&rsquo;s the alternative though? Letting these maggots continue to eat
+society from the inside is far worse, causes much more harm in the long
+run.&rdquo;
+</p>
+
+<p>
+&ldquo;I <i>know</i>, I&rsquo;m still working with you right? If I thought we did more
+harm than good I&rsquo;d take one of the offers I get from the celebrity mags.
+But you can&rsquo;t tell me that you don&rsquo;t feel bad at times?&rdquo;
+</p>
+
+<p>
+&ldquo;Never! Does a surgeon feel bad for cutting a tumour out?&rdquo;
+</p>
+
+<p>
+&ldquo;I wish I had your certainty. You&rsquo;ve always been the strong one.&rdquo;
+</p>
+
+<p>
+Natsume shakes her head, &ldquo;no, I&rsquo;m rigid, brittle. You sway in the wind,
+yield but never break. It&rsquo;s a different type of strength, don&rsquo;t ever
+think you&rsquo;re weak. We complement each other so well, it&rsquo;s why we&rsquo;re such
+a good team. It&rsquo;s why I love you so much.&rdquo;
+</p>
+
+<p>
+Naomi kisses her gently, &ldquo;always with the right words. I love you too.
+Reading that,&rdquo; she points to the screen, &ldquo;is making me think about how
+I&rsquo;d cope if I lost you. I can&rsquo;t bear the thought-&rdquo;
+</p>
+
+<p>
+&ldquo;Nor can I, I don&rsquo;t want to think about it. I&rsquo;m going to get a proper
+check up as soon as I can. Will you do the same, for me?&rdquo; When Naomi
+nods, she sighs and says, &ldquo;thank-you. I&rsquo;ll get contact details for Hisao
+and we&rsquo;ll send him a message. Then once we&rsquo;ve taken care of the living
+we&rsquo;ll try and find out what happened to Ikuno.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Hanako sips her tea as she reads the Yamaku Alumni newsletter. She
+frowns when she comes to Suzu&rsquo;s obituary and grabs her phone. &ldquo;Lilly,
+Hanako here. Are you sitting down? No, it&rsquo;s not a problem with our
+business. Do you remember Suzu, one of my classmates at Yamaku. Yes, the
+sleepy one.&rdquo; She rolls her eyes. &ldquo;She passed away recently, there&rsquo;s an
+obituary in the latest Yamaku Alumni newsletter. I got it by email, your
+braille edition probably won&rsquo;t arrive for a few days. How do I feel? A
+bit shaken, I didn&rsquo;t know her that well but it&rsquo;s always a shock when
+someone you know passes on. I wouldn&rsquo;t have called except that there&rsquo;s a
+quote from Hisao in the obituary, he must have been close to her.&rdquo; She
+listens for a while. &ldquo;Probably, though it&rsquo;s not nice to call Miki &lsquo;the
+stumpy one&rsquo;. I have fond memories of Hisao too. He must be feeling
+awful, can you think of anything we could do for him? Host a memorial
+service? I like that idea. No I don&rsquo;t have contact details for him, but
+leave it with me, I&rsquo;ll let you know when I&rsquo;ve tracked him down. Yes,
+I&rsquo;ll liaise with Akira.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Hisao sits in his office at home, waiting for his PC to boot up,
+thankful yet again for the flexibility his research position affords
+him. As long as he continues to secure research grants he has no other
+schedule than his own. His Dean is very happy with both the amount of
+money he has brought in and the prestige his publications have brought
+to the faculty. As is his habit, he opens his email and scans through to
+see if anything needs his immediate attention. Two messages catch his
+attention and he reads them quickly. &ldquo;Miki, come and have a look at
+this.&rdquo;
+</p>
+
+<p>
+She comes in munching a croissant, wearing training kit. Despite having
+seen her countless times over the last decade, Hisao can&rsquo;t help but
+admire her lean, curvy body. &ldquo;Stop drooling, it&rsquo;s not a good look,&rdquo; she
+says, kissing him to show that she&rsquo;s teasing. &ldquo;You better not have lured
+me in here for something sordid.&rdquo;
+</p>
+
+<p>
+&ldquo;Not immediately&#x2026; We&rsquo;ve got a couple of emails about Suzu, one from
+Naomi and Natsume, the other from Hanako.&rdquo;
+</p>
+
+<p>
+Miki smiles, &ldquo;I wish I&rsquo;d stayed in contact with Natsume, she&rsquo;s one hell
+of a woman. Most people thought Shizune was the alpha bitch but I saw
+her back down many a time when Natsume got started on her.&rdquo; She quickly
+reads their message. &ldquo;Well that was lovely.&rdquo;
+</p>
+
+<p>
+&ldquo;Were you good friends with them? They seem keen to know how you&rsquo;re
+getting on.&rdquo;
+</p>
+
+<p>
+&ldquo;It was more mutual respect thing than close friendship. I think they&rsquo;re
+fishing, trying to find out why you were interviewed for the newsletter
+rather than me. Last they knew, Suzu and me were besties. What&rsquo;s Hanako
+got to say?&rdquo; Hisao opens her email and sits back to let Miki read. &ldquo;A
+memorial service in their Tokyo restaurant? Wow, that&rsquo;s a generous
+offer.&rdquo;
+</p>
+
+<p>
+&ldquo;Suzu was atheist through and through, I&rsquo;d be uncomfortable with
+anything religious, it&rsquo;d feel disrespectful to her.&rdquo;
+</p>
+
+<p>
+&ldquo;Services are for the living, but I take your point. Maybe tell her we&rsquo;d
+prefer to have a meal with some of our classmates and remember Suzu,
+catch up with each other.&rdquo;
+</p>
+
+<p>
+He nods, &ldquo;yeah that would be better. I like how us Yamaku graduates look
+out for each other when the shit hits the fan.&rdquo;
+</p>
+
+<p>
+&ldquo;Not only in the bad times, you know I was planning on getting in touch
+with them about the wedding, the publicity will be good for them too.
+Since I&rsquo;m here, can I read the obituary?&rdquo;
+</p>
+
+<p>
+&ldquo;Oh yeah, I haven&rsquo;t read it either.&rdquo;
+</p>
+
+<p>
+Miki sits on Hisao&rsquo;s lap and they hold each other tight as they read.
+&ldquo;Beautiful,&rdquo; she whispers. &ldquo;Did they quote you accurately?&rdquo; When he nods
+she kisses his cheek, feeling his tears against her lips. &ldquo;That was well
+said, if just one person gets themselves checked out you&rsquo;ve done a fine
+thing.&rdquo;
+</p>
+
+<p>
+&ldquo;I don&rsquo;t want to have done a fine thing,&rdquo; he sobs, &ldquo;I just want her
+back.&rdquo;
+</p>
+
+<p>
+She pulls him tight, &ldquo;I do too but it&rsquo;s not an option, so you do what
+you can.&rdquo;
+</p>
+
+<p>
+&ldquo;I keep expecting to see her when I walk into a room. I find myself
+starting to tell her something and then I realise she&rsquo;s not there.
+She&rsquo;ll <i>never</i> be there.&rdquo;
+</p>
+
+<p>
+&ldquo;I know. When grandpa died, grandma said one of the hardest things was
+not being able to talk about him. I understand her now, at least <i>we</i>
+can talk about Suzu, keep her memory alive.&rdquo;
+</p>
+
+<p>
+He nods, starting to calming down. &ldquo;The grief comes and goes, the worst
+part is feeling guilty when something makes me happy. I know it&rsquo;s
+stupid, she wouldn&rsquo;t want that.&rdquo;
+</p>
+
+<p>
+&ldquo;The worst thing for me is feeling guilty for wanting you.&rdquo;
+</p>
+
+<p>
+&ldquo;Yeah, that too. She wouldn&rsquo;t resent us finding joy in each other, she&rsquo;d
+be cheering us on. I know it in my head but, my heart disagrees.&rdquo; He
+pauses to wipe his eyes. &ldquo;What did you think of her grave?&rdquo;
+</p>
+
+<p>
+&ldquo;I thought it was beautiful. I know I&rsquo;ve not exactly had anything good
+to say about her parents and I&rsquo;ll always resent the way they pushed us
+out when Suzu died, but they must be going through the same hell that we
+are. Maybe one day they&rsquo;ll be able to talk to me, I&rsquo;d love to tell them
+about the wonderful woman Suzu grew into, the woman they never really
+knew.&rdquo;
+</p>
+
+<p>
+&ldquo;Once again I&rsquo;m humbled by your generous heart.&rdquo;
+</p>
+
+<p>
+&ldquo;Oh hush, you know that competing has taught me not to dwell on the
+negative. Maybe it&rsquo;s just me, but I&rsquo;m sure I felt her presence at the
+grave. There was such a surge of joy when I thought about having her
+child, the marriage, I&rsquo;m convinced she&rsquo;s smiling down on us and giving
+us her blessing.&rdquo;
+</p>
+
+<p>
+He hugs her tight. &ldquo;As a man of science I&rsquo;m supposed to say that&rsquo;s
+superstitious nonsense, but I felt something too. I want to believe that
+she&rsquo;s cheering us on and it&rsquo;s not just wish-fulfilment.&rdquo;
+</p>
+
+<p>
+Miki stands and pulls Hisao onto his feet and into her arms. &ldquo;Come on,
+let&rsquo;s try and find some of the joy you were talking about while she&rsquo;s
+smiling on us. Maybe we&rsquo;ll be in the proper frame of mind to send
+replies after.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Hanako divides her latest recipe between Lilly and Akira&rsquo;s plates
+and sits down to watch how they respond. Lilly&rsquo;s face always gives her
+the most honest reaction, unfiltered by tact or diplomacy. Her rapturous
+look makes Hanako smile in relief.
+</p>
+
+<p>
+&ldquo;What did you change? This is heavenly!&rdquo;
+</p>
+
+<p>
+&ldquo;You know that I&rsquo;d have to kill you if I told you,&rdquo; she giggles.
+</p>
+
+<p>
+&ldquo;And that would be bad for business,&rdquo; Akira replies, finishing their
+running joke.
+</p>
+
+<p>
+&ldquo;I want this to leave them uplifted, reinforcing the good memories and
+giving thanks for her life rather than dwelling on its loss.&rdquo;
+</p>
+
+<p>
+&ldquo;Yes,&rdquo; Lilly says thoughtfully, &ldquo;we should pair it with a botrytis
+sémillon wines and change the background music to something uplifting.&rdquo;
+</p>
+
+<p>
+&ldquo;Subtly change the colour temperature of the lights to something
+warmer,&rdquo; Akira adds. &ldquo;You two are going to a lot of effort for a girl
+you have seen for years&#x2026; OK, OK, I know, I wasn&rsquo;t at Yamaku so I don&rsquo;t
+understand the ties you have. But I <i>do</i> understand business and this is
+costing a lot.&rdquo;
+</p>
+
+<p>
+&ldquo;Money isn&rsquo;t everything sister dear, but if you&rsquo;re desperately worried I
+think we&rsquo;ll be able to offer something similar as one of our experience
+packages. An aging population means there&rsquo;s a lot of money in funerals
+and memorials.&rdquo;
+</p>
+
+<p>
+&ldquo;Besides its a way for me to do something for Hisao and Miki. You know
+what a big role Hisao played in bringing me out of my shell and Miki was
+challenging in a good way, a way I needed at the time. I&rsquo;m excited to
+see them again, it&rsquo;s just a shame that it&rsquo;s taken a tragedy to bring us
+together.&rdquo;
+</p>
+
+<p>
+Akira shrugs, &ldquo;hey, I&rsquo;m just the one with a bit of business savvy that
+keeps you two creatives from going off the rails. Tell me where you want
+to go and I&rsquo;ll do my best to get you there.&rdquo;
+</p>
+
+<p>
+Hanako smiles fondly at her as she shakes her head, &ldquo;you&rsquo;re far more
+than that, we&rsquo;d still be dreaming our lives away in regular jobs if you
+hadn&rsquo;t taken a chance on us, given up your secure career against the
+wishes of your parents and turned our wild ideas into a <i>very</i>
+profitable business.&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s a partnership,&rdquo; Lilly agrees, &ldquo;a synergy where we each contribute
+what we do best and hold each other to the highest standards.&rdquo;
+</p>
+
+<p>
+Akira laughs, &ldquo;you two saved me from a dead end, I was bumping up
+against the glass ceiling and chafing at the bit for more
+responsibility, the opportunity to spread my wings. I&rsquo;m just glad it&rsquo;s
+worked out, I never told you how scary it was to have you two expecting
+me to make your crazy ideas work, I was flying by the seat of my pants,
+making it up as I was going along. But I&rsquo;ve never felt more <i>alive</i>, I
+wasn&rsquo;t born to toe the corporate line any more than you two were.&rdquo;
+</p>
+
+<p>
+Lilly reaches out towards her sister, who takes her hand with a smile.
+&ldquo;I suppose we should get in touch with Rin, run the visuals by her.&rdquo;
+</p>
+
+<p>
+Noting the reluctance in her voice, Hanako replies, &ldquo;yes! I know you
+find her hard to deal with but no-one else comes <i>close</i> to tying all
+the elements together. She might not be a core part of the team but we&rsquo;d
+be less effective without her. I&rsquo;ll see if she&rsquo;s free now.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+Rin looks in annoyance at the &rsquo;phone as she is about to leave her
+apartment, dressed in black with a messenger bag slung over her
+shoulder. Only the the caller-id showing Hanako&rsquo;s number stops her from
+walking out of the door. With a sigh she slips a sandal off and presses
+the <i>answer</i> button. &ldquo;Of course it&rsquo;s me, who else were you expecting? I
+have no idea what I&rsquo;ll be doing tomorrow morning, ask me tomorrow
+afternoon and I&rsquo;ll tell you. What about my calendar? Oh, alright.&rdquo; She
+checks the date and walks over to the large calendar on her wall.
+&ldquo;Nothing. I&rsquo;m doing nothing tomorrow morning.&rdquo; Satisfied with her
+answer, she presses the <i>end</i> button.
+</p>
+
+<p>
+Retrieving her sandal, she turns to leave when the phone rings again.
+&ldquo;Hanako, I&rsquo;m about to be busy and I answered your question. Oh. Well my
+calendar says I <i>could</i> come along tomorrow, but I don&rsquo;t always do what
+it tells me. Not that it speaks. What? A new experience menu? Hisao?
+Suzu? Alright, but not too early. Half eleven is fine.&rdquo; After ending the
+call she stares at the &rsquo;phone for a moment, daring it to ring again.
+When it stays silent she slips out into the Tokyo night, on her way to
+meet up with Wanto and the other members of 246.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+<p>
+&ldquo;Oh my Nat, look at this.&rdquo; Naomi holds up a very formal invitation
+card. &ldquo;I&rsquo;ve only ever heard <i>rumours</i> about this place, no-one I know
+has actually been there. To think that Hanako and Lilly run it!&rdquo;
+</p>
+
+<p>
+&ldquo;What a rigmarole! Strict dress code, no phones, no cameras or other
+recording devices, we will be picked up and taken to the venue. It&rsquo;s
+just a restaurant for goodness sake!&rdquo;
+</p>
+
+<p>
+Naomi looks sternly at Natsume. &ldquo;It&rsquo;s not &lsquo;just a restaurant&rsquo;! Never
+mind the fact that you have to be <i>invited</i> to eat there, the food is
+supposed to be only one element of a complete sensory package and it&rsquo;s
+said that they never repeat themselves. It&rsquo;s extraordinarily generous of
+them to do this in memory of Suzu.&rdquo;
+</p>
+
+<p>
+&ldquo;If I remember right, it&rsquo;s supposed to seat eight. I wonder who else
+will be there?&rdquo;
+</p>
+
+<p>
+Shrugging, Naomi replies, &ldquo;Apart from Hisao and Miki? I wonder if Hanako
+and Lilly will participate or officiate. Suzu wasn&rsquo;t that outgoing, I
+can&rsquo;t think of many other people she was close to at school. Anyway,
+we&rsquo;ll find out in a week. In the meanwhile, back to business. We&rsquo;ve got
+four potential commisions with two that will need Misaki&rsquo;s input, one
+that will require us to travel to America, and one that&rsquo;ll need a very
+deep dive into the national library. I hate long journeys and the
+thought of being locked up in the stacks is not exactly enticing at this
+time of year.&rdquo;
+</p>
+
+<p>
+&ldquo;Agreed. Tell me about the other two.&rdquo;
+</p>
+
+<p>
+&ldquo;The first wants us to get inside one of the crews responsible for the
+graffiti epidemic in Tokyo.&rdquo; Seeing Natsume grimace she says, &ldquo;yeah, not
+really our thing. I have no contacts even remotely associated with that
+scene. It&rsquo;s a shame for Misaki though, this type of photography is right
+up her street, she&rsquo;d carry the article with her images.&rdquo;
+</p>
+
+<p>
+&ldquo;Pass the details on to her, she can get a head start on the photo work
+for whoever they get to write the article. What&rsquo;s the last one?&rdquo;
+</p>
+
+<p>
+&ldquo;A look behind the scenes of the luxury holiday industry, exposing the
+conditions of the casual labour it depends on.&rdquo;
+</p>
+
+<p>
+&ldquo;Perfect. Not only do we get to expose scumbags, but we do it in the lap
+of luxury! Pack that string bikini you&rsquo;ve got hidden in your drawer,
+we&rsquo;ll need some eye candy for Misaki to shoot,&rdquo; Natsume says with a
+wicked grin.
+</p>
+
+<p>
+Blushing, Naomi says, &ldquo;no way are you going to put my backside in
+another article!&rdquo;
+</p>
+
+<p>
+&ldquo;But it&rsquo;s such a <i>splendid</i> backside, it&rsquo;ll double our readership and
+no-one will ever know it&rsquo;s you.&rdquo;
+</p>
+
+<p>
+&ldquo;<i>I&rsquo;ll</i> know it&rsquo;s me! If you&rsquo;re so keen on the idea, how about we use
+yours?&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;ve got all the looks in this relationship, no-one wants to see my
+bony arse and knobbly knees.&rdquo;
+</p>
+
+<p>
+Catching a hint of bitterness in her voice, Naomi walks over and kisses
+her deeply. &ldquo;It&rsquo;s my favourite arse in the world. Anyway, our work
+doesn&rsquo;t need prettying up to make an impact, I say we leave the visuals
+to Misaki. I <i>will</i> take the bikini though, strictly for our down
+times,&rdquo; she says with a cheeky wink.
+</p>
+
+<p>
+&ldquo;Let me tell you what I&rsquo;ve found out about Ikuno. The word is she died
+due to complications arising from an insulin overdose. She was found
+unconscious in Aoyama Cemetery by someone who was visiting a grave and
+died without regaining consciousness two days later. My contact is
+saying that they&rsquo;re treating it either as an accident or a suicide.
+There were no marks on her body to indicate any sort of struggle and
+there were no other fingerprints on the empty insulin pen.&rdquo;
+</p>
+
+<p>
+Naomi frowns, &ldquo;I don&rsquo;t remember if she had to inject when she was at
+school. I&rsquo;m certain I never saw her, but that doesn&rsquo;t mean anything, I
+never really spent any time with her. Nurse will never let his guard
+down enough to violate patient confidentiality, but our woman on the
+inside might be able sneak a look at the records.&rdquo;
+</p>
+
+<p>
+&ldquo;I wish all our contacts would work for parfaits! From what I&rsquo;ve read
+most diabetics end up having to inject insulin, so it won&rsquo;t mean
+anything if she didn&rsquo;t need to at school. I haven&rsquo;t had any luck so far
+in finding out who her doctor was, let alone whether she was being
+prescribed injected insulin.&rdquo;
+</p>
+
+<p>
+&ldquo;We know where she lived right? I can do some legwork in the area, talk
+to pharmacists, see if I can find where she got her meds.&rdquo;
+</p>
+
+<p>
+&ldquo;Good, I&rsquo;ve got a recent photo you can have. I&rsquo;m not buying accidental
+overdose. Anyone who went to Yamaku, who survived Nurse, knows better
+than that, is <i>trained</i> better than that. Her credit history is
+immaculate so we can probably rule out financial pressure as a driver
+for suicide. That leaves depression and social isolation as the most
+likely causes if she did take her own life.&rdquo;
+</p>
+
+<p>
+&ldquo;If I can find her pharmacist I&rsquo;ll ask whether she was on
+anti-depressants and see if they can tell me anything about her frame of
+mind. Social isolation though&#x2026; When Miki and I spoke to her about the
+dating thing she said she was lonely, but at the same time she pushed us
+away. I think I only saw her twice more after she changed class. Which
+makes it all the more surprising that she contacted us recently.&rdquo;
+</p>
+
+<p>
+&ldquo; &lsquo;What I could tell you would cause a century of scandals.&rsquo; I can&rsquo;t
+decide if she was mixed up in something very shady and was killed to
+keep her quiet, or she was mentally ill and ended her own life.&rdquo;
+</p>
+
+<p>
+Naomi nods, &ldquo;we&rsquo;ve been contacted by so many crackpots, it&rsquo;s hard to
+believe <i>anyone</i> when they say they&rsquo;ve got a massive story for us. One
+day&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;One day&#x2026;&rdquo; Natsume echoes. &ldquo;Maybe this is it. We just have to keep
+doing what we do best: collecting tiny pieces of the puzzle and fitting
+them together until we see the big picture.&rdquo; A quiet tone from her
+computer alerts Natsume to a new email which she opens eagerly when she
+sees who sent it. &ldquo;Apparently she has faint abrasions on her torso,
+upper arms and upper legs, consistent with natural fibre ligatures.&rdquo;
+</p>
+
+<p>
+&ldquo;Interesting but not necessarily evidence to support her statement. You
+know how much I enjoy your brand of tight binding&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;How about this. &lsquo;Her torso is a tracery of fine scars, the cuts
+inflicted by an extremely sharp cutting instrument such as a scalpel.&rsquo; &rdquo;
+</p>
+
+<p>
+&ldquo;Again, interesting but not conclusive. But it does give us a new avenue
+to investigate.&rdquo; She adopts a meek expression, but the twinkle in her
+eyes betrays her excitement. &ldquo;This one would be honoured for Mistress to
+show her off in the clubs.&rdquo;
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-29 Tue 11:16</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

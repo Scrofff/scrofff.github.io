@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-29 Tue 11:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loss</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Scroff" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Loss</h1>
+<div class="epigraph">
+<p>
+So here I am, Yamaku Academy at last! Time for a new start, I&rsquo;m not going to be the timid girl I was at middle school, this time I&rsquo;ll have friends and we&rsquo;ll have so much fun!
+</p>
+
+<div class="attrib">
+<p>
+&#x2014;Ikuno Komaki, 2005-03-12
+</p>
+
+</div>
+
+</div>
+
+<p>
+The phone rings and Hisao picks up.<br />
+&ldquo;Good morning, my name is Haruko Chikada and I&rsquo;m calling on behalf of
+the Yamaku Alumni Association. Can I speak to Mr Nakai?&rdquo;
+</p>
+
+<p>
+&ldquo;Speaking.&rdquo;
+</p>
+
+<p>
+&ldquo;I am calling because we have recently been informed that one of our
+former students, Ms Suzu Suzuki, has sadly passed away. We will be
+writing an obituary for her in the next Alumni Newsletter and, as you
+are listed as one of her contacts, and I wonder if there was anything
+you wanted to add to the article?&rdquo;
+</p>
+
+<p>
+Hisao almost puts the phone down as waves of grief threaten to overcome
+him. Suzu&rsquo;s death last week closed the happiest decade of his life to
+date and he still has no idea whether what remains of the family will
+stay together; he has barely seen Miki since they sat on either side of
+Suzu&rsquo;s bed, holding her hands as she took her last breaths.
+</p>
+
+<p>
+&ldquo;Mr Nakai? I am so sorry to intrude on your grief and if this is a bad
+time I could call back, or I would completely understand if you are not
+able to say anything.&rdquo;
+</p>
+
+<p>
+&ldquo;No, no I&#x2026; <i>she</i> deserves some words and I hope I can send a message to
+your readers. Suzu succumbed to cancer last week which was not diagnosed
+until too late. One of the early warning signs, excessive tiredness, was
+masked because she was narcoleptic and being tired was something she
+struggled with every day of her life. Please, don&rsquo;t accept changes in
+your conditions as &lsquo;normal&rsquo;. If any of your symptoms intensify seek
+medical attention. Suzu was angry at herself for ignoring what, in
+hindsight, were warning signs.&rdquo;
+</p>
+
+<p>
+What Hisao can never say is that he is also angry. He blames himself and
+he blames Miki for not noticing the changes in Suzu. There is deeply
+buried, shameful, but persistent anger at Suzu for letting herself die.
+</p>
+
+<p>
+&ldquo;I&rsquo;m not going to give you the usual list of adjectives to describe her,
+I&rsquo;m sure you&rsquo;ve heard them many times before. The only other thing I
+want to say is that Suzu was a wonderful friend and an inspiration to
+all of us who knew her well. She established herself as a feelance
+critic, reviewing books for newspapers and magazines. She loved this
+work and she said that her time in the Literature Club at Yamaku gave
+her the inspiration for following this career. It was also an occupation
+that her narcolepsy did not affect too much since she could work at home
+and at her own pace. This is another lesson she taught me, and I hope
+the readers learn from it too: don&rsquo;t dwell on what your disability
+<i>stops</i> you doing, search out what you <i>can</i> do and make a success of
+it.&rdquo;
+</p>
+
+<p>
+&ldquo;Thank-you Mr Nakai, I know that this must have been very difficult for
+you. You have said powerful and important words and I will do my best to
+do them justice in Ms Suzuki&rsquo;s obituary.&rdquo; After a short pause <b>charname</b>
+continues, &ldquo;we also have Ms Miura listed as a contact but I haven&rsquo;t been
+able to talk to her yet. Can you help me contact her?&rdquo;
+</p>
+
+<p>
+Hisao shrugs, &ldquo;sorry but I don&rsquo;t think that I&rsquo;ll have any more luck that
+you do in getting in touch with her.&rdquo;
+</p>
+
+<p>
+&ldquo;Well thank-you for your help. Are you on the mailing list for the
+newsletter?&rdquo;
+</p>
+
+<p>
+&ldquo;Yes, I get it via email. I do enjoy reading the success stories you
+highlight.&rdquo;
+</p>
+
+<p>
+&ldquo;That&rsquo;s a kind thing for you to say given the circumstances. We aim to
+publish Ms Suzuki&rsquo;s obituary in the next issue, due at the end of this
+month. I&rsquo;ll stop intruding on your grief now, thanks again for your
+message.&rdquo;
+</p>
+
+<p>
+Hisao puts the phone away with a little regret: talking about Suzu was
+painful but cathartic and he has not had much opportunity to speak to
+anyone about her since Miki disappeared.
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+Hisao is halfway through his third glass of whisky when
+the front door bangs and his heart leaps. &ldquo;Miki?&rdquo; he calls
+apprehensively. She walks in, exhausted, dishevelled, shamed-faced.
+Hisao is on his feet and by her side so fast he hardly remembers moving.
+He wraps her in his arms, nose wrinkling at the smell of stale beer and
+cigarette smoke on her clothes.
+</p>
+
+<p>
+&ldquo;I&rsquo;m sorry Hisao, I&rsquo;m sorry I&rsquo;ve let you down I couldn&rsquo;t cope I don&rsquo;t
+know how to cope I don&rsquo;t know how to <i>be</i> without her and you must be
+the same but I wasn&rsquo;t there for you I don&rsquo;t know how to&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;Shh,&rdquo; he interrupts her, &ldquo;you&rsquo;re here now. You&rsquo;re not going away again
+are you?&rdquo; When she shakes her head he sighs in relief. &ldquo;That&rsquo;s all that
+matters, I was so scared that I&rsquo;d lost you both. I would not be able to
+bear that&rdquo;
+</p>
+
+<p>
+&ldquo;Hisao&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;No, let&rsquo;s get you cleaned up and I bet you haven&rsquo;t eaten for days. If
+you want to say anything after that then that&rsquo;s fine, otherwise it&rsquo;ll
+keep till tomorrow.&rdquo;
+</p>
+
+<p>
+He leads her to the bathroom and undresses her, takes off his own
+clothes and sits her on the bathing stool. He carefully washes her,
+noting the bruises and scrapes. He has to wash her hair twice before it
+is properly clean. Her stump is very red, but he follows his own advice
+and says nothing. She passively accepts his care and lets him put her in
+the hot bath. When he turns to the door she protests, &ldquo;don&rsquo;t leave me
+Hisao.&rdquo;
+</p>
+
+<p>
+He stoops and kisses her on the forehead, &ldquo;I&rsquo;m just going to throw a
+pizza in the oven and be right back, you need to eat. So do I for that
+matter, pizza should soak up the whisky.&rdquo;
+</p>
+
+<p>
+When he comes back to the bathroom he joins her in the bath, sitting
+behind her so she can lean back into his chest. They sit there without
+speaking, just being close to each other, until the oven timer alerts
+Hisao that the pizza is ready. &ldquo;There&rsquo;s a clean bathrobe on the back of
+the door, throw that on and come and eat something.&rdquo; sk1p Hisao brings
+the segmented pizza into the lounge and puts it on the low table in the
+centre of the room, seeing Miki sitting on the couch opposite the telly.
+Without talking they start eating, reluctance fading as they realise how
+hungry they are. Before long it is all gone and Miki moves to Hisao and
+straddles his lap&#x2013;her habitual position whenever she could. Hisao
+embraces her with a sob. &ldquo;I was so scared we&rsquo;d never share this again.&rdquo;
+</p>
+
+<p>
+Miki hugs him tighter, &ldquo;I&rsquo;m sorry Hisao, I&rsquo;m back now and I&rsquo;ll nev-&rdquo;
+</p>
+
+<p>
+&ldquo;Don&rsquo;t say that unless you <i>know</i> it&rsquo;s true. Suzu never planned to go
+away either.&rdquo;
+</p>
+
+<p>
+She nods, the tears starting to run down her face. &ldquo;Hisao, I have to
+tell you wha-&rdquo;
+</p>
+
+<p>
+&ldquo;Sorry, I&rsquo;m interrupting you all the time. You don&rsquo;t have to tell me
+anything specific OK? Just tell me that you&rsquo;ve been safe. Tell me you
+haven&rsquo;t done anything that&rsquo;ll have anyone looking for you.&rdquo; He feels her
+tensing up in his arms. &ldquo;Miki?&rdquo;
+</p>
+
+<p>
+&ldquo;Some fucker tried to hit on me in a bar, all I wanted was to drink&#x2013;all
+I&rsquo;ve <i>done</i> is drink&#x2013;and he wouldn&rsquo;t take no for an answer. I hit him
+and the owner kicked him out. I don&rsquo;t think there&rsquo;ll be any come-back.&rdquo;
+</p>
+
+<p>
+&ldquo;You weren&rsquo;t recognised?&rdquo; When she shakes her head he sighs in relief.
+&ldquo;OK, don&rsquo;t forget you&rsquo;re a <i>face</i> these days, we were lucky.&rdquo; Hisao
+changes the subject. &ldquo;I spoke to someone from the Yamaku Alumni
+newsletter earlier today, they&rsquo;re writing an obituary for Suzu. It was
+the first time I&rsquo;ve spoken about her and it helped, a little bit. Do you
+feel up to talking about her?&rdquo;
+</p>
+
+<p>
+&ldquo;That&rsquo;s one of the reasons I came home. I ran from my feelings but they
+were always there. I thought that being with you would be unbearable,
+looking at you would make me miss her, but you&rsquo;re the only one who
+understands. I love you so much, I love Suzu so much, I don&rsquo;t want to
+forget.&rdquo;
+</p>
+
+<p>
+&ldquo;I feel the same. There&rsquo;s a huge hole in our lives but let&rsquo;s face it
+together. What are we going to do to commemerate her? I still don&rsquo;t
+understand why her family had to push us out, it hurt like hell not to
+be able to go to wake or the funeral.&rdquo;
+</p>
+
+<p>
+&ldquo;They&rsquo;ve hated us for years, taking their <i>baby</i> away from them,
+encouraging her to be independent instead of being a proper woman and
+having a husband and children. I wonder what they would do if they knew
+how we <i>actually</i> lived?&rdquo;
+</p>
+
+<p>
+Hisao snorts, &ldquo;yeah, she certainly wasn&rsquo;t the misled innocent they seem
+to think she was. Remember how she would give that innocent look with
+her sleepy eyes before doing something absolutely <i>filthy</i>?&rdquo;
+</p>
+
+<p>
+&ldquo;When did you believe we could work as a trio? I knew I couldn&rsquo;t lose
+either of you after running myself into the ground that day. Suzu seemed
+pretty comfortable with it from the start and thinking back, I&rsquo;m pretty
+sure the cheeky cow manipulated us both into this. Not that I&rsquo;ve ever
+had any complaints! But you&#x2026;you seemed uncomfortable at the beginning,
+as if you were going along with it so you didn&rsquo;t lose me.&rdquo;
+</p>
+
+<p>
+&ldquo;That was exactly it to start with. I mean it&rsquo;s not as if I didn&rsquo;t like
+Suzu, but <i>you</i> were the one for me, I&rsquo;d never felt for anyone what I
+felt for you. What I feel for you. But that week we spent by the sea in
+the summer holidays when I got to know her better, when we weren&rsquo;t
+distracted by school stuff and other people. That&rsquo;s when I knew that I
+could love her too. I really liked her sense of humour, how smart she
+was. And she looked pretty good in that bikini! It was being able to
+relax with each other, to learn how we could be together in and out of
+bed, that made me realise how good the three of us were. Like she said,
+any two would be a great pair but the three together was something else!
+Which was just as well, you wouldn&rsquo;t have been satisfied with just one
+of us, I could tell that you <i>adored</i> being the focus of both of us.&rdquo;
+</p>
+
+<p>
+Miki giggles, &ldquo;hell yeah, it was great while <i>that</i> lasted. But it was
+even better when things evened out and it stopped being Miki and Suzu,
+and Miki and Hisao. When it was just the three of us. Ten amazing years.
+What blows my mind is how few arguments we had.&rdquo;
+</p>
+
+<p>
+&ldquo;What was there to argue <i>about</i>? We weren&rsquo;t shy about being
+affectionate when we were alone, we were all getting great sex. Most of
+all we were all happy with the roles we had. Suzu the dreamer, pointing
+us the way. Hisao the planner, figuring out how to get us there. Miki
+the doer, making it happen. Sure we all did a bit of each but roughly
+that&rsquo;s how it went from my point of view.&rdquo;
+</p>
+
+<p>
+&ldquo;You&rsquo;re a simple man, Hisao! Cuddles, plenty of sex, and good food is
+all you need to be happy. Oh and that maths stuff you do, I know you get
+jumpy if you don&rsquo;t do that a few times a week.&rdquo;
+</p>
+
+<p>
+&ldquo;Ha, you&rsquo;re not much more complicated yourself! Substitute running for
+maths and the same applies to you.&rdquo; He pauses, &ldquo;how do you think we&rsquo;ll
+get on without her? Are you going to be satisfied with just me?&rdquo;
+</p>
+
+<p>
+She shakes her head, &ldquo;I&rsquo;m missing her terribly but that doesn&rsquo;t mean
+that there&rsquo;s anything wrong with what we&rsquo;ve got. I thought that you&rsquo;d
+worked through that uncertainty years ago?&rdquo;
+</p>
+
+<p>
+&ldquo;It&rsquo;s not so much that I&rsquo;m uncertain, though of course I am feeling lost
+without Suzu. You&rsquo;ve been used to having a man <i>and</i> a woman in your bed
+so I was concerned that there was something you got from her that I
+couldn&rsquo;t provide.&rdquo;
+</p>
+
+<p>
+She wraps him up in tight hug. &ldquo;Yes, there were things Suzu did for me
+that you don&rsquo;t and vice versa. But they&rsquo;re <i>Suzu</i> things, not &lsquo;woman&rsquo;
+things. There a lot we are going to have to adjust to without her but I
+think our love life is the least of our worries. Anyway I don&rsquo;t want to
+think about that now, I want to talk about Suzu with the only other
+person who really knew her. Get another glass and we&rsquo;ll sink that bottle
+to her memory.&rdquo;
+</p>
+
+<div class="org-center">
+
+<div class="figure">
+<p><img src="../../css/line-flourish.png" alt="line-flourish.png" width="250" />
+</p>
+</div>
+</div>
+
+
+<p>
+They talk about Suzu for the rest of the night, sharing memories,
+laughing at the good ones, crying at the sad ones. They know that they
+will continue to miss her for the rest of their lives, but the despair
+they had been feeling is starting to give way to grief as, together,
+they begin to come to terms with their loss.
+</p>
+
+<p>
+&ldquo;What about the baby Hisao? We would have something of Suzu.&rdquo;
+</p>
+
+<p>
+He scratches his head. &ldquo;The eggs my friend harvested before Suzu started
+chemo are still in the clinic in America, I don&rsquo;t think there would be
+any <i>technical</i> issue in fertilising and implanting one. We&rsquo;d need to
+think about whether we <i>should</i> do it and when&#x2013;I don&rsquo;t want us to make
+a hasty decision that we regret later. If we decide to go ahead, we need
+to have a clear plan on how we would provide for the littl&rsquo;un.&rdquo;
+</p>
+
+<p>
+What Hisao does not say is that Miki has been earning the most for the
+last couple of years. Hisao&rsquo;s research post pays well, but Miki&rsquo;s high
+profile as one of Japan&rsquo;s top sprinters has attracted generous
+endorsements. Her clothing brand has branched out from sportswear and
+she has been developing a cosmetics range.
+</p>
+
+<p>
+&ldquo;I&rsquo;m sure I want to carry Suzu&rsquo;s baby. She&rsquo;s left us, but we can have
+her baby. What would we be waiting <i>for</i>? I think Suzu urged us to take
+the eggs because she knew that she wouldn&rsquo;t make it and she wanted to
+leave something behind for us. It doesn&rsquo;t stop <i>us</i> having a baby, I
+don&rsquo;t want to have just one child.&rdquo;
+</p>
+
+<p>
+&ldquo;But what about your competitive career?&rdquo;
+</p>
+
+<p>
+Miki takes his hand. &ldquo;I&rsquo;ll always love running, but I don&rsquo;t enjoy
+competing any more. Don&rsquo;t get me wrong, racing is in my blood but I&rsquo;m
+tired of all the crap that goes with it. I don&rsquo;t want to be away so
+much, I don&rsquo;t want to have to piss into a cup after a race, I don&rsquo;t want
+to be gawked at, to have bastards in the crowd shouting that I should be
+in the <i>cripple</i> event. One girl I beat said that I have an unfair
+advantage &lsquo;cos I have less weight to carry. Fuck that, I&rsquo;m really
+enjoying creating the new clothes, the cosmetics, modelling. I&rsquo;m going
+to try my hand at YouTube, my people have been talking to Jeffree Star&rsquo;s
+people which is crazy!&rdquo;
+</p>
+
+<p>
+Seeing the confused look on his face, she laughs. &ldquo;I&rsquo;m going to be a
+beauty guru! Vlogging pregnancies is huge too, and then there&rsquo;s life
+coaching and motivational vidoes&#x2026; I&rsquo;ve spent a <i>lot</i> of time on those
+endless &lsquo;plane trips working out content. I think our income will go up
+and I&rsquo;ll be here more.&rdquo; Her face falls. &ldquo;I wish I had been here more,
+I&rsquo;ll regret not spending more time with Suzu for the rest of my life.&rdquo;
+</p>
+
+<p>
+&ldquo;Hey, you can&rsquo;t think like that! We&rsquo;ve all been busy establishing our
+careers, I&rsquo;ve had to travel too. There&rsquo;s no way we could have known that
+we&rsquo;d lose her.&rdquo;
+</p>
+
+<p>
+&ldquo;So what do you think about having the baby?&rdquo;
+</p>
+
+<p>
+&ldquo;Well, even if your new career doesn&rsquo;t work out we&rsquo;d be OK financially,
+I earn enough to keep us going and I could take some of the consultancy
+work I&rsquo;ve been offered. I don&rsquo;t know if I&rsquo;m going to be a good dad but I
+really want to find out. We mustn&rsquo;t expect Suzu&rsquo;s baby to be a quick
+fix, it won&rsquo;t stop us missing her, but at least we&rsquo;ll have a part of her
+with us. If you&rsquo;re <i>sure</i> about the change in direction-&rdquo;
+</p>
+
+<p>
+&ldquo;Never been more sure. When do we do it?&rdquo;
+</p>
+
+<p>
+He hugs her tightly. &ldquo;Always got to do everything <i>now</i>! We&rsquo;ve got to
+make time for a trip to America. I&rsquo;ll get on to my friend about setting
+up an appointment at the clinic. We should get married too, don&rsquo;t want
+little Suzu to suffer the stigma of being illegitimate. And we should
+probably not advertise that you&rsquo;re carrying a dead woman&rsquo;s child, we&rsquo;d
+never live that down.&rdquo;
+</p>
+
+<p>
+&ldquo;Marriage vlogs are <i>huge</i>, it&rsquo;ll be a good way to kick off the
+channel.&rdquo; Seeing his surprised look she says, &ldquo;you don&rsquo;t mind
+commercialising the marriage do you? It&rsquo;s just a meaningless formality
+as far as I&rsquo;m concerned, my level of commitment has never depended on a
+stupid piece of paper.&rdquo;
+</p>
+
+<p>
+&ldquo;I know, I feel the same way. But it gives us legal and social benefits,
+and benefits your new career. It feels really shitty that we&rsquo;re doing
+this without Suzu and I can&rsquo;t begin to say how much it sucks that losing
+her makes things easier. But it&rsquo;ll make her child&rsquo;s life easier and I
+<i>know</i> she&rsquo;d be OK with that. My only reservation is whether we&rsquo;re
+moving too fast. Will people think we&rsquo;re forgetting her?&rdquo;
+</p>
+
+<p>
+She shakes her head. &ldquo;No-one really <i>knew</i> how we lived. Maybe there
+were people who thought it odd that we were still all lived together,
+but I never heard about it. My mum and your parents haven&rsquo;t given us
+grief, though I bet they&rsquo;re curious. I think they&rsquo;ll be happy about the
+wedding. As for how fast we&rsquo;re moving? Well it&rsquo;ll take a quite a long
+time to get the marriage sorted. Well, not so much the marriage but the
+venue, the publicity, endorsements&#x2026;&rdquo;
+</p>
+
+<p>
+&ldquo;OK, but don&rsquo;t get so busy that we don&rsquo;t sit down and remember Suzu
+regularly. Let&rsquo;s do this for her, and her baby.&rdquo;
+</p>
+
+<p>
+&ldquo;Agreed. I think we should mobilise our fellow Yamaku alumni. Hanako and
+Lilly&rsquo;s restaurants are starting to gaining legendary status, they&rsquo;d be
+ideal for catering the event. Natsume and Naomi seem to be all over the
+papers these days, along with Misaki&rsquo;s photos, we can see if they&rsquo;d do a
+write up for us.&rdquo;
+</p>
+
+<p>
+Hisao frowns, &ldquo;it&rsquo;s a hell of a departure from their usual exposé
+pieces&#x2026;&rdquo;
+</p>
+
+<p>
+Miki nods, &ldquo;yeah, but I doubt they&rsquo;d do a straight puff piece. I&rsquo;d be
+interested in seeing how they&rsquo;d tackle it. And Misaki&rsquo;s got a fantastic
+eye, she&rsquo;s done some stunning pictures of me racing. She&rsquo;d do the formal
+set pieces well but also get a lot of candid stuff.&rdquo;
+</p>
+
+<p>
+Hisao checks his watch. &ldquo;Breakfast time. Don&rsquo;t know about you, but I&rsquo;m
+not feeling sleepy and I&rsquo;m actually hungry for the first time in days.
+How about I cook us something up and we go and visit Suzu&rsquo;s grave? Her
+parents can&rsquo;t stop us doing that.&rdquo;
+</p>
+
+<p>
+&ldquo;I&rsquo;d like that. We can tell her about the baby and ask her blessing for
+the marriage. I want her to be the first to know.&rdquo;
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Scroff</p>
+<p class="date">Created: 2020-09-29 Tue 11:16</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
