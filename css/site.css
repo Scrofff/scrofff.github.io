@@ -7,19 +7,19 @@ body {
   margin: 0;
   border-top: 3px solid #1692cc;
 }
-blockquote {
+.epigraph {
   background: #fff;
   font-size: 16px;
-  border-left: 1px solid #ccc;
+  border-left: 0px solid #ccc;
   margin-left: 13.5em;
   margin-right: 3.5em;
   padding-left: 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
-blockquote p {
+.epigraph p {
     text-align: justify;
 }
-.right {
+.attrib {
     line-height: 0.1;
     display: flex;
     justify-content: flex-end;
