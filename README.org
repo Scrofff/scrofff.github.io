@@ -1,1 +1,5 @@
 Just a basic repository which allows me to publish some ramblings on my personal github page
+
+#+begin_comment
+emacs --batch --load publish.el --funcall org-publish-all
+#+end_comment
